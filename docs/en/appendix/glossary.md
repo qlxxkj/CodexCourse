@@ -1,114 +1,114 @@
-# 术语速查表
+# Glossary
 
 ---
 
 ## A
 
-### Agent（智能体）
-AI 系统的一种形态，能够自主感知环境、做出决策并执行行动。Codex 就是一个 AI 编程智能体——它能"读文件、写代码、运行命令"，而不是被动回答问题。
+### Agent (智能体)
+A type of AI system that can autonomously perceive the environment, make decisions, and take actions. Codex is an AI programming agent — it can "read files, write code, run commands" instead of just answering questions passively.
 
-### API（应用程序接口）
-不同软件之间通信的规则和协议。比如 Codex 通过 API 与 OpenAI 的服务器通信，获取 AI 能力。
+### API (Application Programming Interface)
+Rules and protocols for communication between different software. For example, Codex communicates with OpenAI's servers through APIs to get AI capabilities.
 
 ---
 
 ## C
 
-### CLI（命令行界面）
-Command Line Interface 的缩写。通过输入文本命令来操作电脑的方式，与图形界面（点鼠标）相对。Codex 有 CLI 版本，适合高级用户使用。
+### CLI (Command Line Interface)
+A way to operate your computer by typing text commands, as opposed to a graphical interface (clicking with a mouse). Codex has a CLI version for advanced users.
 
-### Code Interpreter（代码解释器）
-ChatGPT 的一个功能，可以让 AI 运行你上传的代码并返回结果。Codex 桌面 App 的核心能力之一就是代码解释器的增强版。
+### Code Interpreter
+A feature of ChatGPT that allows AI to run code you upload and return results. The core capability of the Codex desktop app is an enhanced version of the code interpreter.
 
 ---
 
 ## D
 
-### Deep Learning（深度学习）
-机器学习的一个分支，使用多层神经网络来学习数据中的复杂模式。Codex 背后的技术基础就是深度学习。
+### Deep Learning
+A branch of machine learning that uses multi-layer neural networks to learn complex patterns in data. The technology behind Codex is based on deep learning.
 
 ---
 
 ## G
 
 ### GitHub
-全球最大的代码托管平台，开发者在上面分享、协作和管理代码项目。
+The world's largest code hosting platform, where developers share, collaborate on, and manage code projects.
 
 ---
 
 ## L
 
-### LLM（大语言模型）
-Large Language Model 的缩写，指参数量巨大的语言模型。ChatGPT、Codex 等都基于 LLM 技术。
+### LLM (Large Language Model)
+Refers to language models with enormous numbers of parameters. ChatGPT, Codex, and others are all based on LLM technology.
 
-### Local Storage（本地存储）
-浏览器提供的一种数据存储方式，网页可以在用户的浏览器中保存数据，即使关闭页面也不会丢失。项目三中用到的待办事项持久化就依赖它。
+### Local Storage
+A data storage method provided by browsers. Web pages can save data in the user's browser, and it won't be lost even after closing the page. The todo app in Project 3 relies on this for data persistence.
 
 ---
 
 ## M
 
 ### Markdown
-一种轻量级标记语言，用简单的文本符号来表示格式（如标题用 `#`，加粗用 `**`）。GitBook 使用 Markdown 作为内容格式。
+A lightweight markup language that uses simple text symbols to represent formatting (e.g., `#` for headings, `**` for bold). This course uses Markdown as its content format.
 
-### MCP（Model Context Protocol）
-模型上下文协议，一种让 AI 模型连接外部工具和数据的标准化协议。通过 MCP，Codex 可以访问更多外部资源。
+### MCP (Model Context Protocol)
+A standardized protocol that allows AI models to connect to external tools and data sources. Through MCP, Codex can access more external resources.
 
-### Machine Learning（机器学习）
-人工智能的一个分支，让计算机从数据中学习规律，而不需要显式编程。
+### Machine Learning
+A branch of AI that enables computers to learn patterns from data without explicit programming.
 
 ---
 
 ## N
 
-### Natural Language Processing（NLP，自然语言处理）
-让计算机理解和生成人类语言的技术。Codex 能听懂你的中文指令，靠的就是 NLP 技术。
+### Natural Language Processing (NLP)
+Technology that enables computers to understand and generate human language. Codex can understand your Chinese or English instructions thanks to NLP technology.
 
 ---
 
 ## P
 
-### Prompt（提示词/指令）
-你输入给 AI 的文字指令。好的 prompt 能得到更好的结果。课程中多次强调"写好指令"的重要性。
+### Prompt (提示词/指令)
+The text instructions you input to AI. Good prompts get better results. The course emphasizes the importance of "writing good prompts" multiple times.
 
 ### Python
-一种广泛使用的编程语言，语法简洁易读，非常适合数据处理、自动化脚本等任务。Codex 生成的代码很多是 Python。
+A widely used programming language with simple, readable syntax, very suitable for data processing, automation scripts, and other tasks. Much of the code Codex generates is in Python.
 
 ---
 
 ## R
 
-### RPA（机器人流程自动化）
-用软件机器人自动执行重复性任务的技術。Codex 可以看作是 RPA 的升级版——它更灵活，不需要预先设计好流程。
+### RPA (Robotic Process Automation)
+Using software robots to automatically execute repetitive tasks. Codex can be seen as an upgraded version of RPA — it's more flexible and doesn't require pre-designed workflows.
 
 ---
 
 ## S
 
-### Sandbox（沙盒）
-一种隔离执行的环境。Codex 的工作区就是一种"沙盒"——它只能在工作区内操作文件，不会影响其他区域。
+### Sandbox (沙盒)
+An isolated execution environment. Codex's workspace is a kind of "sandbox" — it can only operate on files within the workspace and won't affect other areas.
 
-### Session（会话）
-一次对话的完整过程。从你打开 Codex 开始输入第一条消息，到关闭应用为止，就是一个会话。
+### Session (会话)
+The complete process of one conversation. From when you open Codex and type the first message until you close the app, that's one session.
 
 ---
 
 ## V
 
-### Vibe Coding（氛围编程）
-一种新的编程理念：不写代码，而是用自然语言描述你想要的效果，让 AI 来完成实现。本课程的核心教学理念就是 Vibe Coding。
+### Vibe Coding (氛围编程)
+A new programming philosophy: don't write code, instead describe the effect you want in natural language and let AI handle the implementation. This is the core teaching philosophy of this course.
 
 ---
 
 ## W
 
-### Workspace（工作区）
-Codex 中最重要的概念之一。工作区是你指定给 AI 的文件操作范围，类似一个"安全沙盒"。
+### Workspace (工作区)
+One of the most important concepts in Codex. The workspace is the file operation scope you designate to AI, like a "safe sandbox".
 
 ---
 
-## 📝 使用提示
+## 📝 Usage Tips
 
-- 本术语表使用大白话解释，避免技术黑话
-- 如果某个术语在文中多次出现但仍有疑问，随时回查本表
-- 术语会随技术发展而更新，最新版本请参考 [OpenAI 官方文档](https://help.openai.com)
+- This glossary uses plain language explanations, avoiding technical jargon
+- If a term appears multiple times in the text but you're still confused, check back in this glossary
+- Terms will be updated as technology advances. For the latest version, please refer to [OpenAI Official Documentation](https://help.openai.com)

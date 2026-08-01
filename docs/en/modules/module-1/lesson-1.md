@@ -1,146 +1,146 @@
-# 第 1 课：AI 编程助手是什么？
+# Lesson 1: What is an AI Programming Assistant?
 
-> 📌 **学习目标**：理解 AI 编程助手的基本概念，知道 Codex 和传统聊天机器人的区别  
-> ⏱️ **预计时长**：15 分钟  
-> 🎯 **本节节奏**：先演示 → 后讲解 → 再实操
+> 📌 **Learning Objectives**: Understand the basic concept of AI programming assistants, know the difference between Codex and traditional chatbots
+> ⏱️ **Estimated Time**: 15 minutes
+> 🎯 **Teaching Rhythm**: Demo first → Explain → Practice
 
 ---
 
-## 一、先演示：让 AI 帮你做件事
+## I. Demo First: Let AI Do Something for You
 
-在开始之前，我想让你先体验一下"AI 帮你干活"的感觉。
+Before we start, I want you to experience what "AI doing work for you" feels like.
 
-打开 ChatGPT（或任何 AI 聊天工具），输入下面这句话：
+Open ChatGPT (or any AI chat tool) and type this:
 
 ```
-帮我写一个 Python 脚本，读取当前文件夹下所有 .txt 文件，统计每个文件的行数，最后输出一个汇总报告。
+Help me write a Python script that reads all .txt files in the current folder, counts the lines in each file, and outputs a summary report.
 ```
 
-看看 AI 是怎么回答的——它通常会直接给你一段可运行的代码。你复制这段代码，保存为 `count_lines.py`，然后在终端运行：
+See how the AI responds — it will usually give you runnable code directly. Copy this code, save it as `count_lines.py`, then run it in your terminal:
 
 ```bash
 python count_lines.py
 ```
 
-恭喜你，你已经用 AI 完成了一个小工具的开发。**你没有写过一行代码，但你让它帮你写了。**
+Congratulations, you've just used AI to build a small tool. **You haven't written a single line of code, but you made AI write it for you.**
 
-这就是 AI 编程助手的威力。
-
----
-
-## 二、从"聊天机器人"到"能帮你干活的智能体"
-
-### 2.1 聊天机器人 vs 编程助手
-
-你可能用过 ChatGPT、文心一言、通义千问这类 AI 工具。它们有一个共同特点：**只能和你聊天**。
-
-你问它问题，它给你文字回复。你可以让它写代码片段，但代码能不能跑、怎么跑、在哪里跑——它不管。
-
-**AI 编程助手（比如 Codex）不一样。** 它不仅"能聊"，还能"能干"：
-
-| 能力 | 聊天机器人 | AI 编程助手（Codex） |
-|------|-----------|---------------------|
-| 回答问题 | ✅ | ✅ |
-| 写代码片段 | ✅ | ✅ |
-| 读你的项目文件 | ❌ | ✅ |
-| 运行代码并调试 | ❌ | ✅ |
-| 操作电脑上的文件 | ❌ | ✅ |
-| 调用外部工具 | ❌ | ✅ |
-| 完成完整任务 | ❌ | ✅ |
-
-### 2.2 Codex 到底是什么？
-
-**Codex 是 OpenAI 推出的 AI 编程智能体（coding agent）。**
-
-注意两个关键词：
-
-- **编程**：它的核心能力围绕代码展开——写代码、改代码、调试代码、解释代码
-- **智能体（Agent）**：它不是被动回答问题的工具，而是能主动执行任务的"助手"
-
-你可以把 Codex 想象成一个**会编程的实习生**：
-
-- 你告诉它要做什么（用自然语言）
-- 它自己去读相关文件、写代码、运行测试、发现问题、修正错误
-- 最后把成果交给你
-
-**你不需要教它编程知识，你只需要告诉它你要什么。**
+This is the power of AI programming assistants.
 
 ---
 
-## 三、生活中的类比
+## II. From "Chatbot" to "Agent That Gets Things Done"
 
-如果还是觉得抽象，我们用几个生活场景来理解：
+### 2.1 Chatbot vs Programming Assistant
 
-### 类比 1：Codex = 会编程的实习生
+You've probably used AI tools like ChatGPT, Wenxin Yiyan, or Tongyi Qianwen. They all share one common characteristic: **they can only chat with you**.
 
-你是一家公司的新人主管，招了一个实习生。这个实习生：
+You ask a question, it gives you a text response. You can ask it to write code snippets, but whether the code runs, how to run it, and where to run it — it doesn't care.
 
-- 会写代码
-- 能读你给的文件
-- 能自己想办法解决问题
-- 做错了你会告诉他，他会改
-- 做完会把成果交给你审核
+**AI programming assistants (like Codex) are different.** They can not only "chat" but also "do things":
 
-**Codex 就是这个实习生。** 你不需要会编程，你只需要像主管一样"提需求"。
+| Capability | Chatbot | AI Programming Assistant (Codex) |
+|------------|---------|----------------------------------|
+| Answer questions | ✅ | ✅ |
+| Write code snippets | ✅ | ✅ |
+| Read your project files | ❌ | ✅ |
+| Run code and debug | ❌ | ✅ |
+| Operate files on your computer | ❌ | ✅ |
+| Call external tools | ❌ | ✅ |
+| Complete full tasks | ❌ | ✅ |
 
-### 类比 2：Codex = 万能秘书
+### 2.2 What Exactly is Codex?
 
-你的秘书能帮你：
+**Codex is OpenAI's AI programming agent.**
 
-- 整理文件（按类型、日期分类）
-- 搜索资料（上网查资料并整理成报告）
-- 写邮件（根据你给的要点自动生成）
-- 做表格（你说数据格式，她帮你排版）
+Pay attention to two keywords:
 
-**Codex 就是这个秘书，只不过它额外还会写代码。**
+- **Programming**: Its core capabilities revolve around code — writing code, modifying code, debugging code, explaining code
+- **Agent**: It's not a passive tool that answers questions, but an "assistant" that can proactively execute tasks
 
-### 类比 3：Codex = 乐高积木 + 说明书
+You can think of Codex as a **programming-savvy intern**:
 
-假设你想搭一个乐高城堡：
+- You tell it what you want (in natural language)
+- It goes to read relevant files, write code, run tests, find problems, and fix errors
+- Finally, it delivers the results to you
 
-- **传统方式**：你自己一块一块拼，需要看懂说明书
-- **Codex 方式**：你告诉它"我要一个带塔楼和城墙的城堡"，它帮你拼好，你只管验收
-
----
-
-## 四、Codex 不是代码补全工具
-
-很多人第一次听说 AI 编程工具，想到的是 GitHub Copilot。Copilot 是什么？它是一个**代码补全工具**——你在编辑器里打字，它帮你补全下一行代码。
-
-**Codex 比 Copilot 强大得多。**
-
-| 对比项 | GitHub Copilot | Codex |
-|--------|---------------|-------|
-| 工作位置 | 编辑器内 | 独立应用/命令行 |
-| 能力范围 | 补全代码 | 读项目、写代码、运行命令、调工具 |
-| 任务粒度 | 单行/单函数 | 完整功能/完整项目 |
-| 是否需要编程基础 | 需要（至少看得懂代码） | 不需要（用自然语言对话） |
-| 典型用户 | 程序员 | 任何人（包括不会编程的人） |
-
-**简单说：Copilot 是给程序员用的"辅助轮"，Codex 是给普通人用的"自动驾驶"。**
+**You don't need to teach it programming knowledge. You just need to tell it what you want.**
 
 ---
 
-## 五、本节小结
+## III. Real-Life Analogies
 
-| 知识点 | 核心内容 |
-|--------|---------|
-| AI 编程助手 vs 聊天机器人 | 前者能干活，后者只能聊天 |
-| Codex 的核心定位 | OpenAI 的 AI 编程智能体，能读文件、写代码、运行命令 |
-| Codex vs Copilot | Copilot 补全代码，Codex 完成任务 |
-| 类比理解 | Codex = 会编程的实习生 / 万能秘书 |
+If it still feels abstract, let's use some everyday scenarios to understand:
+
+### Analogy 1: Codex = A Programming-Savvy Intern
+
+You're a new manager at a company and you've hired an intern. This intern:
+
+- Can write code
+- Can read the files you give them
+- Can figure out solutions on their own
+- You tell them when they make a mistake, they'll fix it
+- They deliver the results to you for review
+
+**Codex is this intern.** You don't need to know how to code. You just need to "make requests" like a manager.
+
+### Analogy 2: Codex = A Multi-Talented Secretary
+
+Your secretary can help you:
+
+- Organize files (by type, date, etc.)
+- Search for information (look up materials online and compile reports)
+- Write emails (automatically generate based on your key points)
+- Make spreadsheets (you tell them the data format, they format it)
+
+**Codex is this secretary, except it can also write code.**
+
+### Analogy 3: Codex = LEGO Bricks + Instructions
+
+Imagine you want to build a LEGO castle:
+
+- **Traditional way**: You piece it together yourself, needing to understand the instructions
+- **Codex way**: You tell it "I want a castle with towers and walls," and it builds it for you. You just inspect the result.
 
 ---
 
-## 六、课后思考
+## IV. Codex Is Not Just a Code Completion Tool
 
-1. 你工作中有没有那种"重复做、很烦人、但又不得不做"的任务？想想看，Codex 能不能帮你做？
-2. 你觉得"会编程"和"能用 AI 编程"之间有什么区别？
+Many people first hear about AI programming tools and think of GitHub Copilot. What is Copilot? It's a **code completion tool** — you type in your editor, and it helps complete the next line of code.
 
-> 💡 提示：下一节课我们会展示 Codex 具体能帮你做什么，到时候你可能会发现更多可以用它替代的任务。
+**Codex is much more powerful than Copilot.**
+
+| Comparison | GitHub Copilot | Codex |
+|------------|----------------|-------|
+| Where it works | Inside editor | Standalone app / command line |
+| Capability scope | Complete code | Read projects, write code, run commands, call tools |
+| Task granularity | Single line / single function | Complete features / complete projects |
+| Need programming background? | Yes (at least read code) | No (converse in natural language) |
+| Typical users | Programmers | Anyone (including non-programmers) |
+
+**Simply put: Copilot is "training wheels" for programmers, Codex is "autopilot" for ordinary people.**
 
 ---
 
-## 七、下一步
+## V. Summary
 
-[→ 第 2 课：Codex 能帮你做什么？](lesson-2.md)
+| Knowledge Point | Core Content |
+|-----------------|--------------|
+| AI Programming Assistant vs Chatbot | The former can do things, the latter can only chat |
+| Codex's Core Positioning | OpenAI's AI programming agent, can read files, write code, run commands |
+| Codex vs Copilot | Copilot completes code, Codex completes tasks |
+| Analogy Understanding | Codex = Programming-Savvy Intern / Multi-Talented Secretary |
+
+---
+
+## VI. Post-Lesson Thinking
+
+1. Is there a "repeat, annoying, but must-do" task in your work? Think about it — can Codex help you do it?
+2. What do you think is the difference between "knowing how to code" and "using AI to program"?
+
+> 💡 **Hint**: In the next lesson, we'll show what Codex can specifically do for you. You might discover more tasks you can replace with it.
+
+---
+
+## VII. Next Step
+
+[→ Lesson 2: What Can Codex Do for You?](lesson-2.md)

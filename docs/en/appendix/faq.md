@@ -1,127 +1,127 @@
-# 常见问题 FAQ
+# FAQ - Frequently Asked Questions
 
 ---
 
-## 安装与登录
+## Installation & Login
 
-### Q1：Codex 桌面 App 在哪里下载？
+### Q1: Where can I download the Codex desktop app?
 
-A：通过 ChatGPT 官网（chatgpt.com）登录后，在左侧菜单找到 "Codex" 入口即可下载。也可以直接在 ChatGPT 网页版中使用 Code Interpreter 功能。
+A: After logging into the ChatGPT website (chatgpt.com), find the "Codex" entry in the left sidebar menu to download. You can also use the Code Interpreter feature directly in the ChatGPT web version.
 
-### Q2：免费版可以用 Codex 吗？
+### Q2: Can I use Codex with a free account?
 
-A：可以，但免费版的额度有限。如果你经常使用，建议升级到 Plus（$20/月）或 Pro（$200/月）。
+A: Yes, but the free version has limited quota. If you use it frequently, we recommend upgrading to Plus ($20/month) or Pro ($200/month).
 
-### Q3：登录时提示"账号未激活"怎么办？
+### Q3: What should I do if I see "Account not activated" when logging in?
 
-A：请检查你的注册邮箱，确认已完成验证。如果找不到验证邮件，检查垃圾邮件文件夹，或者重新发送验证邮件。
+A: Please check your registration email and confirm you've completed verification. If you can't find the verification email, check your spam folder, or resend the verification email.
 
-### Q4：Mac 上首次打开 Codex 提示"来自未识别开发者"？
+### Q4: On Mac, Codex says "from an unidentified developer" on first open?
 
-A：这是 macOS 的安全机制。进入"系统偏好设置 → 安全性与隐私"，在"通用"标签页中点击"仍然打开"即可。
-
----
-
-## 权限与工作区
-
-### Q5：什么是工作区？为什么需要设置？
-
-A：工作区是 Codex 操作文件的范围。设置工作区可以：
-- 保护你电脑上的其他文件不被意外修改
-- 让 Codex 更好地理解你的项目结构
-- 方便追踪和管理 AI 的修改记录
-
-### Q6：三种权限模式有什么区别？
-
-| 模式 | 说明 | 推荐度 |
-|------|------|--------|
-| 默认权限 | Codex 操作前征求你的同意 | ⭐⭐⭐ 新手首选 |
-| 自动审查 | Codex 自动执行，你事后审计 | ⭐⭐ 进阶用户 |
-| 完全访问 | Codex 拥有完全控制权 | ⚠️ 不推荐 |
-
-### Q7：如何更改权限模式？
-
-A：在 Codex 的设置界面中找到"权限管理"或"安全设置"，选择你想要的模式即可。
+A: This is a macOS security mechanism. Go to "System Preferences → Security & Privacy" and click "Open Anyway" on the "General" tab.
 
 ---
 
-## 使用问题
+## Permissions & Workspace
 
-### Q8：Codex 生成的代码/内容不正确怎么办？
+### Q5: What is a workspace? Why do I need to set it up?
 
-A：不要担心，这是正常现象。你可以：
-1. 告诉 Codex 哪里不对，让它修正
-2. 提供更详细的背景信息
-3. 把大任务拆成小步骤逐步完成
+A: A workspace is the scope where Codex operates on files. Setting a workspace helps:
+- Protect other files on your computer from accidental modifications
+- Help Codex better understand your project structure
+- Make it easy to track and manage AI modifications
 
-### Q9：Codex 能操作我电脑上的所有文件吗？
+### Q6: What are the differences between the three permission modes?
 
-A：不能。Codex 只能在它被授权的工作区内操作文件。这是出于安全考虑的设计。
+| Mode | Description | Recommendation |
+|------|-------------|----------------|
+| Default | Codex asks for your approval before any file modification | ⭐⭐⭐ Best for beginners |
+| Auto-review | Codex executes automatically, you audit afterward | ⭐⭐ For advanced users |
+| Full access | Codex has complete control | ⚠️ Not recommended |
 
-### Q10：Codex 会保存我的数据吗？
+### Q7: How do I change the permission mode?
 
-A：Codex 的使用记录保存在你的 ChatGPT 账号中。它不会将你的私人文件上传到外部服务器。你可以在 ChatGPT 设置中管理数据保留选项。
-
-### Q11：Codex 支持中文指令吗？
-
-A：支持。Codex 理解多种语言，包括中文、英文等。你可以用你最舒服的语言来指挥它。
-
----
-
-## 额度和费用
-
-### Q12：Codex 使用消耗额度吗？
-
-A：是的。每次对话都会消耗一定的 ChatGPT 额度。Plus 用户每月有充足额度，Pro 用户额度更多。
-
-### Q13：额度用完了怎么办？
-
-A：
-- 等待下月重置（按月计费）
-- 升级到更高版本
-- 使用免费版（额度较少）
-
-### Q14：如何查看当前剩余额度？
-
-A：在 ChatGPT 设置中可以看到你的计划类型和剩余额度信息。
+A: Find "Permissions Management" or "Security Settings" in Codex's settings interface and select your preferred mode.
 
 ---
 
-## 安全与隐私
+## Usage Issues
 
-### Q15：在 Codex 中输入敏感信息安全吗？
+### Q8: What if the code/content Codex generates is incorrect?
 
-A：**不建议**。永远不要在 Codex 中输入密码、银行卡号、身份证号等敏感信息。Codex 虽然安全，但这些信息不应该出现在任何 AI 对话中。
+A: Don't worry, this is normal. You can:
+1. Tell Codex what's wrong and ask it to fix it
+2. Provide more detailed background information
+3. Break the big task into small steps and complete them one by one
 
-### Q16：Codex 会泄露我的文件内容吗？
+### Q9: Can Codex operate all files on my computer?
 
-A：不会。Codex 处理你的文件内容是为了完成任务，不会将其分享给第三方。你的数据受到 OpenAI 的隐私政策保护。
+A: No. Codex can only operate on files within its authorized workspace. This is a security-by-design feature.
 
-### Q17：如何确保 Codex 不会误删重要文件？
+### Q10: Does Codex save my data?
 
-A：
-1. 使用"默认权限"模式，每次操作都经过你确认
-2. 操作重要文件前先备份
-3. 限制 Codex 的工作区范围
+A: Codex usage records are stored in your ChatGPT account. It does not upload your private files to external servers. You can manage data retention options in ChatGPT settings.
+
+### Q11: Does Codex support Chinese instructions?
+
+A: Yes. Codex understands multiple languages, including Chinese and English. You can command it in whichever language you're most comfortable with.
 
 ---
 
-## 技术支持
+## Quota & Billing
 
-### Q18：Codex 运行很慢怎么办？
+### Q12: Does using Codex consume quota?
 
-A：可能的原因和解决方案：
-- 网络连接不稳定 → 检查网络
-- 任务过于复杂 → 拆分任务
-- 服务器繁忙 → 稍后再试
+A: Yes. Each conversation consumes a certain amount of ChatGPT quota. Plus users have ample quota per month, and Pro users have even more.
 
-### Q19：Codex 无法访问某些文件夹？
+### Q13: What should I do when my quota runs out?
 
-A：检查工作区设置是否正确，以及该文件夹是否有读取权限。macOS 用户可能需要在全磁盘访问中允许 Codex。
+A:
+- Wait for the monthly reset (billed monthly)
+- Upgrade to a higher plan
+- Use the free version (limited quota)
 
-### Q20：如何获取帮助？
+### Q14: How do I check my remaining quota?
 
-A：
-- OpenAI 官方文档：https://help.openai.com
-- 社区论坛：https://community.openai.com
-- 本课程附录中的 [课前准备清单](prep-checklist.md)
+A: You can see your plan type and remaining quota in ChatGPT settings.
+
+---
+
+## Security & Privacy
+
+### Q15: Is it safe to enter sensitive information in Codex?
+
+A: **Not recommended.** Never enter passwords, bank card numbers, ID card numbers, or other sensitive information in Codex. While Codex is secure, this information should never appear in any AI conversation.
+
+### Q16: Can Codex leak my file contents?
+
+A: No. Codex processes your file contents to complete tasks and will not share them with third parties. Your data is protected by OpenAI's privacy policy.
+
+### Q17: How do I ensure Codex won't accidentally delete important files?
+
+A:
+1. Use "Default Permission" mode so every operation requires your confirmation
+2. Back up important files before letting Codex operate on them
+3. Limit the scope of Codex's workspace
+
+---
+
+## Technical Support
+
+### Q18: What should I do if Codex runs slowly?
+
+A: Possible causes and solutions:
+- Unstable network connection → Check your network
+- Task is too complex → Break it into smaller tasks
+- Server is busy → Try again later
+
+### Q19: Codex can't access certain folders?
+
+A: Check whether the workspace settings are correct and whether the folder has read permissions. macOS users may need to allow Codex in Full Disk Access.
+
+### Q20: How do I get help?
+
+A:
+- OpenAI Official Documentation: https://help.openai.com
+- Community Forum: https://community.openai.com
+- [Pre-course Checklist](prep-checklist.md) in this course's appendix

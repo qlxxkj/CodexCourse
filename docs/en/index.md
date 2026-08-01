@@ -19,47 +19,61 @@ If you relate to any of these, this course is for you.
 
 Most importantly: **you don't need to know how to code**. As long as you can speak naturally, you can use Codex to complete these tasks.
 
+Inside OpenAI, lawyers use Codex to organize contract clauses, recruiters use Codex to screen resumes, and operations staff use Codex to create data reports. You can too.
+
 ## Course Structure
 
 This course has **6 modules**, about **16 lessons + 4 hands-on projects**:
 
-| Module | Content | Duration |
-|--------|---------|----------|
-| Module 1 | Understanding Codex | 45 min |
-| Module 2 | Getting Started | 60 min |
-| Module 3 | Core Features | 90 min |
-| Module 4 | Practical Tips | 45 min |
-| Module 5 | Project Practice | 120 min |
-| Module 6 | Summary & Next Steps | 30 min |
+```
+Module 1: Understanding Codex       →  Learn what it is and what it can do
+Module 2: Getting Started            →  Install, log in, have your first conversation
+Module 3: Core Features              →  File operations, natural language, web search, automation
+Module 4: Practical Tips             →  Write better prompts, use safely, call skills
+Module 5: Project Practice           →  4 complete projects, from beginner to advanced
+Module 6: Summary & Next Steps       →  Review, FAQ, what to learn next
+```
 
-**Total: about 5-7 hours**, you can learn module by module.
+## Learning Paths
 
-## Get Started
+### Complete Learning (Recommended)
+Study in module order, total duration about **5-7 hours**:
 
-<a href="/en/modules/module-1/lesson-1.md" class="btn-primary">→ Start Lesson 1</a>
+| Module | Estimated Time | Description |
+|--------|---------------|-------------|
+| Module 1 | 45 minutes | Build understanding, no need to operate yet |
+| Module 2 | 60 minutes | Hands-on installation, login, run first task |
+| Module 3 | 90 minutes | Core features, practice every lesson |
+| Module 4 | 45 minutes | Skill improvement, learn and use simultaneously |
+| Module 5 | 120 minutes | Project practice, recommended to split over two days |
+| Module 6 | 30 minutes | Review and plan next steps |
 
-## What You'll Learn
+### Crash Course
+If time is tight, you can just learn:
 
-- ✅ Let Codex help organize folders, batch rename, classify files
-- ✅ Describe needs in plain language, let Codex generate web pages or small tools
-- ✅ Let Codex search the internet and compile reports
-- ✅ Let Codex handle repetitive tasks to save time
-- ✅ Use Codex's built-in skills to quickly complete complex tasks (like generating PPTs)
+1. **Module 1** (Understanding Codex) → 15 minutes
+2. **Module 2** (Install + First Conversation) → 30 minutes
+3. **Module 5 · Project 1** (Organize Computer) → 20 minutes
 
-<style>
-.btn-primary {
-  display: inline-block;
-  padding: 12px 32px;
-  background: #0a6ad5;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.2s;
-}
+This way you can use Codex for the most practical things.
 
-.btn-primary:hover {
-  background: #0a5eb8;
-  color: #fff;
-}
-</style>
+## Pre-course Preparation
+
+Before starting, make sure you have the following ready:
+
+1. **ChatGPT Account** — Free version works, but Plus/Pro has more quota
+2. **A Computer** — macOS or Windows both work
+3. **Stable Internet Connection** — Codex needs to connect to the internet
+4. **A Folder to Organize** — For practice (e.g., "Downloads" folder)
+
+> 📋 For the detailed preparation checklist, please refer to [Pre-course Checklist](appendix/prep-checklist.md)
+
+## What If I Encounter Problems?
+
+- Installation issues → See [FAQ](appendix/faq.md)
+- Don't understand terms → See [Glossary](appendix/glossary.md)
+- Self-assessment after course → Fill out [Feedback Form](appendix/feedback.md)
+
+---
+
+*Ready? Let's start Lesson 1 👉 [Lesson 1: What is an AI Programming Assistant?](modules/module-1/lesson-1.md)*
