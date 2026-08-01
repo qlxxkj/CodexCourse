@@ -1,0 +1,120 @@
+# Codex from Zero to One: Let AI Handle Programming and Office Work
+
+> **Course Positioning**: For working professionals and content creators with zero programming background  
+> **Course Goal**: Help students understand what Codex is, what it can do, and how to use it independently to complete real tasks  
+> **Course Duration**: Recommended 5-7 hours (can be learned in modules)
+
+---
+
+## 📖 Course Overview
+
+Have you ever had these experiences?
+
+- Want to write a small tool to organize files, but don't know how to code
+- Need to make a PPT, spending half a day finding materials and formatting
+- Want to analyze a pile of data, but Excel formulas and search engines can't help
+- Heard AI can write code and help with office work, but have no idea where to start
+
+If you relate to any of these, this course is for you.
+
+**Codex is OpenAI's AI coding agent.** It's not just a simple "chatbot" — it can read your projects, write code, run commands, call tools, and even help you organize computer folders, generate PPTs, and do data analysis.
+
+Most importantly: **you don't need to know how to code**. As long as you can speak naturally, you can use Codex to complete these tasks.
+
+Inside OpenAI, lawyers use Codex to organize contract clauses, recruiters use Codex to screen resumes, and operations staff use Codex to create data reports. You can too.
+
+---
+
+## 🎯 What Can You Do After This Course?
+
+| Skill | What It Looks Like |
+|-------|-------------------|
+| File Operations | Let Codex help organize folders, batch rename, classify files |
+| Information Retrieval | Let Codex search the internet and compile reports |
+| Simple Programming | Describe needs in natural language, let Codex generate web pages or small tools |
+| Automation | Let Codex handle repetitive tasks to save time |
+| Skill Calling | Use Codex's built-in skills to quickly complete complex tasks (like generating PPTs) |
+
+---
+
+## 📚 Course Structure
+
+This course has **6 modules**, about **16 lessons + 4 hands-on projects**:
+
+```
+Module 1: Understanding Codex    →  Learn what it is and what it can do
+Module 2: Getting Started         →  Install, log in, have your first conversation
+Module 3: Core Features           →  File operations, natural language, web search, automation
+Module 4: Practical Tips          →  Write better prompts, use safely, call skills
+Module 5: Project Practice        →  4 complete projects, from beginner to advanced
+Module 6: Summary & Next Steps    →  Review, FAQ, what to learn next
+```
+
+> 💡 **Teaching Tip**: Each lesson follows the rhythm of "demo first → explain → practice", avoiding theory at the beginning.
+
+---
+
+## ⏱️ Suggested Learning Path
+
+### Complete Learning (Recommended)
+Study in module order, total duration about **5-7 hours**:
+
+| Module | Estimated Time | Description |
+|--------|---------------|-------------|
+| Module 1 | 45 minutes | Build understanding, no need to operate yet |
+| Module 2 | 60 minutes | Hands-on installation, login, run first task |
+| Module 3 | 90 minutes | Core features, practice every lesson |
+| Module 4 | 45 minutes | Skill improvement, learn and use simultaneously |
+| Module 5 | 120 minutes | Project practice, recommended to split over two days |
+| Module 6 | 30 minutes | Review and plan next steps |
+
+### Crash Course
+If time is tight, you can just learn:
+
+1. **Module 1** (Understanding Codex) → 15 minutes
+2. **Module 2** (Install + First Conversation) → 30 minutes
+3. **Module 5 · Project 1** (Organize Computer) → 20 minutes
+
+This way you can use Codex for the most practical things.
+
+---
+
+## 🛠️ Pre-course Preparation
+
+Before starting, make sure you have the following ready:
+
+1. **ChatGPT Account** — Free version works, but Plus/Pro has more quota
+2. **A Computer** — macOS or Windows both work
+3. **Stable Internet Connection** — Codex needs to connect to the internet
+4. **A Folder to Organize** — For practice (e.g., "Downloads" folder)
+
+> 📋 For the detailed preparation checklist, please refer to [Pre-course Checklist](appendix/prep-checklist.md)
+
+---
+
+## ❓ What If I Encounter Problems?
+
+- Installation issues → See [FAQ](appendix/faq.md)
+- Don't understand terms → See [Glossary](appendix/glossary.md)
+- Self-assessment after course → Fill out [Feedback Form](appendix/feedback.md)
+
+---
+
+## 📝 Course Update History
+
+| Date | Version | Update |
+|------|---------|--------|
+| 2026-07-22 | v1.0 | Initial version, completed all 16 lessons + 4 projects |
+
+---
+
+*Ready? Let's start Lesson 1 👉 [Lesson 1: What is an AI Programming Assistant?](modules/module-1/lesson-1.md)*
+
+---
+
+## 🌐 Multilingual Versions
+
+| Language | Link |
+|----------|------|
+| 🇨🇳 Chinese | [README.md](README.md) |
+| 🇬🇧 English | [README.en.md](README.en.md) |

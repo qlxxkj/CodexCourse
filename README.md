@@ -108,4 +108,13 @@ OpenAI 内部，律师用 Codex 整理合同条款，招聘人员用 Codex 筛�
 
 ---
 
+## 🌐 多语言版本 / Multilingual Versions
+
+| 语言 | 链接 |
+|------|------|
+| 🇨🇳 中文 | [README.md](README.md) |
+| 🇬🇧 English | [README.en.md](README.en.md) |
+
+---
+
 *准备好了吗？让我们开始第一课吧 👉 [第 1 课：AI 编程助手是什么？](modules/module-1/lesson-1.md)*
