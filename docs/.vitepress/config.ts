@@ -18,7 +18,7 @@ export default defineConfig({
     root: {
       label: '中文',
       lang: 'zh-CN',
-      link: '/zh/',
+      link: '/',
       title: 'Codex 从零到一',
       description: '让 AI 帮你搞定编程与办公',
     },
@@ -34,75 +34,75 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     nav: [
-      { text: '课程', link: '/zh/' },
-      { text: 'About', link: '/zh/about.md' },
+      { text: '课程', link: '/' },
+      { text: 'About', link: '/about.md' },
     ],
     sidebar: {
-      '/zh/': [
+      '/': [
         {
           text: '课程介绍',
           items: [
-            { text: '课程简介', link: '/zh/' },
-            { text: '课前准备清单', link: '/zh/appendix/prep-checklist.md' },
-            { text: '术语速查表', link: '/zh/appendix/glossary.md' },
-            { text: '常见问题 FAQ', link: '/zh/appendix/faq.md' },
-            { text: '课后反馈表', link: '/zh/appendix/feedback.md' },
+            { text: '课程简介', link: '/' },
+            { text: '课前准备清单', link: '/appendix/prep-checklist.md' },
+            { text: '术语速查表', link: '/appendix/glossary.md' },
+            { text: '常见问题 FAQ', link: '/appendix/faq.md' },
+            { text: '课后反馈表', link: '/appendix/feedback.md' },
           ],
         },
         {
           text: '模块一：认识 Codex',
           collapsed: false,
           items: [
-            { text: '第 1 课：AI 编程助手是什么？', link: '/zh/modules/module-1/lesson-1.md' },
-            { text: '第 2 课：Codex 能帮你做什么？', link: '/zh/modules/module-1/lesson-2.md' },
-            { text: '第 3 课：Codex vs 其他工具', link: '/zh/modules/module-1/lesson-3.md' },
+            { text: '第 1 课：AI 编程助手是什么？', link: '/modules/module-1/lesson-1.md' },
+            { text: '第 2 课：Codex 能帮你做什么？', link: '/modules/module-1/lesson-2.md' },
+            { text: '第 3 课：Codex vs 其他工具', link: '/modules/module-1/lesson-3.md' },
           ],
         },
         {
           text: '模块二：上手准备',
           collapsed: false,
           items: [
-            { text: '第 4 课：准备工作', link: '/zh/modules/module-2/lesson-4.md' },
-            { text: '第 5 课：安装 Codex 桌面 App', link: '/zh/modules/module-2/lesson-5.md' },
-            { text: '第 6 课：认识 Codex 界面', link: '/zh/modules/module-2/lesson-6.md' },
-            { text: '第 7 课：第一次对话', link: '/zh/modules/module-2/lesson-7.md' },
+            { text: '第 4 课：准备工作', link: '/modules/module-2/lesson-4.md' },
+            { text: '第 5 课：安装 Codex 桌面 App', link: '/modules/module-2/lesson-5.md' },
+            { text: '第 6 课：认识 Codex 界面', link: '/modules/module-2/lesson-6.md' },
+            { text: '第 7 课：第一次对话', link: '/modules/module-2/lesson-7.md' },
           ],
         },
         {
           text: '模块三：核心功能',
           collapsed: false,
           items: [
-            { text: '第 8 课：文件操作', link: '/zh/modules/module-3/lesson-8.md' },
-            { text: '第 9 课：自然语言驱动', link: '/zh/modules/module-3/lesson-9.md' },
-            { text: '第 10 课：联网与资料检索', link: '/zh/modules/module-3/lesson-10.md' },
-            { text: '第 11 课：自动化任务', link: '/zh/modules/module-3/lesson-11.md' },
+            { text: '第 8 课：文件操作', link: '/modules/module-3/lesson-8.md' },
+            { text: '第 9 课：自然语言驱动', link: '/modules/module-3/lesson-9.md' },
+            { text: '第 10 课：联网与资料检索', link: '/modules/module-3/lesson-10.md' },
+            { text: '第 11 课：自动化任务', link: '/modules/module-3/lesson-11.md' },
           ],
         },
         {
           text: '模块四：实用技巧',
           collapsed: false,
           items: [
-            { text: '第 12 课：如何写出更好的指令', link: '/zh/modules/module-4/lesson-12.md' },
-            { text: '第 13 课：安全与权限管理', link: '/zh/modules/module-4/lesson-13.md' },
-            { text: '第 14 课：Codex 的"技能"', link: '/zh/modules/module-4/lesson-14.md' },
+            { text: '第 12 课：如何写出更好的指令', link: '/modules/module-4/lesson-12.md' },
+            { text: '第 13 课：安全与权限管理', link: '/modules/module-4/lesson-13.md' },
+            { text: '第 14 课：Codex 的"技能"', link: '/modules/module-4/lesson-14.md' },
           ],
         },
         {
           text: '模块五：项目实战',
           collapsed: false,
           items: [
-            { text: '项目一：整理你的电脑', link: '/zh/modules/module-5/project-1.md' },
-            { text: '项目二：生成一份 PPT 报告', link: '/zh/modules/module-5/project-2.md' },
-            { text: '项目三：做一个简单网页', link: '/zh/modules/module-5/project-3.md' },
-            { text: '项目四：待办事项管理小工具', link: '/zh/modules/module-5/project-4.md' },
+            { text: '项目一：整理你的电脑', link: '/modules/module-5/project-1.md' },
+            { text: '项目二：生成一份 PPT 报告', link: '/modules/module-5/project-2.md' },
+            { text: '项目三：做一个简单网页', link: '/modules/module-5/project-3.md' },
+            { text: '项目四：待办事项管理小工具', link: '/modules/module-5/project-4.md' },
           ],
         },
         {
           text: '模块六：总结与进阶',
           collapsed: false,
           items: [
-            { text: '第 15 课：课程回顾与学习路径', link: '/zh/modules/module-6/lesson-15.md' },
-            { text: '第 16 课：下一步可以学什么', link: '/zh/modules/module-6/lesson-16.md' },
+            { text: '第 15 课：课程回顾与学习路径', link: '/modules/module-6/lesson-15.md' },
+            { text: '第 16 课：下一步可以学什么', link: '/modules/module-6/lesson-16.md' },
           ],
         },
       ],
