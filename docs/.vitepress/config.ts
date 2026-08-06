@@ -1,6 +1,7 @@
 import { defineConfig, defaultTheme } from 'vitepress'
 
 export default defineConfig({
+  base: '/CodexCourse/',
   title: 'Codex Course',
   description: '从零到一：让 AI 帮你搞定编程与办公 | Learn Codex from Scratch',
   lang: 'zh-CN',
