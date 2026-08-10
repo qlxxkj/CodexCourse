@@ -1,1 +1,132 @@
-# Lesson 11 :Automation Tasks —— 让 Codex 帮你"跑腿" > 📌 **Learning Objectives**：学会用 Codex 执行重复性任务，理解"一次性任务"与"可复用流程"的区别 > ⏱️ **Estimated Time**：25 分钟 > 🎯 **Teaching Rhythm**：先演示 → 后讲解 → Then Practice --- ## I.什么是"Automation Tasks"？ Automation Tasks就是：**你告诉 Codex 要做什么，它自己一步步完成整个过程，不需要你反复操作。** ### 生活中的类比 假设你要搬家： - **手动方式**：你自己打包每一样东西，贴标签，搬上车 - **自动化方式**：你告诉一个助手"我要搬家，把这些东西搬到新家"，助手自己去打包、贴标签、搬运 Codex 就是那个"助手"。 --- ## II.实操一：批量重命名一批文件 ### 场景 你下载了 50 张图片，文件名都是 `download_001.jpg`, `download_002.jpg`... 你想改成更有意义的名字。 ### 操作步骤 1. 打开图片文件夹作为工作区 2. 输入指令： ``` 帮我把这些图片按日期重命名，格式为"拍摄日期_序号.jpg" 例如：2026-07-20_001.jpg ``` 3. Codex 会读取每张图片的 EXIF 信息（如果有的话），然后批量重命名 ### 更多批量操作示例 | 你的需求 | 指令示例 | |---------|---------| | 统一扩展名大小写 | "把所有 .JPG 改成 .jpg" | | 添加前缀/后缀 | "在所有文件名前面加上'项目A-'" | | 删除特定字符 | "去掉所有文件名中的空格和下划线" | | 按规则重命名 | "把'IMG_*.jpg'改成'旅行_*.jpg'" | --- ## III.实操二：自动下载并整理资料 ### 场景 你需要收集某个主题的网上资料，但不想一个个点开链接复制粘贴。 ### 操作步骤 1. 在 Codex 中输入： ``` 帮我搜索"远程办公最佳实践"的最新文章，找出排名前 5 的结果，把每个结果的标题、摘要和链接整理成一个文档 ``` 2. Codex 会： - 联网搜索相关信息 - 提取前 5 条结果 - 创建一个 Markdown 文件保存整理后的内容 3. 你可以进一步要求： ``` 把这个文档翻译成中文 ``` 或 ``` 根据这些资料，写一篇关于远程办公的推荐清单 ``` --- ## IV.理解"一次性任务"vs"可重复使用的自动化流程" ### 一次性任务 比如："帮我把这个文件夹里的 PDF 文件合并成一个" - 做一次就完了 - 下次再做同样的事，需要重新告诉 Codex ### 可重复使用的流程 比如："每次有新邮件时，自动提取附件中的表格数据并保存到 Excel" - 可以设置成定期执行 - 或者做成脚本/模板，随时调用 > 💡 **提示**：Codex 不仅能做一次性任务，还能帮你编写可复用的脚本。当你发现某个任务经常要做时，可以让 Codex 把它变成一个自动化脚本。 --- ## V.实操三：创建你的Lesson一个自动化脚本 ### 任务 让 Codex 帮你写一个"每日工作日报"的自动生成脚本。 ### 步骤 1. 准备一个包含每日工作记录的文件夹 2. 输入指令： ``` 帮我写一个 Python 脚本，读取这个文件夹里所有的日志文件， 统计每天的工作条目数，生成一个汇总报告 ``` 3. Codex 会生成一个可复用的脚本 4. 以后每天早上运行一次这个脚本，就能自动得到昨天的工作汇总 --- ## VI.本节实操任务清单 请按顺序完成以下任务： - [ ] 让 Codex 批量重命名一批文件 - [ ] 让 Codex 联网搜索资料并整理成文档 - [ ] 尝试让 Codex 写一个简单的自动化脚本 - [ ] 思考：你工作中有哪些重复性任务可以交给 Codex 自动化？ --- ## VII.Summary | 知识点 | 核心内容 | |--------|---------| | Automation Tasks | 让 Codex 代替你完成重复性工作 | | 批量操作 | 重命名、移动、分类、格式化等 | | Web Search | 搜索 + 整理 + 总结 | | 一次性 vs 可复用 | 简单任务直接说，复杂任务写脚本 | --- ## VIII.Next Step [→ 进入Module 4:实用技巧](../module-4/lesson-12.md)
+# Lesson 11: Automation Tasks — Let Codex Run Errands for You
+
+> 📌 **Learning Objectives**: Learn to use Codex to execute repetitive tasks, understand the difference between "one-time tasks" and "reusable workflows"
+> ⏱️ **Estimated Time**: 25 minutes
+> 🎯 **Teaching Rhythm**: Demo first → Explain → Practice
+
+---
+
+## I. What Are "Automation Tasks"?
+
+Automation Tasks mean: **You tell Codex what to do, and it completes the entire process step by step, without you needing to repeatedly operate.**
+
+### Real-Life Analogy
+
+Imagine you're moving house:
+- **Manual way**: You pack everything yourself, label each box, and carry it to the truck
+- **Automation way**: You tell an assistant "I'm moving, take these things to the new place," and the assistant handles packing, labeling, and transporting on its own
+
+Codex is that "assistant."
+
+---
+
+## II. Practice 1: Batch Rename a Set of Files
+
+### Scenario
+You downloaded 50 photos, and the filenames are all `download_001.jpg`, `download_002.jpg`... You want to give them more meaningful names.
+
+### Steps
+
+1. Open the photos folder as the workspace
+2. Type this command:
+   ```
+   Help me rename these photos by date, in the format "ShootingDate_Sequence.jpg".
+   Example: 2026-07-20_001.jpg
+   ```
+3. Codex will read each photo's EXIF data (if available) and batch-rename them.
+
+### More Batch Operation Examples
+
+| Your Need | Command Example |
+|-----------|----------------|
+| Unify extension case | "Change all .JPG to .jpg" |
+| Add a prefix/suffix | "Add 'ProjectA-' to the front of all filenames" |
+| Remove specific characters | "Remove all spaces and underscores from filenames" |
+| Rename by rule | "Change 'IMG_*.jpg' to 'Trip_*.jpg'" |
+
+---
+
+## III. Practice 2: Automatically Download and Organize Materials
+
+### Scenario
+You need to collect online materials on a certain topic, but you don't want to click each link and copy-paste manually.
+
+### Steps
+
+1. In Codex, type:
+   ```
+   Help me search for the latest articles on "remote work best practices", find the top 5 results, and organize each result's title, summary, and link into a document.
+   ```
+2. Codex will:
+   - Search the web for relevant information
+   - Extract the top 5 results
+   - Create a Markdown file with the organized content
+3. You can then ask:
+   ```
+   Translate this document into Chinese.
+   ```
+   or
+   ```
+   Based on these materials, write a recommendation list about remote work.
+   ```
+
+---
+
+## IV. Understand "One-Time Task" vs "Reusable Automation Workflow"
+
+### One-Time Task
+For example: "Help me merge the PDF files in this folder into one."
+- Do it once and it's done
+- If you need to do the same thing again, you have to tell Codex again
+
+### Reusable Workflow
+For example: "Every time a new email arrives, automatically extract the table data from the attachment and save it to Excel."
+- Can be set to run periodically
+- Or made into a script/template for随时调用
+
+> 💡 **Tip**: Codex can not only do one-time tasks but also help you write reusable scripts. When you find a task that you do often, ask Codex to turn it into an automation script.
+
+---
+
+## V. Practice 3: Create Your First Automation Script
+
+### Task
+Ask Codex to write an auto-generation script for your "daily work report."
+
+### Steps
+
+1. Prepare a folder containing daily work records.
+2. Type this command:
+   ```
+   Help me write a Python script that reads all log files in this folder,
+   counts the number of work entries per day, and generates a summary report.
+   ```
+3. Codex will generate a reusable script.
+4. Every morning, run the script once, and you'll automatically get the previous day's work summary.
+
+---
+
+## VI. In-Lesson Practice Checklist
+
+Complete the following tasks in order:
+- [ ] Have Codex batch-rename a set of files
+- [ ] Have Codex search the web for materials and organize them into a document
+- [ ] Try having Codex write a simple automation script
+- [ ] Reflect: What repetitive tasks in your work could you hand over to Codex for automation?
+
+---
+
+## VII. Summary
+
+| Knowledge Point | Core Content |
+|-----------------|--------------|
+| Automation Tasks | Let Codex handle repetitive work for you |
+| Batch operations | Rename, move, classify, format, etc. |
+| Web Search | Search + organize + summarize |
+| One-time vs reusable | Simple tasks: just ask. Complex tasks: write a script |
+
+---
+
+## VIII. Next Step
+
+[→ Enter Module 4: Practical Tips](../module-4/lesson-12)

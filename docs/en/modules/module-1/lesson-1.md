@@ -143,4 +143,4 @@ Many people first hear about AI programming tools and think of GitHub Copilot. W
 
 ## VII. Next Step
 
-[→ Lesson 2: What Can Codex Do for You?](lesson-2.md)
+[→ Lesson 2: What Can Codex Do for You?](lesson-2)

@@ -1,7 +1,35 @@
+---
+layout: home
+
+hero:
+  name: Codex from Zero to One
+  text: Let AI Handle Programming and Office Work
+  tagline: Designed for working professionals and content creators with zero programming background
+  actions:
+    - theme: brand
+      text: → Start Lesson 1
+      link: /en/modules/module-1/lesson-1
+    - theme: alt
+      text: Course Overview
+      link: /en/appendix/prep-checklist
+
+features:
+  - title: Organize Files
+    details: Use Codex to organize folders, batch rename, and categorize files
+  - title: Generate Webpages
+    details: Describe what you want in plain language, let Codex build it
+  - title: Web Research
+    details: Have Codex search the web and compile reports
+  - title: Automation
+    details: Automate repetitive tasks and save time
+  - title: Create PPTs
+    details: Use Codex skills to quickly complete complex tasks
+---
+
 # Codex from Zero to One
 ## Let AI Handle Programming and Office Work
 
-> Designed for working professionals and content creators with zero programming background  
+> Designed for working professionals and content creators with zero programming background
 > Use natural language to make AI your personal assistant
 
 ## Course Overview
@@ -76,4 +104,4 @@ Before starting, make sure you have the following ready:
 
 ---
 
-*Ready? Let's start Lesson 1 👉 [Lesson 1: What is an AI Programming Assistant?](modules/module-1/lesson-1.md)*
+*Ready? Let's start Lesson 1 👉 [Lesson 1: What is an AI Programming Assistant?](modules/module-1/lesson-1)*

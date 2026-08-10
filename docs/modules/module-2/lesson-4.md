@@ -95,4 +95,4 @@ codex --workspace /path/to/project "帮我写一个排序程序"
 
 ## 五、下一步
 
-[→ 第 5 课：安装 Codex 桌面 App](lesson-5.md)
+[→ 第 5 课：安装 Codex 桌面 App](lesson-5)

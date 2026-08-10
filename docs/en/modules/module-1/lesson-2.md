@@ -1,1 +1,200 @@
-# Lesson 2 :What Can Codex Do for You?（展示环节） > 📌 **Learning Objectives**:通过实际案例了解 Codex 的能力边界和应用场景 > ⏱️ **Estimated Time**:20 分钟 > 🎯 **Teaching Rhythm**:纯演示为主，边看边聊 --- ## I.开场:先看看 Codex 到底有多"能干" 在正式学之前，我想先给你看几个真实案例。这些不是"演示用的小把戏"，而是普通人真的在用 Codex 完成的工作。 --- ## II.编程开发:不只是写代码 ### 案例 1:修一个 Bug **学员背景**:小王，大学生，做课程项目时遇到一个 Python 报错，查了两天没解决。 **他怎么做的**: 1. 把报错信息复制给 Codex 2. 把相关代码文件拖进 Codex 工作区 3. 说:"这个函数报 'IndexError: list index out of range'，帮我找原因并修复" **结果**:Codex 在 30 秒内找到了问题——列表索引越界，因为代码没有检查列表是否为空。它给出了修复后的代码，还解释了为什么出错。 > 💡 **关键点**:你不需要知道什么是"索引越界"，你只需要告诉 Codex "出错了，帮我修"。 ### 案例 2:从一个想法到完整网页 **学员背景**:小李，市场专员，想做一个产品宣传页，但不会前端开发。 **他怎么做的**: 1. 打开 Codex，说:"帮我做一个单页网站，介绍我的产品——一款智能水杯" 2. Codex 生成了一个包含 Hero 区域、功能介绍、用户评价的完整 HTML 页面 3. 小李说:"把主色调改成蓝色，加一个联系表单" 4. Codex 修改后，小李把文件保存为 `index.html`，双击就能在浏览器里看 **结果**:一个原本需要花几天时间的前端工作，30 分钟搞定。 ### 案例 3:重构一段混乱的代码 **学员背景**:老张，运维工程师，接手了一段前任写的 Python 脚本，代码又长又乱。 **他怎么做的**: 1. 把文件拖进 Codex 2. 说:"这段代码太乱了，帮我重构一下，加上注释，让其他人也能看懂" **结果**:Codex 把代码拆成了清晰的函数，加了文档字符串，还写了使用说明。 --- ## III.办公提效:整理资料、生成内容 ### 案例 4:整理杂乱的下载文件夹 **学员背景**:小陈，行政人员，电脑"下载"文件夹里有几百个文件，乱七八糟。 **她怎么做的**: 1. 把"下载"文件夹设为 Codex 的工作区 2. 说:"帮我整理这个文件夹，按文件类型分类，图片放 images 文件夹，PDF 放 documents，Excel 放 spreadsheets" 3. Codex 自动创建了子文件夹，把文件移了进去 **结果**:5 分钟，一个混乱的文件夹变得井井有条。 ### 案例 5:生成会议纪要 **学员背景**:阿杰，项目经理，每天开各种会，纪要写得头疼。 **他怎么做的**: 1. 把会议录音转成的文字稿（或语音转文字后的文本）发给 Codex 2. 说:"根据这份会议记录，生成一份结构化的会议纪要，包括:议题、讨论要点、决议事项、待办任务（含责任人）" **结果**:Codex 生成了一份格式清晰的会议纪要，比他自己写的还规范。 ### 案例 6:批量处理 Excel 数据 **学员背景**:小刘，财务分析师，每个月要做销售报表。 **他怎么做的**: 1. 把 Excel 文件拖进 Codex 2. 说:"分析这份销售数据，找出每个产品的月度趋势，生成一个汇总报告" 3. Codex 用 Python 读取了 Excel，做了数据分析，生成了图表 **结果**:原本需要 2 小时的手工工作，5 分钟完成。 --- ## IV.数据分析:自动化处理 + 生成报告 ### 案例 7:从 CSV 到可视化报告 **学员背景**:小周，自媒体运营，需要从后台导出数据并做分析。 **他怎么做的**: 1. 导出后台数据的 CSV 文件 2. 拖进 Codex，说:"分析这些数据，告诉我哪篇文章阅读量最高，哪些时间段发布效果最好" 3. Codex 生成了分析结论和可视化图表 ### 案例 8:对比两个数据集 **学员背景**:老李，电商运营，需要对比两个季度的销售数据。 **他怎么做的**: 1. 把两个季度的 CSV 文件都拖进 Codex 2. 说:"对比这两个文件，找出增长最快的品类和下降最快的品类" 3. Codex 完成了对比，生成了结论 --- ## V.日常任务:不只是"专业"场景 ### 案例 9:整理照片 **学员背景**:小吴，摄影师爱好者，手机里几千张照片不知道该怎么分类。 **他怎么做的**: 1. 把照片文件夹拖进 Codex 2. 说:"按拍摄日期把这些照片分成不同的文件夹，每个月一个" 3. Codex 读取了照片的 EXIF 信息，按日期分类 ### 案例 10:分析磁盘空间 **学员背景**:老赵，电脑快满了，想知道是什么占用了空间。 **他怎么做的**: 1. 说:"帮我分析一下这个文件夹的空间占用情况，列出最大的 10 个文件" 2. Codex 执行了系统命令，生成了分析报告 ### 案例 11:翻译和润色文档 **学员背景**:小郑，需要把一份中文报告翻译成英文。 **他怎么做的**: 1. 把文档拖进 Codex 2. 说:"把这份中文报告翻译成英文，保持正式商务风格" --- ## VI.Non-Technical People Are Also Using It 这里有一个你可能不知道的真相:**OpenAI 内部，非技术岗位的人也在用 Codex 工作。** | 岗位 | 使用场景 | |------|---------| | 律师 | 整理合同条款、提取关键日期和金额 | | 招聘人员 | 筛选简历、生成面试问题 | | 运营 | 分析用户反馈数据、生成周报 | | 设计师 | 生成 CSS 样式、调整设计稿的参数 | | 教师 | 出题、批改作业、生成教学材料 | **这意味着什么？** 意味着 Codex 不是"程序员专属工具"，它是"任何人都能用的高效工具"。 --- ## VII.Your Turn to Try 现在轮到你亲自试试了。 **任务**:让你的 Codex 帮你做一件小事。 1. 打开 Codex 2. 输入以下任意一个指令（选一个你觉得有用的）: - "帮我写一封邮件，感谢客户昨天的订单" - "帮我列一个本周工作计划的模板" - "帮我生成一个待办事项清单的 HTML 页面" 3. 看看 Codex 给出的结果 4. 如果不够满意，试着追加一句要求，比如"把语气改得更正式一些" > 💡 **提示**:不用追求完美结果。这一节的目标是让你感受"用自然语言指挥 AI"的体验。 --- ## VIII.Summary | 能力类别 | 典型场景 | |---------|---------| | 编程开发 | 写功能、修 Bug、重构代码 | | 办公提效 | 整理资料、生成内容、做 PPT | | 数据分析 | 自动化处理数据、生成报告 | | 日常任务 | 整理文件、分析磁盘空间、翻译文档 | **核心认知**:Codex 不是一个"高级搜索工具"，它是一个能直接操作你文件和系统的"智能助手"。 --- ## IX.Post-Lesson Thinking 1. 今天展示的哪个案例最让你觉得"这对我有用"？ 2. 你目前的工作中，有哪些重复性任务可以考虑交给 Codex？ 3. 你觉得 Codex 能帮你解决的最大痛点是什么？ > 💡 提示:带着这些问题进入下一节课，我们会对比 Codex 和其他工具的区别，帮你更清楚地定位它的价值。 --- ## X.Next Step [→ Lesson 3 :Codex vs Other Tools](lesson-3.md)
+# Lesson 2: What Can Codex Do for You? (Demo Session)
+
+> 📌 **Learning Objectives**: Understand Codex's capabilities and application scenarios through real-world examples
+> ⏱️ **Estimated Time**: 20 minutes
+> 🎯 **Teaching Rhythm**: Demo-focused, watch and discuss
+
+---
+
+## I. Opening: Let's See How Capable Codex Really Is
+
+Before we dive into the formal content, I want to show you a few real cases. These aren't "demo tricks" — these are things ordinary people actually use Codex to get done.
+
+---
+
+## II. Programming & Development: More Than Just Writing Code
+
+### Case 1: Fixing a Bug
+
+**User background**: Xiao Wang, a college student, encountered a Python error while working on a course project. He spent two days searching online but couldn't solve it.
+
+**What he did**:
+1. Copied the error message and pasted it into Codex
+2. Dragged the relevant code files into Codex's workspace
+3. Said: "This function throws 'IndexError: list index out of range'. Help me find the cause and fix it."
+
+**Result**: Codex found the issue in 30 seconds — the list index was out of bounds because the code didn't check if the list was empty. It provided the fixed code and explained why the error occurred.
+
+> 💡 **Key takeaway**: You don't need to know what "index out of bounds" means. You just need to tell Codex "it's broken, help me fix it."
+
+### Case 2: From an Idea to a Complete Website
+
+**User background**: Xiao Li, a marketing specialist, wanted to build a product landing page but didn't know frontend development.
+
+**What he did**:
+1. Opened Codex and said: "Help me build a single-page website to introduce my product — a smart water bottle"
+2. Codex generated a complete HTML page with a Hero section, feature introductions, and user testimonials
+3. Xiao Li said: "Change the main color to blue and add a contact form"
+4. After Codex made the modifications, Xiao Li saved the file as `index.html` and double-clicked to view it in a browser
+
+**Result**: A frontend task that would normally take days was completed in 30 minutes.
+
+### Case 3: Refactoring Messy Code
+
+**User background**: Lao Zhang, an operations engineer, inherited a Python script written by a predecessor — long, messy, and hard to understand.
+
+**What he did**:
+1. Dragged the file into Codex
+2. Said: "This code is too messy. Refactor it, add comments, and make it readable for others."
+
+**Result**: Codex split the code into clear functions, added docstrings, and wrote usage instructions.
+
+---
+
+## III. Office Productivity: Organizing Materials & Generating Content
+
+### Case 4: Organizing a Messy Downloads Folder
+
+**User background**: Xiao Chen, an administrative staff member, had hundreds of files in her computer's "Downloads" folder, all jumbled together.
+
+**What she did**:
+1. Set the "Downloads" folder as Codex's workspace
+2. Said: "Help me organize this folder. Classify by file type: put images in an `images` folder, PDFs in `documents`, and Excel files in `spreadsheets`."
+3. Codex automatically created subfolders and moved the files in.
+
+**Result**: In 5 minutes, a chaotic folder became neatly organized.
+
+### Case 5: Generating Meeting Minutes
+
+**User background**: Ajie, a project manager, attends various meetings every day and finds writing minutes exhausting.
+
+**What he did**:
+1. Sent Codex the transcript of a meeting recording (or text converted from speech)
+2. Said: "Based on this meeting record, generate a structured meeting minutes document, including: agenda items, key discussion points, resolutions, and action items (with assigned owners)."
+
+**Result**: Codex produced a well-formatted meeting minutes document, even better than what he would have written himself.
+
+### Case 6: Batch Processing Excel Data
+
+**User background**: Xiao Liu, a financial analyst, needs to produce sales reports every month.
+
+**What he did**:
+1. Dragged an Excel file into Codex
+2. Said: "Analyze this sales data, find the monthly trends for each product, and generate a summary report."
+3. Codex used Python to read the Excel file, performed data analysis, and generated charts.
+
+**Result**: A manual task that used to take 2 hours was completed in 5 minutes.
+
+---
+
+## IV. Data Analysis: Automation + Report Generation
+
+### Case 7: From CSV to Visual Reports
+
+**User background**: Xiao Zhou, a social media operator, needs to export data from a backend system and analyze it.
+
+**What she did**:
+1. Exported the CSV file from the backend
+2. Dragged it into Codex and said: "Analyze this data. Tell me which article got the most views and which posting time slots performed best."
+3. Codex generated analysis conclusions and visual charts.
+
+### Case 8: Comparing Two Datasets
+
+**User background**: Lao Li, an e-commerce operator, needs to compare sales data between two quarters.
+
+**What he did**:
+1. Dragged both quarters' CSV files into Codex
+2. Said: "Compare these two files. Find the fastest-growing categories and the fastest-declining categories."
+3. Codex completed the comparison and generated conclusions.
+
+---
+
+## V. Everyday Tasks: Not Just "Professional" Scenarios
+
+### Case 9: Organizing Photos
+
+**User background**: Xiao Wu, a photography enthusiast, has thousands of photos on his phone and doesn't know how to categorize them.
+
+**What he did**:
+1. Dragged the photos folder into Codex
+2. Said: "Organize these photos into different folders by shooting date, one folder per month."
+3. Codex read the EXIF data and categorized by date.
+
+### Case 10: Analyzing Disk Space
+
+**User background**: Lao Zhao's computer was nearly full, and he wanted to know what was taking up space.
+
+**What he did**:
+1. Said: "Help me analyze the disk space usage of this folder and list the top 10 largest files."
+2. Codex executed system commands and generated a report.
+
+### Case 11: Translating and Polishing Documents
+
+**User background**: Xiao Zheng needed to translate a Chinese report into English.
+
+**What he did**:
+1. Dragged the document into Codex
+2. Said: "Translate this Chinese report into English, maintaining a formal business style."
+
+---
+
+## VI. Non-Technical People Are Also Using It
+
+Here's something you might not know: **Inside OpenAI, non-technical staff also use Codex for their work.**
+
+| Role | Use Case |
+|------|----------|
+| Lawyer | Organizing contract clauses, extracting key dates and amounts |
+| Recruiter | Screening resumes, generating interview questions |
+| Operations | Analyzing user feedback data, generating weekly reports |
+| Designer | Generating CSS styles, adjusting design parameters |
+| Teacher | Creating exams, grading assignments, generating teaching materials |
+
+**What does this mean?** It means Codex is not a "programmer-only tool." It's an "efficient tool that anyone can use."
+
+---
+
+## VII. Your Turn to Try
+
+Now it's your turn to try it yourself.
+
+**Task**: Get Codex to help you with something small.
+
+1. Open Codex
+2. Enter any one of the following prompts (pick the one you find most useful):
+   - "Help me write an email thanking a client for yesterday's order"
+   - "Help me create a weekly work plan template"
+   - "Help me generate an HTML page for a to-do list"
+3. See what Codex produces
+4. If you're not satisfied, try adding another request, like "Make the tone more formal."
+
+> 💡 **Tip**: Don't aim for a perfect result. The goal of this section is to let you experience "commanding AI with natural language."
+
+---
+
+## VIII. Summary
+
+| Capability Category | Typical Scenarios |
+|---------------------|-------------------|
+| Programming & Development | Writing features, fixing bugs, refactoring code |
+| Office Productivity | Organizing materials, generating content, making PPTs |
+| Data Analysis | Automating data processing, generating reports |
+| Everyday Tasks | Organizing files, analyzing disk space, translating documents |
+
+**Core insight**: Codex is not a "search engine on steroids." It's a "smart assistant" that can directly operate your files and systems.
+
+---
+
+## IX. Post-Lesson Thinking
+
+1. Which case shown today made you think "this would be useful for me"?
+2. What repetitive tasks in your current work could you hand over to Codex?
+3. What do you think is Codex's biggest pain point it could solve for you?
+
+> 💡 **Hint**: Bring these questions into the next lesson. We'll compare Codex with other tools to help you position its value more clearly.
+
+---
+
+## X. Next Step
+
+[→ Lesson 3: Codex vs Other Tools](lesson-3)

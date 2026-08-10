@@ -1,1 +1,123 @@
-# Project 1:Organize Your Computer（入门级） > 📌 **Learning Objectives**：通过整理电脑文件夹，掌握 Codex 的File Operations和自然语言指令能力 > ⏱️ **Estimated Time**：20 分钟 > 🎯 **学到的能力**：File Operations、自然语言指令、权限管理 --- ## I.任务描述 用 Codex 分析并整理电脑上一个杂乱的下载文件夹。 --- ## II.Preparation 1. 在你的电脑上创建一个测试文件夹，命名为"待整理文件夹" 2. 往里面放入一些不同类型的文件（如果没有真实文件，可以手动创建几个）： - 几个文本文件（.txt） - 几个图片文件（.jpg, .png） - 几个 PDF 文件 - 几个 Excel 文件（.xlsx） - 几个压缩包（.zip） 3. 也可以直接使用你电脑上的"下载"文件夹（建议先复制一份到桌面作为测试） --- ## III.操作步骤 ### 步骤 1：将文件夹设为 Codex 的工作区 1. 打开 Codex 桌面 App 2. 点击"打开文件夹"或"选择工作区" 3. 找到你的"待整理文件夹"并确认 ### 步骤 2：让 Codex 分析文件夹 在对话框中输入： ``` 请帮我分析一下这个文件夹，告诉我： 1. 总共有多少个文件？ 2. 按文件类型分类，各有多少个？ 3. 最大的三个文件是什么？ ``` 观察 Codex 的输出，了解文件夹的现状。 ### 步骤 3：让 Codex 整理文件夹 输入指令： ``` 请按文件类型帮我整理这个文件夹： - 图片文件（.jpg, .png, .gif）移到 images 文件夹 - 文档文件（.pdf, .docx, .doc）移到 documents 文件夹 - 表格文件（.xlsx, .xls, .csv）移到 spreadsheets 文件夹 - 文本文件（.txt, .md）移到 text-files 文件夹 - 压缩文件（.zip, .rar, .7z）移到 archives 文件夹 - 其他文件移到 other 文件夹 请先告诉我你的计划，等我确认后你再执行。 ``` ### 步骤 4：审查 Codex 的计划 Codex 会列出它的整理计划，例如： ``` 我的整理计划： 1. 创建以下子文件夹：images/, documents/, spreadsheets/, text-files/, archives/, other/ 2. 扫描所有文件并按扩展名分类 3. 将每个文件移动到对应的子文件夹 请确认是否开始执行？ ``` 点击"允许"或输入"开始"。 ### 步骤 5：验证结果 整理完成后，检查文件夹结构是否正确： ``` 待整理文件夹/ ├── images/ │ ├── photo1.jpg │ └── screenshot.png ├── documents/ │ └── report.pdf ├── spreadsheets/ │ └── data.xlsx ├── text-files/ │ └── notes.txt ├── archives/ │ └── backup.zip └── other/ └── unknown.file ``` --- ## IV.进阶挑战 如果上面的任务已经难不倒你，试试这些进阶指令： ``` 找出所有超过 10MB 的文件，把它们单独放到一个"大文件"文件夹里 ``` ``` 统计一下这个文件夹里有多少重复的文件名（忽略扩展名） ``` ``` 帮我生成一份文件夹整理报告，保存到 reports.md 文件中 ``` --- ## V.Summary | 学到的能力 | 具体表现 | |-----------|---------| | File Operations | 读取、分类、移动文件 | | 自然语言指令 | 用中文描述整理规则 | | 权限管理 | 观察 Codex 如何征求你的同意 | | 结果验证 | 检查整理结果是否符合预期 | --- ## VI.Next Step [→ Project 2:Create a PPT Report](project-2.md)
+# Project 1: Organize Your Computer (Beginner Level)
+
+> 📌 **Learning Objectives**: Master Codex's File Operations and natural language command abilities by organizing a computer folder
+> ⏱️ **Estimated Time**: 20 minutes
+> 🎯 **Skills learned**: File Operations, natural language commands, permission management
+
+---
+
+## I. Task Description
+
+Use Codex to analyze and organize a messy downloads folder on your computer.
+
+---
+
+## II. Preparation
+
+1. Create a test folder on your computer named "Folder to Organize"
+2. Put some different types of files inside it (if you don't have real files, just create a few manually):
+   - A few text files (.txt)
+   - A few image files (.jpg, .png)
+   - A few PDF files
+   - A few Excel files (.xlsx)
+   - A few archive files (.zip)
+3. You can also use your computer's actual "Downloads" folder (recommended: copy it to the desktop first as a test).
+
+---
+
+## III. Operation Steps
+
+### Step 1: Set the Folder as Codex's Workspace
+
+1. Open the Codex desktop app
+2. Click "Open Folder" or "Select Workspace"
+3. Find your "Folder to Organize" and confirm.
+
+### Step 2: Have Codex Analyze the Folder
+
+Type this into the chat box:
+```
+Please help me analyze this folder. Tell me:
+1. How many files are there in total?
+2. How many of each file type?
+3. What are the three largest files?
+```
+Observe Codex's output to understand the folder's current state.
+
+### Step 3: Have Codex Organize the Folder
+
+Type this command:
+```
+Please organize this folder by file type:
+- Image files (.jpg, .png, .gif) → move to images folder
+- Document files (.pdf, .docx, .doc) → move to documents folder
+- Spreadsheet files (.xlsx, .xls, .csv) → move to spreadsheets folder
+- Text files (.txt, .md) → move to text-files folder
+- Archive files (.zip, .rar, .7z) → move to archives folder
+- Other files → move to other folder
+Please tell me your plan first, and wait for my confirmation before executing.
+```
+
+### Step 4: Review Codex's Plan
+
+Codex will list its organization plan, for example:
+```
+My organization plan:
+1. Create the following subfolders: images/, documents/, spreadsheets/, text-files/, archives/, other/
+2. Scan all files and classify by extension
+3. Move each file to the corresponding subfolder
+Please confirm whether to start execution?
+```
+Click "Allow" or type "Start."
+
+### Step 5: Verify the Results
+
+After organizing, check whether the folder structure is correct:
+```
+Folder to Organize/
+├── images/
+│   ├── photo1.jpg
+│   └── screenshot.png
+├── documents/
+│   └── report.pdf
+├── spreadsheets/
+│   └── data.xlsx
+├── text-files/
+│   └── notes.txt
+├── archives/
+│   └── backup.zip
+└── other/
+    └── unknown.file
+```
+
+---
+
+## IV. Advanced Challenges
+
+If the above task is too easy, try these advanced commands:
+```
+Find all files larger than 10MB and put them in a separate "large-files" folder.
+```
+```
+Count how many files have duplicate names (ignoring extensions) in this folder.
+```
+```
+Help me generate a folder organization report and save it to reports.md.
+```
+
+---
+
+## V. Summary
+
+| Skill Learned | How It Shows |
+|---------------|-------------|
+| File Operations | Read, classify, move files |
+| Natural language commands | Describe organization rules in natural language |
+| Permission management | Observe how Codex asks for your approval |
+| Result verification | Check whether the organization results meet expectations |
+
+---
+
+## VI. Next Step
+
+[→ Project 2: Create a PPT Report](project-2)

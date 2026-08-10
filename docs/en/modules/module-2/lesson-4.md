@@ -1,1 +1,96 @@
-# Lesson 4 :Preparation > 📌 **Learning Objectives**:了解使用 Codex 前需要准备的账号、设备和网络环境 > ⏱️ **Estimated Time**:10 分钟 > 🎯 **Teaching Rhythm**:讲解为主 --- ## I.你需要什么？ ### 1. 一个 ChatGPT 账号 | 版本 | 价格 | 额度 | 推荐度 | |------|------|------|--------| | 免费版 | ¥0 | 有限额度 | 可以体验，但不够用 | | Plus | $20/月 | 充足 | ✅ 推荐入门 | | Pro | $200/月 | 大量 | 重度使用者 | > 💡 **建议**:如果你是Lesson一次接触，先用 Plus 版体验一周。如果觉得有用再决定是否升级 Pro。 ### 2. 一台电脑 - **macOS**:macOS 12.0 及以上 - **Windows**:Windows 10 及以上 - **Chromebook**:支持 Chrome OS 即可 ### 3. 稳定的网络连接 Codex 需要实时联网与 AI 服务器通信，建议使用 50Mbps 以上的宽带。 --- ## II.Codex 的四种使用方式 ### 方式 1:桌面 App（最推荐小白） ![Codex 桌面 App](https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800) - 有可视化界面，操作一目了然 - 可以直接拖拽文件到工作区 - 实时查看 AI 的执行过程 - 权限管理直观清晰 **适合人群**:所有用户，尤其是零编程基础的新手 ### 方式 2:ChatGPT 网页版 在 [chatgpt.com](https://chatgpt.com) 中切换到 "Advanced Search" 或 "Code Interpreter" 模式。 - 无需安装任何软件 - 随时随地可用 - 功能相对简单 **适合人群**:偶尔使用、不想安装软件的用户 ### 方式 3:命令行 CLI 通过终端直接使用 Codex，适合熟悉命令行的用户。 ```bash codex --workspace /path/to/project "帮我写一个排序程序" ``` **适合人群**:开发者、运维人员 ### 方式 4:VS Code 插件 在 VS Code 中安装 Codex 插件，直接在编辑器中使用。 **适合人群**:已经在用 VS Code 的开发者 --- ## III.本节实操任务 1. 登录你的 ChatGPT 账号 2. 确认你当前使用的版本（免费/Plus/Pro） 3. 尝试打开 ChatGPT 的 "Advanced Search" 模式 4. 输入:"你好，请做一个自我介绍" > 💡 **提示**:这一步只是为了让你熟悉界面，不需要理解太多技术细节。 --- ## IV.Summary | 知识点 | 核心内容 | |--------|---------| | 账号要求 | ChatGPT 账号（免费版可用，推荐 Plus） | | 设备要求 | macOS 12+ 或 Windows 10+ | | 四种使用方式 | 桌面 App（推荐）、网页版、CLI、VS Code 插件 | | 新手首选 | 桌面 App，操作简单直观 | --- ## V.Next Step [→ Lesson 5 :Installing Codex Desktop App](lesson-5.md)
+# Lesson 4: Preparation
+
+> 📌 **Learning Objectives**: Understand the accounts, devices, and network environment needed before using Codex
+> ⏱️ **Estimated Time**: 10 minutes
+> 🎯 **Teaching Rhythm**: Explanation-focused
+
+---
+
+## I. What Do You Need?
+
+### 1. A ChatGPT Account
+
+| Plan | Price | Quota | Recommendation |
+|------|-------|-------|----------------|
+| Free | $0 | Limited | Can try it out, but not enough for serious use |
+| Plus | $20/month | Generous | ✅ Recommended for beginners |
+| Pro | $200/month | Extensive | Heavy users |
+
+> 💡 **Suggestion**: If this is your first time using Codex, start with the Plus plan for a week. If you find it useful, consider upgrading to Pro.
+
+### 2. A Computer
+- **macOS**: macOS 12.0 or later
+- **Windows**: Windows 10 or later
+- **Chromebook**: Chrome OS supported
+
+### 3. A Stable Internet Connection
+Codex needs real-time connectivity to communicate with AI servers. A broadband connection of 50Mbps or above is recommended.
+
+---
+
+## II. Four Ways to Use Codex
+
+### Method 1: Desktop App (Most Recommended for Beginners)
+
+![Codex Desktop App](https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800)
+
+- Visual interface, operations are clear at a glance
+- Drag and drop files directly into the workspace
+- Watch the AI's execution process in real time
+- Intuitive permission management
+
+**Best for**: All users, especially beginners with zero programming experience.
+
+### Method 2: ChatGPT Web Version
+
+Switch to "Advanced Search" or "Code Interpreter" mode on [chatgpt.com](https://chatgpt.com).
+
+- No software installation required
+- Available anytime, anywhere
+- Features are relatively basic
+
+**Best for**: Occasional users who don't want to install software.
+
+### Method 3: Command Line (CLI)
+
+Use Codex directly through the terminal, suitable for users familiar with command lines.
+
+```bash
+codex --workspace /path/to/project "Help me write a sorting program"
+```
+
+**Best for**: Developers, operations staff.
+
+### Method 4: VS Code Extension
+
+Install the Codex extension in VS Code and use it directly in the editor.
+
+**Best for**: Developers already using VS Code.
+
+---
+
+## III. In-Lesson Practice Tasks
+
+1. Log into your ChatGPT account
+2. Confirm which plan you're currently using (Free / Plus / Pro)
+3. Try opening ChatGPT's "Advanced Search" mode
+4. Type: "Hello, please introduce yourself."
+
+> 💡 **Tip**: This step is just to help you get familiar with the interface. You don't need to understand too many technical details.
+
+---
+
+## IV. Summary
+
+| Knowledge Point | Core Content |
+|-----------------|--------------|
+| Account requirement | ChatGPT account (Free works, Plus recommended) |
+| Device requirement | macOS 12+ or Windows 10+ |
+| Four usage methods | Desktop App (recommended), Web, CLI, VS Code extension |
+| Best for beginners | Desktop App — simple and intuitive |
+
+---
+
+## V. Next Step
+
+[→ Lesson 5: Installing Codex Desktop App](lesson-5)

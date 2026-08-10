@@ -17,5 +17,18 @@
         "@algolia/client-search"
       ]
     }
+  },
+  "dependencies": {
+    "@heygen/liveavatar-web-sdk": "^0.0.18",
+    "@remotion/cli": "^4.0.506",
+    "@remotion/gif": "^4.0.506",
+    "@remotion/google-fonts": "^4.0.505",
+    "@remotion/install-whisper-cpp": "^4.0.506",
+    "@remotion/lambda": "^4.0.506",
+    "@remotion/player": "^4.0.506",
+    "@remotion/shapes": "^4.0.506",
+    "@teamduality/heygen-typescript-sdk": "^0.4.3",
+    "hyperframes": "^0.7.94",
+    "remotion": "^4.0.506"
   }
 }

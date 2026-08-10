@@ -1,1 +1,106 @@
-# Project 2:Create a PPT Report（进阶级） > 📌 **Learning Objectives**：学会让 Codex 联网搜索资料并生成演示文稿 > ⏱️ **Estimated Time**：30 分钟 > 🎯 **学到的能力**：Web Search、内容整理、Call Skills --- ## I.任务描述 让 Codex 根据网上资料生成一份主题演示文稿。 --- ## II.操作步骤 ### 步骤 1：选择主题 选择一个你感兴趣的话题，比如： - "2026 年 AI 发展趋势" - "远程办公的最佳实践" - "健康饮食指南" - "新能源汽车市场现状" ### 步骤 2：让 Codex 生成大纲 打开 Codex，输入： ``` 帮我做一个关于"[你的主题]"的演示文稿，要求： 1. 10-15 页左右 2. 包含封面、目录、主要观点分析、案例、总结 3. 每页要有标题和 3-5 个要点 4. 风格要简洁专业 先给我一个大纲，等我确认后再开始制作。 ``` ### 步骤 3：审查大纲 Codex 会生成类似这样的结构： ``` 📊 [主题] 演示文稿大纲 Lesson 1 页：封面 - 标题、副标题、日期 Lesson 2 页：目录 - 背景介绍 - 核心趋势 - 案例分析 - 未来展望 - 总结 ...（更多页面） ``` 检查大纲是否覆盖了你关心的所有方面，如有需要可以调整。 ### 步骤 4：让 Codex 联网搜索并填充内容 确认大纲后，输入： ``` 大纲没问题，请开始制作。 注意： 1. 联网搜索最新的资料来填充内容 2. 每个观点都要有数据或案例支撑 3. 引用来源要标注清楚 4. 使用专业的商务风格 ``` ### 步骤 5：审查并微调 Codex 完成后，审查生成的内容： ``` 帮我检查一下： 1. 数据是否最新？ 2. 有没有过时的信息？ 3. 语言是否通顺？ 4. 格式是否统一？ ``` 然后根据 Codex 的建议进行微调。 --- ## III.进阶技巧 ### 添加图表 ``` 在"市场规模"这一页，帮我生成一个柱状图来展示过去 5 年的数据变化 ``` ### 转换语言 ``` 把这份演示文稿翻译成英文版本 ``` ### 导出为不同格式 ``` 把内容保存为 Markdown 格式的文件，方便我后续编辑 ``` --- ## IV.Summary | 学到的能力 | 具体说明 | |-----------|---------| | Web Search | 让 Codex 搜索最新资料 | | 内容整理 | 从搜索结果中提取关键信息 | | Call Skills | 使用 PPT 生成技能 | | 迭代优化 | 通过追问不断完善结果 | --- ## V.Next Step [→ Project 3:Build a Simple Website](project-3.md)
+# Project 2: Create a PPT Report (Intermediate Level)
+
+> 📌 **Learning Objectives**: Learn to have Codex search the web for materials and generate a presentation
+> ⏱️ **Estimated Time**: 30 minutes
+> 🎯 **Skills learned**: Web Search, content organization, Skill calling
+
+---
+
+## I. Task Description
+
+Have Codex generate a themed presentation based on online research.
+
+---
+
+## II. Operation Steps
+
+### Step 1: Choose a Topic
+
+Pick a topic you're interested in, such as:
+- "AI Development Trends in 2026"
+- "Best Practices for Remote Work"
+- "Healthy Eating Guide"
+- "Current State of the New Energy Vehicle Market"
+
+### Step 2: Have Codex Generate an Outline
+
+Open Codex and type:
+```
+Help me make a presentation about "[your topic]". Requirements:
+1. About 10-15 pages
+2. Include cover, table of contents, main point analysis, case studies, and summary
+3. Each page should have a title and 3-5 key points
+4. Style should be clean and professional
+Give me an outline first, and wait for my confirmation before starting the actual creation.
+```
+
+### Step 3: Review the Outline
+
+Codex will generate a structure like this:
+```
+📊 [Topic] Presentation Outline
+Page 1: Cover — title, subtitle, date
+Page 2: Table of Contents — background intro, core trends, case studies, future outlook, summary
+... (more pages)
+```
+Check whether the outline covers everything you care about. Adjust if needed.
+
+### Step 4: Have Codex Search the Web and Fill in Content
+
+After confirming the outline, type:
+```
+The outline looks good, please start creating.
+Note:
+1. Search the web for the latest materials to fill in the content
+2. Every claim should be supported by data or case studies
+3. Cite sources clearly
+4. Use a professional business style
+```
+
+### Step 5: Review and Refine
+
+After Codex finishes, review the generated content:
+```
+Help me check:
+1. Are the data points up to date?
+2. Is there any outdated information?
+3. Is the language fluent?
+4. Is the formatting consistent?
+```
+Then make微调 based on Codex's suggestions.
+
+---
+
+## III. Advanced Techniques
+
+### Add Charts
+```
+On the "Market Size" page, help me generate a bar chart showing the data changes over the past 5 years.
+```
+
+### Translate to Another Language
+```
+Translate this presentation into an English version.
+```
+
+### Export in Different Formats
+```
+Save the content as a Markdown file so I can edit it later.
+```
+
+---
+
+## IV. Summary
+
+| Skill Learned | Description |
+|---------------|-------------|
+| Web Search | Have Codex search for the latest materials |
+| Content Organization | Extract key information from search results |
+| Skill Calling | Use the PPT generation skill |
+| Iterative Optimization | Continuously refine results through follow-up prompts |
+
+---
+
+## V. Next Step
+
+[→ Project 3: Build a Simple Website](project-3)

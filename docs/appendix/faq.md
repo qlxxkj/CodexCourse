@@ -124,4 +124,4 @@ A：检查工作区设置是否正确，以及该文件夹是否有读取权限�
 A：
 - OpenAI 官方文档：https://help.openai.com
 - 社区论坛：https://community.openai.com
-- 本课程附录中的 [课前准备清单](prep-checklist.md)
+- 本课程附录中的 [课前准备清单](prep-checklist)

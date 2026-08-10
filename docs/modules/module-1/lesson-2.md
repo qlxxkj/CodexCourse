@@ -197,4 +197,4 @@
 
 ## 十、下一步
 
-[→ 第 3 课：Codex vs 其他工具](lesson-3.md)
+[→ 第 3 课：Codex vs 其他工具](lesson-3)

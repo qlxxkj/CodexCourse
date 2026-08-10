@@ -78,4 +78,4 @@
 
 当你勾选了以上所有项目后，就可以开始学习第一课了！
 
-👉 [第 1 课：AI 编程助手是什么？](../modules/module-1/lesson-1.md)
+👉 [第 1 课：AI 编程助手是什么？](../modules/module-1/lesson-1)

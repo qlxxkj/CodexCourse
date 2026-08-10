@@ -1,1 +1,112 @@
-# Project 4:Todo List App（综合实战） > 📌 **Learning Objectives**：从零到一完成一个完整的 Web 应用开发 > ⏱️ **Estimated Time**：30 分钟 > 🎯 **学到的能力**：需求拆解、任务规划、全流程协作 --- ## I.任务描述 用 Codex 做一个"待办事项管理"小工具，具备以下功能： - 添加待办事项 - 标记已完成 - 删除事项 - 数据保存在本地浏览器中 --- ## II.操作步骤 ### 步骤 1：用自然语言描述完整需求 ``` 帮我做一个待办事项管理网页，功能要求： 1. 可以添加新的待办事项 2. 每个事项前面有复选框，点击可以标记为已完成 3. 已完成的事项显示为灰色并加删除线 4. 可以删除事项 5. 数据保存在浏览器的 localStorage 中，刷新页面不丢失 6. 界面简洁美观，支持深色模式切换 ``` ### 步骤 2：让 Codex 拆解任务并制定计划 在 Codex 生成代码之前，让它先给出计划： ``` 在开始写代码之前，请先告诉我你的实现计划，包括： 1. 使用什么技术栈 2. 文件结构是怎样的 3. 各个功能的实现思路 ``` ### 步骤 3：逐步实现 确认计划后，让 Codex 开始编码。Codex 会生成一个包含 HTML + CSS + JavaScript 的完整项目。 ### 步骤 4：测试与修正 将生成的代码保存为项目文件，在浏览器中打开测试： - 添加几个待办事项，检查是否能正常显示 - 点击复选框，检查是否能标记完成 - 删除一个事项，检查是否正确移除 - 刷新页面，检查数据是否保留 如果发现问题，告诉 Codex： ``` 我发现一个问题：删除事项后，计数没有更新。请修复这个问题。 ``` ### 步骤 5：验收成果 功能全部正常后，你可以： - 添加更多功能（比如分类、优先级、搜索） - 美化界面（添加动画、调整配色） - 部署上线（部署到 GitHub Pages 或其他静态托管平台） --- ## III.进阶扩展 ### 添加分类功能 ``` 帮我给待办事项加上分类功能，可以按"工作""个人""学习"分类 ``` ### 添加提醒功能 ``` 帮我添加一个提醒功能，可以设置每个事项的截止日期 ``` ### 添加导出功能 ``` 帮我添加一个导出功能，可以把待办事项导出为 JSON 或 CSV 文件 ``` --- ## IV.本节实操任务清单 请按顺序完成以下任务： - [ ] 描述完整需求并让 Codex 制定计划 - [ ] 确认计划后让 Codex 开始编码 - [ ] 在浏览器中测试所有功能 - [ ] 发现并修复至少一个问题 - [ ] 尝试添加一个扩展功能 --- ## V.Summary | 学到的能力 | 具体说明 | |-----------|---------| | 需求拆解 | 将复杂需求拆分成可执行的任务 | | 任务规划 | 让 Codex 先给出实现计划 | | 全流程协作 | 从需求到交付的完整开发流程 | | 测试验证 | 发现问题并及时反馈修正 | --- ## VI.Next Step [→ 进入Module 6:总结与进阶](../module-6/lesson-15.md)
+# Project 4: Todo List App (Capstone Project)
+
+> 📌 **Learning Objectives**: Complete a full web application development from scratch to delivery
+> ⏱️ **Estimated Time**: 30 minutes
+> 🎯 **Skills learned**: Requirement breakdown, task planning, full-process collaboration
+
+---
+
+## I. Task Description
+
+Use Codex to build a "Todo List Management" tool with the following features:
+- Add todo items
+- Mark items as completed
+- Delete items
+- Data saved in the local browser
+
+---
+
+## II. Operation Steps
+
+### Step 1: Describe the Full Requirements in Natural Language
+
+```
+Help me build a todo list management webpage. Feature requirements:
+1. Can add new todo items
+2. Each item has a checkbox in front; clicking it marks the item as completed
+3. Completed items are shown in gray with a strikethrough
+4. Can delete items
+5. Data is saved in the browser's localStorage, so it doesn't disappear on page refresh
+6. Clean and attractive interface with dark mode toggle support
+```
+
+### Step 2: Have Codex Break Down the Task and Make a Plan
+
+Before Codex generates code, ask it to present a plan first:
+```
+Before you start writing code, please tell me your implementation plan, including:
+1. What tech stack you'll use
+2. What the file structure will be
+3. The approach for implementing each feature
+```
+
+### Step 3: Implement Step by Step
+
+After confirming the plan, let Codex start coding. Codex will generate a complete project with HTML + CSS + JavaScript.
+
+### Step 4: Test and Fix
+
+Save the generated code as project files and test in a browser:
+- Add several todo items, check if they display correctly
+- Click checkboxes, check if items are marked as completed
+- Delete an item, check if it's removed correctly
+- Refresh the page, check if data is preserved
+
+If you find issues, tell Codex:
+```
+I found a problem: after deleting an item, the counter doesn't update. Please fix this.
+```
+
+### Step 5: Final Review
+
+Once all features work correctly, you can:
+- Add more features (e.g., categories, priorities, search)
+- Polish the interface (add animations, adjust colors)
+- Deploy online (deploy to GitHub Pages or other static hosting)
+
+---
+
+## III. Advanced Extensions
+
+### Add Categories
+```
+Help me add a categorization feature for todo items. I want to categorize them as "Work", "Personal", and "Study".
+```
+
+### Add Reminders
+```
+Help me add a reminder feature. I want to set a due date for each item.
+```
+
+### Add Export
+```
+Help me add an export feature. I want to export todo items as JSON or CSV files.
+```
+
+---
+
+## IV. In-Lesson Practice Checklist
+
+Complete the following tasks in order:
+- [ ] Describe full requirements and have Codex make a plan
+- [ ] After confirming the plan, have Codex start coding
+- [ ] Test all features in a browser
+- [ ] Find and fix at least one issue
+- [ ] Try adding one extension feature
+
+---
+
+## V. Summary
+
+| Skill Learned | Description |
+|---------------|-------------|
+| Requirement breakdown | Break complex requirements into executable tasks |
+| Task planning | Have Codex present an implementation plan first |
+| Full-process collaboration | Complete development flow from requirement to delivery |
+| Testing & validation | Find issues and provide timely feedback for fixes |
+
+---
+
+## VI. Next Step
+
+[→ Enter Module 6: Summary & Next Steps](../module-6/lesson-15)

@@ -1,1 +1,128 @@
-# Lesson 12 :Writing Better Prompts > 📌 **Learning Objectives**：掌握编写有效指令的技巧，让 Codex 更准确地理解你的需求 > ⏱️ **Estimated Time**：20 分钟 > 🎯 **Teaching Rhythm**：讲解 + 对比示例 --- ## I.指令质量决定结果质量 Codex 的能力很强，但它的表现很大程度上取决于你给出的指令。 **好的指令 = 清晰的目标 + 具体的要求 + 明确的验收标准** --- ## II.把大任务拆成小步骤 ### ❌ 差的指令："帮我做一个网站" 这个指令太模糊了。Codex 不知道你想要什么类型的网站、什么风格、包含哪些内容。 ### ✅ 好的指令："帮我做一个个人简介网页" 好一些，但还是不够具体。 ### ✅✅ 更好的指令： ``` 帮我做一个个人简介网页，要求： 1. 包含以下部分：头像、姓名、一句话简介、技能列表、联系方式 2. 使用简洁现代的设计风格 3. 主色调为蓝色 4. 代码保存为 index.html ``` **关键技巧**：把一个大任务拆成几个小步骤，一步一步来。 --- ## III.告诉 Codex "先计划、再执行" 有时候，直接让 Codex 执行可能会遗漏细节。更好的做法是： ``` 在开始之前，先告诉我你的执行计划，等我确认后你再开始 ``` 这样你可以： - 确认 Codex 理解了你的需求 - 调整计划中的任何偏差 - 避免 Codex 做了一堆无用功 --- ## IV.提供背景信息 Codex 不了解你的生活和工作场景，你需要主动提供。 ### 示例 | 场景 | 需要提供的背景 | |------|--------------| | 整理照片 | "这些是我去年去日本旅行拍的照片，按城市分类" | | 写邮件 | "这是一封给客户的邮件，语气要正式，主题是关于项目延期" | | 数据分析 | "这是我们的销售数据，包含日期、产品、数量、金额四列" | > 💡 **提示**：背景信息不是越多越好，而是越相关越好。 --- ## V.用"验收标准"告诉 Codex 什么叫"做好了" ### 示例 ``` 帮我整理这份文档，要求： 1. 去除所有空行 2. 统一标题格式（一级标题用 #，二级标题用 ##） 3. 检查并修正错别字 4. 最后告诉我你做了哪些修改 ``` 注意最后一条——**让 Codex 告诉你它做了什么**，这样你可以快速验证结果是否符合预期。 --- ## VI.指令模板 ### File Operations类 ``` 请帮我 [动作] [对象]，[具体要求]，[验收标准] ``` ### 内容生成类 ``` 请帮我 [动作] 一个 [类型]，关于 [主题]，要求 [格式/风格]，[验收标准] ``` ### 数据分析类 ``` 请帮我分析 [数据源]，找出 [关注点]，输出 [格式]，[验收标准] ``` --- ## VII.本节实操任务 1. 选择一个你想让 Codex 完成的任务 2. 先用模糊的指令试一次 3. 再用清晰的指令（按照上面的模板）试一次 4. 对比两次结果的差异 --- ## VIII.Summary | 技巧 | 说明 | |------|------| | 拆分任务 | 大任务拆成小步骤，逐步完成 | | 先计划后执行 | 让 Codex 先给出计划，确认后再执行 | | 提供背景 | 主动告诉 Codex 相关上下文 | | 验收标准 | 明确告诉 Codex 什么叫"做好了" | --- ## IX.Next Step [→ Lesson 13 :Security & Permissions](lesson-13.md)
+# Lesson 12: Writing Better Prompts
+
+> 📌 **Learning Objectives**: Master the techniques for writing effective prompts, so Codex can more accurately understand your needs
+> ⏱️ **Estimated Time**: 20 minutes
+> 🎯 **Teaching Rhythm**: Explanation + contrast examples
+
+---
+
+## I. Prompt Quality Determines Result Quality
+
+Codex is very capable, but its performance largely depends on the prompts you give it.
+
+**A good prompt = Clear goal + Specific requirements + Explicit acceptance criteria**
+
+---
+
+## II. Break Big Tasks Into Small Steps
+
+### ❌ Bad prompt: "Help me build a website"
+
+This prompt is too vague. Codex doesn't know what kind of website you want, what style, or what content to include.
+
+### ✅ Better prompt: "Help me build a personal profile webpage"
+
+Better, but still not specific enough.
+
+### ✅✅ Even better prompt:
+```
+Help me build a personal profile webpage with the following requirements:
+1. Include these sections: avatar, name, one-sentence bio, skills list, and contact info
+2. Use a clean, modern design style
+3. Primary color should be blue
+4. Save the code as index.html
+```
+
+**Key technique**: Break a big task into several small steps and do them one at a time.
+
+---
+
+## III. Tell Codex to "Plan First, Then Execute"
+
+Sometimes, directly asking Codex to execute may cause details to be missed. A better approach is:
+
+```
+Before you start, tell me your execution plan first. Wait for my confirmation before you begin.
+```
+
+This way you can:
+- Confirm that Codex understood your requirements
+- Adjust any deviations in the plan
+- Avoid Codex doing a lot of useless work
+
+---
+
+## IV. Provide Background Information
+
+Codex doesn't know about your life and work context. You need to proactively provide it.
+
+### Examples
+
+| Scenario | Background to Provide |
+|----------|----------------------|
+| Organizing photos | "These are photos from my trip to Japan last year. Organize them by city." |
+| Writing an email | "This is an email to a client. The tone should be formal. The topic is about a project delay." |
+| Data analysis | "This is our sales data, containing four columns: date, product, quantity, and amount." |
+
+> 💡 **Tip**: More background info is not always better. Relevance is what matters.
+
+---
+
+## V. Use "Acceptance Criteria" to Tell Codex What "Done" Looks Like
+
+### Example
+
+```
+Help me clean up this document. Requirements:
+1. Remove all empty lines
+2. Unify heading format (level 1 headings use #, level 2 headings use ##)
+3. Check and fix typos
+4. Finally, tell me what changes you made
+```
+
+Notice the last item — **asking Codex to tell you what it did**. This way you can quickly verify whether the result meets your expectations.
+
+---
+
+## VI. Prompt Templates
+
+### File Operations
+```
+Please help me [action] [object], [specific requirements], [acceptance criteria]
+```
+
+### Content Generation
+```
+Please help me [action] a [type] about [topic], with [format/style], [acceptance criteria]
+```
+
+### Data Analysis
+```
+Please help me analyze [data source], find [focus point], output as [format], [acceptance criteria]
+```
+
+---
+
+## VII. In-Lesson Practice
+
+1. Choose a task you want Codex to complete.
+2. Try it once with a vague prompt.
+3. Try it again with a clear prompt (following the templates above).
+4. Compare the difference between the two results.
+
+---
+
+## VIII. Summary
+
+| Technique | Description |
+|-----------|-------------|
+| Break down tasks | Break big tasks into small steps, complete them gradually |
+| Plan before executing | Ask Codex to give a plan first, confirm before executing |
+| Provide background | Proactively tell Codex relevant context |
+| Acceptance criteria | Clearly tell Codex what "done" looks like |
+
+---
+
+## IX. Next Step
+
+[→ Lesson 13: Security & Permissions](lesson-13)

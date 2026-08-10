@@ -1,1 +1,0 @@
-import{_ as a,o as e,c as d,a2 as o}from"./chunks/framework.CHeM0PsO.js";const x=JSON.parse('{"title":"Codex 从零到一","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),r={name:"index.md"};function l(i,t,n,s,h,c){return e(),d("div",null,[...t[0]||(t[0]=[o("",17)])])}const u=a(r,[["render",l]]);export{x as __pageData,u as default};

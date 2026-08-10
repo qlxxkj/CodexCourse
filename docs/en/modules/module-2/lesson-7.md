@@ -1,1 +1,117 @@
-# Lesson 7 :Lesson一次对话 —— 跑通Lesson一个任务 > 📌 **Learning Objectives**:完成 Codex 的Lesson一次实际对话，体验从输入指令到获得结果的全过程 > ⏱️ **Estimated Time**:20 分钟 > 🎯 **Teaching Rhythm**:手把手实操 --- ## I.最简单的开始:问一个问题 打开 Codex，在对话框中输入: ``` 今天 AI 圈有什么新闻？ ``` 按回车（或点击发送）。 Codex 会联网搜索最新的 AI 相关新闻，并给你一份总结。你可能会看到类似这样的回复: > 以下是今天 AI 领域的几条重要新闻: > 1. OpenAI 发布了 GPT-5 的最新进展... > 2. Google DeepMind 在 Nature 上发表了一篇新论文... > 3. ... 这就是 Codex 最基础的能力:**Web Search + 信息整理**。 --- ## II.让它帮你做点实际的 现在我们来做一个更实用的任务。 ### 任务:分析你电脑上的一个文件夹 1. 在 Codex 中打开一个文件夹作为工作区（比如你的"下载"文件夹，或者你专门创建的一个测试文件夹） 2. 在对话框中输入: ``` 帮我分析一下这个文件夹，统计一下里面有多少个文件，按文件类型分类看看各有多少个 ``` 3. 观察 Codex 的执行过程: - 它会列出文件夹中的文件 - 统计每种类型的数量 - 生成一个汇总报告 ### 你可能看到的输出: ``` 文件夹分析报告: - 总文件数:47 - 按类型分类: - PDF 文档:12 个 - JPEG 图片:8 个 - MP4 视频:5 个 - ZIP 压缩包:3 个 - 其他:19 个 ``` --- ## III.进阶任务:整理文件夹 如果你觉得只是"看"不够过瘾，让 Codex 帮你"做": ### 任务:整理杂乱的文件夹 1. 准备一个包含各种文件的文件夹（如果没有，可以随便创建几个不同类型的文件） 2. 在对话框中输入: ``` 帮我整理这个文件夹，把同类文件放到同一个子文件夹里 ``` 3. Codex 会: - 扫描所有文件 - 根据文件扩展名创建子文件夹（如 images/, documents/, videos/） - 将文件移动到对应的子文件夹中 > ⚠️ **注意**:在执行文件移动操作前，Codex 通常会先征求你的同意。这是默认权限模式的保护机制。 --- ## IV.感受 Codex 如何一步步执行任务 当你输入指令后，Codex 的工作流程是这样的: ``` 你输入指令 → Codex 理解意图 → Codex 读取相关文件 → Codex 制定计划 → Codex 执行操作 → 你审核结果 ``` 每一步都有迹可循。你可以在 Codex 的执行日志中看到它的思考过程和操作步骤。 --- ## V.本节实操任务清单 请按顺序完成以下任务: - [ ] 问 Codex 一个简单的问题（比如"今天天气怎么样"） - [ ] 设置一个文件夹为工作区 - [ ] 让 Codex 分析该文件夹的内容 - [ ] 让 Codex 整理该文件夹的文件 - [ ] 观察 Codex 的执行日志 --- ## VI.Summary | 知识点 | 核心内容 | |--------|---------| | Lesson一次对话 | 从简单问题开始，建立信心 | | 文件夹分析 | 让 Codex 统计和分类文件 | | 文件夹整理 | 让 Codex 自动归类文件 | | 执行流程 | 理解 → 计划 → 执行 → 审核 | --- ## VII.Next Step [→ 进入Module 3:核心功能](../module-3/lesson-8.md)
+# Lesson 7: Your First Conversation — Completing a Task End to End
+
+> 📌 **Learning Objectives**: Complete Codex's first real conversation and experience the full process from inputting a command to getting results
+> ⏱️ **Estimated Time**: 20 minutes
+> 🎯 **Teaching Rhythm**: Hands-on practice
+
+---
+
+## I. The Simplest Start: Ask a Question
+
+Open Codex and type this into the chat box:
+
+```
+What are the latest AI news today?
+```
+
+Press Enter (or click Send).
+
+Codex will search the web for the latest AI-related news and give you a summary. You might see a response like this:
+
+> Here are some important AI news items from today:
+> 1. OpenAI released the latest progress on GPT-5...
+> 2. Google DeepMind published a new paper in Nature...
+> 3. ...
+
+This is Codex's most basic capability: **Web Search + Information Organization**.
+
+---
+
+## II. Let It Do Something Practical
+
+Now let's do a more useful task.
+
+### Task: Analyze a Folder on Your Computer
+
+1. Open a folder as the workspace in Codex (e.g., your "Downloads" folder, or a test folder you created specifically for this).
+2. Type this into the chat box:
+   ```
+   Help me analyze this folder. Count how many files there are and show me the breakdown by file type.
+   ```
+3. Watch Codex's execution process:
+   - It lists the files in the folder
+   - Counts the quantity of each type
+   - Generates a summary report
+
+### What You Might See:
+
+```
+Folder Analysis Report:
+- Total files: 47
+- By type:
+  - PDF documents: 12
+  - JPEG images: 8
+  - MP4 videos: 5
+  - ZIP archives: 3
+  - Others: 19
+```
+
+---
+
+## III. Advanced Task: Organize a Folder
+
+If just "looking" isn't exciting enough, let Codex help you "do" it:
+
+### Task: Organize a Messy Folder
+
+1. Prepare a folder containing various files (if you don't have one, just create a few different types of files randomly).
+2. Type this into the chat box:
+   ```
+   Help me organize this folder. Put similar files into the same subfolder.
+   ```
+3. Codex will:
+   - Scan all files
+   - Create subfolders based on file extensions (e.g., `images/`, `documents/`, `videos/`)
+   - Move files into the corresponding subfolders.
+
+> ⚠️ **Note**: Before executing file move operations, Codex will usually ask for your confirmation. This is a built-in safety mechanism of the default permission mode.
+
+---
+
+## IV. Observe How Codex Executes Tasks Step by Step
+
+When you input a command, Codex's workflow is:
+
+```
+You input command → Codex understands intent → Codex reads relevant files → Codex makes a plan → Codex executes → You review the result
+```
+
+Every step is traceable. You can see its thinking process and operation steps in Codex's execution log.
+
+---
+
+## V. In-Lesson Practice Checklist
+
+Complete the following tasks in order:
+- [ ] Ask Codex a simple question (e.g., "What's the weather today?")
+- [ ] Set a folder as the workspace
+- [ ] Have Codex analyze the folder's contents
+- [ ] Have Codex organize the folder's files
+- [ ] Observe Codex's execution log
+
+---
+
+## VI. Summary
+
+| Knowledge Point | Core Content |
+|-----------------|--------------|
+| First conversation | Start with a simple question to build confidence |
+| Folder analysis | Have Codex count and categorize files |
+| Folder organization | Have Codex automatically sort files |
+| Execution flow | Understand → Plan → Execute → Review |
+
+---
+
+## VII. Next Step
+
+[→ Enter Module 3: Core Features](../module-3/lesson-8)

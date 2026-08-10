@@ -124,4 +124,4 @@ A: Check whether the workspace settings are correct and whether the folder has r
 A:
 - OpenAI Official Documentation: https://help.openai.com
 - Community Forum: https://community.openai.com
-- [Pre-course Checklist](prep-checklist.md) in this course's appendix
+- [Pre-course Checklist](prep-checklist) in this course's appendix

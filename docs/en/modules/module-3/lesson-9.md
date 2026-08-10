@@ -1,1 +1,166 @@
-# Lesson 9 :Natural Language Driven —— 用"说话"来指挥 AI > 📌 **Learning Objectives**：掌握编写有效指令的方法，学会用自然语言描述需求 > ⏱️ **Estimated Time**：25 分钟 > 🎯 **Teaching Rhythm**：讲解 + 对比示例 + 实操 --- ## I.什么是"Vibe Coding"？ **Vibe Coding** 是一个新词，意思是：**用自然语言描述你想要什么，让 AI 来完成具体实现。** 你不需要写代码，不需要懂技术细节。你只需要： 1. 清楚地知道你想要什么 2. 用简洁的语言描述出来 3. 让 AI 去实现 ### 类比 想象你在餐厅点菜： - **传统编程方式**：你需要自己买菜、洗菜、切菜、炒菜、调味——每一步都要亲自动手 - **Vibe Coding**：你告诉厨师（Codex）"我要一份宫保鸡丁，少辣"，厨师帮你完成所有步骤 **你不需要会做饭，你只需要会点菜。** --- ## II.如何写好"指令" ### 2.1 差的指令 vs 好的指令 | 差的指令 ❌ | 好的指令 ✅ | 为什么 | |------------|------------|--------| | "帮我做个东西" | "帮我做一个个人简介网页，包含头像、姓名、简介和联系方式" | 具体说明要做什么 | | "整理一下文件" | "把桌面上的文档按日期归类到不同文件夹" | 说明整理规则 | | "写个程序" | "写一个 Python 脚本，读取 CSV 文件并统计每列的平均值" | 说明输入、处理和输出 | | "改一下颜色" | "把页面的主色调从红色改成蓝色，按钮背景色改成深蓝色" | 具体说明改什么 | ### 2.2 好指令的四个要素 一个完整的指令应该包含以下要素： ``` [动作] + [对象] + [规则/要求] + [期望结果] ``` 举例： - **动作**：帮我整理 / 帮我创建 / 帮我分析 - **对象**：这个文件夹 / 这份数据 / 这个网页 - **规则**：按文件类型分类 / 去除空行 / 使用蓝色主题 - **期望结果**：生成一个报告 / 输出汇总表格 / 保存到指定位置 ### 2.3 指令模板 你可以直接套用这些模板： **File Operations类：** ``` 帮我 [动作] [对象]，[规则] 例如：帮我把这个文件夹里的图片按拍摄日期分类 ``` **内容生成类：** ``` 帮我 [动作] 一个 [类型]，关于 [主题]，要求 [具体要求] 例如：帮我写一份关于健康饮食的周报，要求分三个部分 ``` **数据分析类：** ``` 帮我分析 [数据源]，找出 [关注点]，输出 [格式] 例如：帮我分析这份销售数据，找出增长最快的产品，输出为表格 ``` --- ## III.学会"追问"和"修正" Codex 不是一次就能给出完美结果的。关键在于**学会追问**。 ### 场景演示 假设你要 Codex 帮你做一个网页： **Lesson一轮：** ``` 你：帮我做一个个人简介网页 Codex：生成了一个基本网页 ``` **Lesson二轮（发现问题）：** ``` 你：页面太简单了，加一个项目展示区域 Codex：添加了项目展示区域 ``` **Lesson三轮（继续优化）：** ``` 你：把主色调改成蓝色，字体换成更大的 Codex：修改了颜色和字体 ``` **Lesson四轮（最终验收）：** ``` 你：很好，现在帮我把代码保存为 index.html Codex：保存完成 ``` ### 关键技巧 - **不要怕说"不对"**：如果结果不满意，直接告诉 Codex 哪里不对 - **给具体反馈**：不要说"不好看"，要说"把标题字体加大"、"增加一些间距" - **分步推进**：大任务拆成小步骤，一步一步来 --- ## IV.实操：让 Codex 根据你的描述创建一个网页 ### 任务 用 Codex 创建一个简单的个人简介网页。 ### 步骤 1. 打开 Codex，创建一个新的工作区（比如桌面上的"我的网页"文件夹） 2. 输入指令： ``` 帮我做一个个人简介网页，包含以下内容： - 顶部：一张圆形头像占位符 + 姓名 + 一句话简介 - 中间：技能列表（用标签形式展示） - 底部：联系方式（邮箱和社交媒体链接） 整体风格要简洁现代，使用蓝色作为主色调 ``` 3. 观察 Codex 生成的 HTML 代码 4. 将代码保存为 `index.html`，在浏览器中打开查看效果 5. 根据看到的实际效果，继续提出修改要求 ### 可能的追问示例 - "把头像从圆形改成圆角方形" - "在技能列表下面加一个项目展示区域" - "把配色方案改成深色模式" --- ## V.本节实操任务清单 请按顺序完成以下任务： - [ ] 尝试用"差的指令"让 Codex 做一件事，感受模糊指令的问题 - [ ] 用"好的指令"重新描述同一个任务，对比结果差异 - [ ] 完成上面的网页创建实操，至少进行 3 轮追问 - [ ] 总结：你觉得写指令最难的部分是什么？ --- ## VI.Summary | 知识点 | 核心内容 | |--------|---------| | Vibe Coding | 用自然语言描述目标，AI 来完成 | | 好指令四要素 | 动作 + 对象 + 规则 + 期望结果 | | 追问和修正 | 不追求一次完美，学会分步优化 | | 指令模板 | File Operations / 内容生成 / 数据分析三类模板 | --- ## VII.Next Step [→ Lesson 10 :Web Search & Research](lesson-10.md)
+# Lesson 9: Natural Language Driven — Commanding AI by "Talking"
+
+> 📌 **Learning Objectives**: Master the method of writing effective prompts, learn to describe needs in natural language
+> ⏱️ **Estimated Time**: 25 minutes
+> 🎯 **Teaching Rhythm**: Explanation + contrast examples + hands-on practice
+
+---
+
+## I. What is "Vibe Coding"?
+
+**Vibe Coding** is a new term that means: **describe what you want in natural language, and let AI handle the implementation.**
+
+You don't need to write code. You don't need to understand technical details. You only need to:
+1. Clearly know what you want
+2. Describe it concisely in language
+3. Let AI implement it
+
+### Analogy
+
+Imagine ordering food at a restaurant:
+- **Traditional programming**: You need to buy ingredients, wash them, chop them, cook them, and season them — every step by hand
+- **Vibe Coding**: You tell the chef (Codex) "I want Kung Pao chicken, less spicy," and the chef handles everything
+
+**You don't need to know how to cook. You just need to know how to order.**
+
+---
+
+## II. How to Write Good "Prompts"
+
+### 2.1 Bad Prompt vs Good Prompt
+
+| Bad Prompt ❌ | Good Prompt ✅ | Why |
+|-------------|---------------|-----|
+| "Help me make something" | "Help me build a personal profile webpage with a photo, name, bio, and contact info" | Specific about what to do |
+| "Organize the files" | "Group the documents on my desktop into folders by date" | Explain the sorting rule |
+| "Write a program" | "Write a Python script that reads a CSV file and calculates the average of each column" | Specify input, processing, and output |
+| "Change the colors" | "Change the page's primary color from red to blue, and make the button background dark blue" | Specify exactly what to change |
+
+### 2.2 Four Elements of a Good Prompt
+
+A complete prompt should include these elements:
+
+```
+[Action] + [Object] + [Rules/Requirements] + [Expected Result]
+```
+
+Examples:
+- **Action**: Help me organize / Help me create / Help me analyze
+- **Object**: This folder / This dataset / This webpage
+- **Rule**: Classify by file type / Remove empty rows / Use blue theme
+- **Expected result**: Generate a report / Output a summary table / Save to specified location
+
+### 2.3 Prompt Templates
+
+You can directly use these templates:
+
+**File Operations:**
+```
+Help me [action] [object], [rule]
+Example: Help me classify the images in this folder by shooting date.
+```
+
+**Content Generation:**
+```
+Help me [action] a [type] about [topic], with [specific requirements]
+Example: Help me write a weekly report on healthy eating, divided into three sections.
+```
+
+**Data Analysis:**
+```
+Help me analyze [data source], find [focus point], output as [format]
+Example: Help me analyze this sales data, find the fastest-growing products, output as a table.
+```
+
+---
+
+## III. Learn to "Follow Up" and "Correct"
+
+Codex doesn't always give perfect results on the first try. The key is **learning to follow up**.
+
+### Scenario Demo
+
+Suppose you want Codex to build you a webpage:
+
+**Round 1:**
+```
+You: Help me build a personal profile webpage.
+Codex: Generates a basic webpage.
+```
+
+**Round 2 (you notice an issue):**
+```
+You: The page is too simple. Add a project showcase section.
+Codex: Adds the project showcase section.
+```
+
+**Round 3 (further optimization):**
+```
+You: Change the primary color to blue and use a larger font.
+Codex: Modifies the color and font.
+```
+
+**Round 4 (final review):**
+```
+You: Great. Now save the code as index.html.
+Codex: Save complete.
+```
+
+### Key Tips
+- **Don't be afraid to say "that's not right"**: If the result isn't what you want, tell Codex directly what's wrong.
+- **Give specific feedback**: Don't say "it doesn't look good." Say "make the title font bigger" or "add some spacing."
+- **Progress step by step**: Break big tasks into small steps and do them one at a time.
+
+---
+
+## IV. Hands-On: Let Codex Create a Webpage from Your Description
+
+### Task
+Use Codex to create a simple personal profile webpage.
+
+### Steps
+
+1. Open Codex and create a new workspace (e.g., a "My Webpage" folder on your desktop).
+2. Type this prompt:
+   ```
+   Help me build a personal profile webpage that includes:
+   - Top: a circular avatar placeholder + name + a one-sentence bio
+   - Middle: a skills list (displayed as tags)
+   - Bottom: contact info (email and social media links)
+   The overall style should be clean and modern, using blue as the primary color.
+   ```
+3. Observe the HTML code Codex generates.
+4. Save the code as `index.html` and open it in a browser to see the result.
+5. Based on what you see, continue to request modifications.
+
+### Possible Follow-Up Prompts
+- "Change the avatar from a circle to a rounded square."
+- "Add a project showcase section below the skills list."
+- "Change the color scheme to dark mode."
+
+---
+
+## V. In-Lesson Practice Checklist
+
+Complete the following tasks in order:
+- [ ] Try using a "bad prompt" to get Codex to do something, and feel the problem with vague prompts.
+- [ ] Rephrase the same task with a "good prompt" and compare the results.
+- [ ] Complete the webpage creation hands-on above, with at least 3 rounds of follow-up.
+- [ ] Summarize: What do you think is the hardest part of writing prompts?
+
+---
+
+## VI. Summary
+
+| Knowledge Point | Core Content |
+|-----------------|--------------|
+| Vibe Coding | Describe the goal in natural language, let AI handle the rest |
+| Four elements of a good prompt | Action + Object + Rules + Expected result |
+| Follow-up and correction | Don't追求 a perfect result on the first try, learn to iteratively optimize |
+| Prompt templates | File Operations / Content Generation / Data Analysis three categories |
+
+---
+
+## VII. Next Step
+
+[→ Lesson 10: Web Search & Research](lesson-10)

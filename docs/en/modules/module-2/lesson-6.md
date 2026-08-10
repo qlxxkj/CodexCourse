@@ -1,1 +1,95 @@
-# Lesson 6 :Understanding the Codex Interface > 📌 **Learning Objectives**:熟悉 Codex 桌面 App 的界面布局、核心功能和操作逻辑 > ⏱️ **Estimated Time**:15 分钟 > 🎯 **Teaching Rhythm**:界面导览 + 概念讲解 --- ## I.界面概览 打开 Codex 桌面 App 后，你会看到以下主要区域: ### 左侧面板 - **对话管理**:显示历史对话列表，可以快速切换或新建对话 - **工作区（Workspace）**:显示当前项目/文件夹的内容结构 - **插件/技能**:显示可用的内置技能和扩展功能 ### 中间对话框 - 这是你与 Codex 对话的主要区域 - 你可以在此输入文字指令、上传文件、查看 Codex 的回复和执行结果 ### 右侧/底部面板（视版本而定） - 文件预览区 - 代码编辑器 - 执行日志 --- ## II.核心概念:工作区（Workspace） **工作区是 Codex 最重要的概念之一。** 当你把一个文件夹设为工作区时，你实际上是在告诉 Codex:"你可以在这个文件夹范围内读取、创建和修改文件。" ### 为什么需要工作区？ 1. **安全边界**:Codex 只能在指定的工作区内操作，不会影响到其他文件 2. **上下文聚焦**:Codex 可以读取工作区内的所有文件，理解你的项目结构 3. **结果可控**:所有修改都在工作区内，方便追溯和管理 ### 如何设置工作区？ 1. 在 Codex 界面中找到"打开文件夹"或"选择工作区"按钮 2. 浏览到你的目标文件夹并确认 3. 左侧面板会显示该文件夹的文件树结构 --- ## III.权限模式 Codex 提供三种权限模式，用于控制 AI 对文件的操作范围: ### 1. 默认权限（推荐新手） - Codex 在执行任何文件修改前都会先征求你的同意 - 最安全，适合刚开始使用的用户 - 你可以在每次操作前判断是否允许 ### 2. 自动审查（推荐进阶用户） - Codex 可以自动执行操作，但你可以在事后查看和审计 - 效率更高，适合你已经信任 Codex 的工作方式 - ⚠️ 建议在操作重要文件前先备份 ### 3. 完全访问（不推荐） - Codex 拥有对你工作区内文件的完全读写权限 - 风险最高，不建议新手使用 - 仅在你完全了解风险的情况下启用 > ⚠️ **安全提醒**:无论选择哪种权限模式，都不要在 Codex 中输入密码、银行卡号等敏感信息。 --- ## IV.本节实操任务 1. 打开 Codex 桌面 App 2. 创建一个测试文件夹（比如桌面上的"Codex练习"） 3. 将该文件夹设为 Codex 的工作区 4. 观察左侧面板的文件树变化 5. 尝试将权限模式从"默认权限"切换到"自动审查"（体验一下即可，随时可改回来） --- ## V.Summary | 知识点 | 核心内容 | |--------|---------| | 工作区 | Codex File Operations的范围，类似"沙盒" | | 左侧面板 | 对话管理 + 工作区文件树 + 技能列表 | | 对话框 | 输入指令和查看结果的主要区域 | | 权限模式 | 默认权限（安全）、自动审查（高效）、完全访问（高风险） | --- ## VI.Next Step [→ Lesson 7 :Lesson一次对话](lesson-7.md)
+# Lesson 6: Understanding the Codex Interface
+
+> 📌 **Learning Objectives**: Become familiar with the Codex desktop app's layout, core features, and operation logic
+> ⏱️ **Estimated Time**: 15 minutes
+> 🎯 **Teaching Rhythm**: Interface tour + concept explanation
+
+---
+
+## I. Interface Overview
+
+After opening the Codex desktop app, you'll see the following main areas:
+
+### Left Panel
+- **Conversation Manager**: Shows the list of historical conversations. You can quickly switch between them or start a new one.
+- **Workspace**: Displays the file structure of the current project/folder.
+- **Plugins / Skills**: Shows available built-in skills and extensions.
+
+### Center: Chat Dialog
+- This is the main area where you converse with Codex.
+- You can enter text commands, upload files, and view Codex's responses and execution results.
+
+### Right / Bottom Panel (varies by version)
+- File preview area
+- Code editor
+- Execution logs
+
+---
+
+## II. Core Concept: Workspace
+
+**The workspace is one of Codex's most important concepts.**
+
+When you set a folder as your workspace, you're essentially telling Codex: "You can read, create, and modify files within this folder."
+
+### Why do you need a workspace?
+
+1. **Safety boundary**: Codex can only operate within the specified workspace, without affecting other files.
+2. **Context focus**: Codex can read all files in the workspace and understand your project structure.
+3. **Controllable results**: All modifications happen within the workspace, making them easy to track and manage.
+
+### How to set a workspace?
+
+1. Find the "Open Folder" or "Select Workspace" button in the Codex interface.
+2. Browse to your target folder and confirm.
+3. The left panel will display the file tree of that folder.
+
+---
+
+## III. Permission Modes
+
+Codex offers three permission modes to control the AI's file operation scope:
+
+### 1. Default Permission (Recommended for Beginners)
+Codex asks for your approval before executing any file modifications.
+- Safest option, suitable for new users
+- You can evaluate each operation before allowing it.
+
+### 2. Auto-Review (Recommended for Advanced Users)
+Codex can execute operations automatically, and you can review and audit afterward.
+- More efficient, suitable when you trust Codex's working style
+- ⚠️ It's recommended to back up important files before operations.
+
+### 3. Full Access (Not Recommended)
+Codex has full read/write permission to files in your workspace.
+- Highest risk, not recommended for beginners
+- Only enable this if you fully understand the risks.
+
+> ⚠️ **Security reminder**: Regardless of which permission mode you choose, never enter passwords, bank card numbers, or other sensitive information into Codex.
+
+---
+
+## IV. In-Lesson Practice Tasks
+
+1. Open the Codex desktop app
+2. Create a test folder (e.g., "Codex Practice" on your desktop)
+3. Set that folder as Codex's workspace
+4. Observe the file tree changes in the left panel
+5. Try switching the permission mode from "Default" to "Auto-Review" (just for experience, you can switch it back anytime).
+
+---
+
+## V. Summary
+
+| Knowledge Point | Core Content |
+|-----------------|--------------|
+| Workspace | Codex's File Operations scope, like a "sandbox" |
+| Left panel | Conversation manager + workspace file tree + skills list |
+| Chat dialog | Main area for entering commands and viewing results |
+| Permission modes | Default (safe), Auto-Review (efficient), Full Access (high risk) |
+
+---
+
+## VI. Next Step
+
+[→ Lesson 7: Your First Conversation](lesson-7)

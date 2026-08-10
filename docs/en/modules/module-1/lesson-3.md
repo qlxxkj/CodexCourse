@@ -1,1 +1,115 @@
-# Lesson 3 :Codex vs Other Tools（不纠结版） > 📌 **Learning Objectives**:理解 Codex 与 ChatGPT、GitHub Copilot 的区别，知道什么时候该用什么工具 > ⏱️ **Estimated Time**:10 分钟 > 🎯 **Teaching Rhythm**:对比讲解为主 --- ## I.先说结论 如果你只想记住一句话，那就是: > **Codex 能干的事比普通聊天 AI 多得多，它能直接操作你电脑上的文件。** 其他的区别，我们慢慢聊。 --- ## II.Codex vs ChatGPT ### 关系说明 Codex **内置于** ChatGPT。也就是说: - 你用 ChatGPT 时，如果切换到"Advanced Search"或"Code Interpreter"模式，你用的就是 Codex - 你下载独立的 Codex 桌面 App，本质上也是 ChatGPT 的 Codex 功能，只是有了更好的界面 **简单类比**:ChatGPT 是一辆车，Codex 是这辆车的"自动驾驶模式"。 | 特性 | ChatGPT（普通聊天模式） | Codex（代码解释器/高级搜索模式） | |------|----------------------|-------------------------------| | 主要能力 | 回答问题、写文案、翻译 | 读文件、写代码、运行命令、File Operations系统 | | 能否操作你的文件 | ❌ 不能 | ✅ 能（在工作区内） | | 能否执行代码 | ❌ 不能 | ✅ 能 | | 典型使用场景 | "帮我写一封邮件" | "帮我分析这个 Excel 文件" | ### 小白记住一点就行 - 想**聊天、问问题、写文案** → 用 ChatGPT 普通模式 - 想**让 AI 帮你干活**（File Operations、写代码、做分析）→ 用 Codex --- ## III.Codex vs GitHub Copilot 这是最容易混淆的一对。 ### GitHub Copilot 是什么？ Copilot 是一个**代码补全插件**，它运行在你的代码编辑器里（比如 VS Code）。 - 你在写代码时，它猜你想写什么，帮你补全下一行 - 它**不能**独立完成任务——你必须自己写代码、自己调试、自己测试 - 它**不能**操作你的文件——它只能在编辑器里给你建议 ### Codex 是什么？ Codex 是一个**独立的智能体**。 - 你告诉它"帮我做一个网页"，它会自己读文件、写代码、保存文件 - 它**能**独立完成从需求到交付的全过程 - 它**能**操作你的文件系统 ### 对比表格 | 特性 | GitHub Copilot | Codex | |------|---------------|-------| | 工作位置 | 代码编辑器内（VS Code 等） | 独立应用 / 命令行 | | 你需要会编程吗？ | ✅ 需要至少看得懂代码 | ❌ 不需要，用自然语言即可 | | 任务粒度 | 单行/单函数级别的补全 | 完整功能/完整项目 | | 能否File Operations | ❌ 不能 | ✅ 能 | | 能否运行代码 | ❌ 不能 | ✅ 能 | | 典型用户 | 程序员 | 任何人 | ### 小白记住一点就行 - **Copilot = 帮你补全代码的"副驾驶"** - **Codex = 帮你完成整个任务的"实习生"** --- ## IV.Codex vs 传统自动化工具 你可能听说过 RPA（机器人流程自动化）、Excel 宏、Apple Shortcuts 之类的工具。 ### 传统自动化工具的问题 - 需要**预先设计好流程**，灵活性差 - 一旦需求变化，就要重新配置 - 通常需要编程知识或专门的工具 ### Codex 的优势 - **用自然语言描述需求**，不需要预先设计流程 - **灵活调整**——觉得哪里不对，告诉它改就行 - **不需要编程知识** ### 举例 | 任务 | 传统方式 | Codex 方式 | |------|---------|-----------| | 批量重命名文件 | 写一个 Python 脚本，或者用专门的批量重命名软件 | 说:"把这些文件名里的'IMG_'改成'Photo_'" | | 合并多个 Excel | 用 Power Query 或 VBA | 说:"把这三个 Excel 文件的数据合并到一个表里" | --- ## V.本节的"一句话总结" > **Codex 不是聊天工具，不是代码补全工具，不是传统自动化工具。它是一个能听懂人话、能操作你电脑的智能助手。** --- ## VI.Post-Lesson Thinking 1. 你之前用过哪些工具来尝试自动化办公？Codex 和它们比有什么不一样？ 2. 你觉得在什么场景下你会优先选择 Codex，而不是其他工具？ --- ## VII.Next Step [→ 进入Module 2:上手准备](../module-2/lesson-4.md)
+# Lesson 3: Codex vs Other Tools (No Overthinking Version)
+
+> 📌 **Learning Objectives**: Understand the differences between Codex, ChatGPT, and GitHub Copilot, and know when to use which tool
+> ⏱️ **Estimated Time**: 10 minutes
+> 🎯 **Teaching Rhythm**: Comparison-focused explanation
+
+---
+
+## I. The Bottom Line Up Front
+
+If you only remember one sentence from this lesson, let it be this:
+
+> **Codex can do far more than a regular chat AI — it can directly operate files on your computer.**
+
+We'll go into the other details gradually.
+
+---
+
+## II. Codex vs ChatGPT
+
+### Relationship Explained
+
+Codex is **built into** ChatGPT. That means:
+- When you use ChatGPT and switch to "Advanced Search" or "Code Interpreter" mode, you're using Codex
+- The standalone Codex desktop app you download is essentially ChatGPT's Codex feature, just with a better interface
+
+**Simple analogy**: ChatGPT is a car, and Codex is that car's "autonomous driving mode."
+
+| Feature | ChatGPT (Regular Chat Mode) | Codex (Code Interpreter / Advanced Search Mode) |
+|---------|---------------------------|------------------------------------------------|
+| Primary capability | Answering questions, writing copy, translating | Reading files, writing code, running commands, File Operations |
+| Can it operate your files? | ❌ No | ✅ Yes (within the workspace) |
+| Can it execute code? | ❌ No | ✅ Yes |
+| Typical use case | "Help me write an email" | "Help me analyze this Excel file" |
+
+### One thing for beginners to remember:
+- Want to **chat, ask questions, write copy** → Use ChatGPT regular mode
+- Want to **have AI do work for you** (File Operations, write code, do analysis) → Use Codex
+
+---
+
+## III. Codex vs GitHub Copilot
+
+This is the pair most people confuse.
+
+### What is GitHub Copilot?
+
+Copilot is a **code completion plugin** that runs inside your code editor (like VS Code).
+- As you type code, it guesses what you want to write and completes the next line
+- It **cannot** complete tasks independently — you must write the code yourself, debug it, and test it
+- It **cannot** operate your files — it can only give you suggestions inside the editor
+
+### What is Codex?
+
+Codex is a **standalone intelligent agent**.
+- You tell it "help me build a webpage," and it reads files, writes code, and saves files on its own
+- It **can** independently complete the entire process from requirement to delivery
+- It **can** operate your file system
+
+### Comparison Table
+
+| Feature | GitHub Copilot | Codex |
+|---------|---------------|-------|
+| Where it works | Inside code editor (VS Code, etc.) | Standalone app / command line |
+| Do you need to know how to code? | ✅ Yes, at least read code | ❌ No, use natural language |
+| Task granularity | Single line / single function completion | Complete features / complete projects |
+| Can it do File Operations? | ❌ No | ✅ Yes |
+| Can it run code? | ❌ No | ✅ Yes |
+| Typical user | Programmers | Anyone |
+
+### One thing for beginners to remember:
+- **Copilot = "co-pilot" that helps you complete code**
+- **Codex = "intern" that helps you complete entire tasks**
+
+---
+
+## IV. Codex vs Traditional Automation Tools
+
+You may have heard of RPA (Robotic Process Automation), Excel macros, Apple Shortcuts, and similar tools.
+
+### Problems with traditional automation tools
+- They require you to **design the workflow in advance**, which is inflexible
+- When requirements change, you have to reconfigure everything
+- They usually require programming knowledge or specialized tools
+
+### Codex's advantages
+- **Describe your needs in natural language** — no need to design workflows in advance
+- **Flexible adjustments** — if something doesn't look right, just tell Codex to fix it
+- **No programming knowledge needed**
+
+### Examples
+
+| Task | Traditional Way | Codex Way |
+|------|----------------|-----------|
+| Batch rename files | Write a Python script, or use dedicated batch rename software | Just say: "Change 'IMG_' to 'Photo_' in all these filenames" |
+| Merge multiple Excels | Use Power Query or VBA | Just say: "Merge the data from these three Excel files into one sheet" |
+
+---
+
+## V. One-Sentence Summary for This Section
+
+> **Codex is not a chat tool, not a code completion tool, and not a traditional automation tool. It's a smart assistant that understands natural language and can operate your computer.**
+
+---
+
+## VI. Post-Lesson Thinking
+
+1. What tools have you used before to try automating office work? How is Codex different?
+2. In what scenarios would you choose Codex over other tools?
+
+---
+
+## VII. Next Step
+
+[→ Enter Module 2: Getting Started](../module-2/lesson-4)

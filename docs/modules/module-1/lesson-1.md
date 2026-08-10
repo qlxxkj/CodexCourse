@@ -143,4 +143,4 @@ python count_lines.py
 
 ## 七、下一步
 
-[→ 第 2 课：Codex 能帮你做什么？](lesson-2.md)
+[→ 第 2 课：Codex 能帮你做什么？](lesson-2)

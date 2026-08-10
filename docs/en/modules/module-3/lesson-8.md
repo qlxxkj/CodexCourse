@@ -1,1 +1,177 @@
-# Lesson 8 :File Operations —— Codex 最基础的能力 > 📌 **Learning Objectives**：掌握用 Codex 进行文件读取、编辑、整理的基本方法 > ⏱️ **Estimated Time**：25 分钟 > 🎯 **Teaching Rhythm**：先演示 → 后讲解 → Then Practice --- ## I.Codex 能读取你电脑上的文件 这是 Codex 最基础、也是最核心的能力之一。 ### 1.1 拖拽文件进入对话 打开 Codex，直接把文件拖进对话框或工作区： - **文本文件**（.txt, .md, .csv）→ Codex 可以直接阅读内容 - **代码文件**（.py, .js, .html）→ Codex 可以分析并修改 - **图片文件**（.jpg, .png）→ Codex 可以识别图片中的内容 - **PDF 文件** → Codex 可以提取文字并总结 ### 1.2 让 Codex 读取文件夹 除了单个文件，你还可以让 Codex 读取整个文件夹： ``` 帮我看看这个文件夹里有什么文件 ``` Codex 会列出所有文件名、大小、修改日期等信息。 --- ## II.实操一：让 Codex 帮你整理文档 ### 场景 你有一个"杂乱的文档"文件夹，里面混放着： - Word 文档 (.docx) - PDF 文件 - Excel 表格 (.xlsx) - 文本文件 (.txt) ### 操作步骤 1. 在 Codex 中打开该文件夹作为工作区 2. 输入指令： ``` 帮我整理这个文件夹，按文件类型创建子文件夹，把同类文件移进去 ``` 3. Codex 会： - 扫描所有文件 - 创建 `documents/`, `pdfs/`, `spreadsheets/`, `text-files/` 等子文件夹 - 将文件移动到对应位置 ### 进阶指令 如果你想更精细地控制： ``` 把这个文件夹里的所有 PDF 文件移到名为"报告"的子文件夹里 ``` 或者： ``` 找出所有超过 10MB 的文件，把它们移到"大文件"文件夹 ``` --- ## III.实操二：批量重命名文件 ### 场景 你有一批照片，文件名是 `IMG_001.jpg`, `IMG_002.jpg`... 你想改成更有意义的名字。 ### 操作步骤 1. 打开照片文件夹作为工作区 2. 输入指令： ``` 把这些照片的文件名改成"旅行-序号.jpg"的格式，比如"旅行-001.jpg" ``` 3. Codex 会执行批量重命名 ### 更多示例 | 你的指令 | Codex 会做什么 | |---------|--------------| | "把所有 .JPG 改成 .jpg" | 统一小写扩展名 | | "在文件名前面加上日期前缀 20260722" | 添加日期前缀 | | "去掉所有文件名中的空格" | 清理文件名 | --- ## IV.实操三：分析文件夹空间占用 ### 场景 你的硬盘快满了，想知道是什么占用了空间。 ### 操作步骤 1. 打开目标文件夹（比如整个"下载"文件夹） 2. 输入指令： ``` 帮我分析一下这个文件夹的空间占用情况，列出最大的 10 个文件 ``` 3. Codex 会生成类似这样的报告： ``` 📊 文件夹空间分析报告 总大小：4.2 GB 文件总数：328 Top 10 最大文件： 1. video_backup.mp4 - 1.2 GB 2. database_dump.sql - 850 MB 3. project_archive.zip - 620 MB ... ``` --- ## V.Codex 能编辑文件吗？ **可以！** 而且这是它非常强大的一个能力。 ### 示例：修改文本文件 假设你有一个 `notes.txt` 文件，内容是： ``` 待办事项： 1. 买牛奶 2. 交房租 3. 预约牙医 ``` 你可以告诉 Codex： ``` 帮我把这份待办事项加上一项："预约理发"，放在最后 ``` Codex 会直接修改原文件，加上新的待办事项。 ### 示例：格式化数据 假设你有一个 CSV 文件，数据格式混乱。你可以说： ``` 帮我整理这个 CSV 文件，确保每一列都有标题，去除空行，统一日期格式为 YYYY-MM-DD ``` Codex 会读取文件、修改内容、保存结果。 --- ## VI.本节实操任务清单 请按顺序完成以下任务： - [ ] 创建一个测试文件夹，放入不同类型的文件（.txt, .pdf, .jpg, .xlsx） - [ ] 让 Codex 统计文件夹中的文件数量和类型分布 - [ ] 让 Codex 按文件类型自动分类到不同子文件夹 - [ ] 让 Codex 批量重命名一批文件 - [ ] 让 Codex 分析文件夹的空间占用情况 --- ## VII.Summary | 能力 | 说明 | |------|------| | 读取文件 | 支持文本、代码、图片、PDF 等多种格式 | | 读取文件夹 | 列出文件树、统计信息 | | 编辑文件 | 直接修改文件内容 | | 批量操作 | 重命名、移动、分类、格式化 | | 空间分析 | 查看文件大小和占用情况 | --- ## VIII.Next Step [→ Lesson 9 :Natural Language Driven](lesson-9.md)
+# Lesson 8: File Operations — Codex's Most Basic Capability
+
+> 📌 **Learning Objectives**: Master the basic methods for reading, editing, and organizing files with Codex
+> ⏱️ **Estimated Time**: 25 minutes
+> 🎯 **Teaching Rhythm**: Demo first → Explain → Practice
+
+---
+
+## I. Codex Can Read Files on Your Computer
+
+This is one of Codex's most basic and core capabilities.
+
+### 1.1 Drag and Drop Files into the Chat
+
+Open Codex and directly drag files into the chat box or workspace:
+- **Text files** (.txt, .md, .csv) → Codex can read the content directly
+- **Code files** (.py, .js, .html) → Codex can analyze and modify them
+- **Image files** (.jpg, .png) → Codex can recognize the content in the image
+- **PDF files** → Codex can extract text and summarize
+
+### 1.2 Let Codex Read a Folder
+
+Besides individual files, you can also have Codex read an entire folder:
+
+```
+Help me see what files are in this folder.
+```
+
+Codex will list all file names, sizes, modification dates, and other information.
+
+---
+
+## II. Practice 1: Let Codex Help You Organize Documents
+
+### Scenario
+You have a "messy documents" folder containing:
+- Word documents (.docx)
+- PDF files
+- Excel spreadsheets (.xlsx)
+- Text files (.txt)
+
+### Steps
+
+1. Open the folder as the workspace in Codex
+2. Type this command:
+   ```
+   Help me organize this folder. Create subfolders by file type and move similar files into them.
+   ```
+3. Codex will:
+   - Scan all files
+   - Create subfolders like `documents/`, `pdfs/`, `spreadsheets/`, `text-files/`
+   - Move files to the corresponding locations
+
+### Advanced Commands
+
+If you want more fine-grained control:
+```
+Move all PDF files in this folder into a subfolder named "reports"
+```
+or
+```
+Find all files larger than 10MB and move them to a "large-files" folder.
+```
+
+---
+
+## III. Practice 2: Batch Rename Files
+
+### Scenario
+You have a batch of photos with filenames like `IMG_001.jpg`, `IMG_002.jpg`... and you want to give them more meaningful names.
+
+### Steps
+
+1. Open the photos folder as the workspace
+2. Type this command:
+   ```
+   Rename these photos to the format "Trip-Sequence.jpg", e.g., "Trip-001.jpg"
+   ```
+3. Codex will execute the batch rename.
+
+### More Examples
+
+| Your Command | What Codex Does |
+|-------------|-----------------|
+| "Change all .JPG to .jpg" | Unify extension case to lowercase |
+| "Add the date prefix 20260722 to all filenames" | Add a date prefix |
+| "Remove all spaces from filenames" | Clean up filenames |
+
+---
+
+## IV. Practice 3: Analyze Folder Disk Usage
+
+### Scenario
+Your hard drive is nearly full, and you want to know what's taking up space.
+
+### Steps
+
+1. Open the target folder (e.g., the entire "Downloads" folder)
+2. Type this command:
+   ```
+   Help me analyze the disk space usage of this folder and list the top 10 largest files.
+   ```
+3. Codex will generate a report like this:
+
+```
+📊 Folder Space Analysis Report
+Total size: 4.2 GB
+Total files: 328
+
+Top 10 Largest Files:
+1. video_backup.mp4 — 1.2 GB
+2. database_dump.sql — 850 MB
+3. project_archive.zip — 620 MB
+...
+```
+
+---
+
+## V. Can Codex Edit Files?
+
+**Yes!** And this is one of its very powerful capabilities.
+
+### Example: Modifying a Text File
+
+Suppose you have a `notes.txt` file with this content:
+
+```
+To-do list:
+1. Buy milk
+2. Pay rent
+3. Book a dentist appointment
+```
+
+You can tell Codex:
+```
+Add one more item to this to-do list: "Book a haircut appointment", at the end.
+```
+
+Codex will directly modify the original file and add the new item.
+
+### Example: Formatting Data
+
+Suppose you have a CSV file with messy data. You can say:
+```
+Help me clean up this CSV file. Make sure every column has a header, remove empty rows, and unify the date format to YYYY-MM-DD.
+```
+
+Codex will read the file, modify the content, and save the result.
+
+---
+
+## VI. In-Lesson Practice Checklist
+
+Complete the following tasks in order:
+- [ ] Create a test folder and put different types of files in it (.txt, .pdf, .jpg, .xlsx)
+- [ ] Have Codex count the files and show the type distribution
+- [ ] Have Codex automatically classify files by type into different subfolders
+- [ ] Have Codex batch rename a set of files
+- [ ] Have Codex analyze the folder's disk space usage
+
+---
+
+## VII. Summary
+
+| Capability | Description |
+|------------|-------------|
+| Read files | Supports text, code, images, PDF, and more |
+| Read folders | List file trees, show statistics |
+| Edit files | Modify file content directly |
+| Batch operations | Rename, move, classify, format |
+| Space analysis | View file sizes and disk usage |
+
+---
+
+## VIII. Next Step
+
+[→ Lesson 9: Natural Language Driven](lesson-9)

@@ -78,4 +78,4 @@
 
 Once you've checked all the items above, you're ready to start Lesson 1!
 
-👉 [Lesson 1: What is an AI Programming Assistant?](../modules/module-1/lesson-1.md)
+👉 [Lesson 1: What is an AI Programming Assistant?](../modules/module-1/lesson-1)

@@ -1,1 +1,62 @@
-# Lesson 5 :Installing Codex Desktop App（手把手教学） > 📌 **Learning Objectives**:在电脑上成功安装并登录 Codex 桌面 App > ⏱️ **Estimated Time**:15 分钟 > 🎯 **Teaching Rhythm**:手把手演示 + 跟随操作 --- ## I.下载与安装 ### macOS 用户 1. 打开浏览器，访问 ChatGPT 官网:https://chatgpt.com 2. 登录后，在左侧菜单找到 **"Codex"** 或 **"Code Interpreter"** 入口 3. 点击后选择 "Download Desktop App"（如适用） 4. 下载完成后，将应用拖入"应用程序"文件夹 5. 首次打开时，系统会提示"来自未识别开发者"，在"系统偏好设置 → 安全性与隐私"中允许即可 ### Windows 用户 1. 打开浏览器，访问 ChatGPT 官网:https://chatgpt.com 2. 登录后，在左侧菜单找到 **"Codex"** 或 **"Code Interpreter"** 入口 3. 点击后选择 "Download Desktop App"（如适用） 4. 下载完成后，双击安装包 5. 按照安装向导的提示完成安装 > ⚠️ **重要提醒**:只从 OpenAI 官方入口下载，不要从Lesson三方网站下载。 --- ## II.登录 1. 打开 Codex 桌面 App 2. 使用你的 ChatGPT 账号登录 3. 如果使用的是 Plus/Pro 账号，登录后可直接使用高级功能 > 💡 **提示**:如果你还没有 ChatGPT 账号，请先注册。注册过程很简单，只需邮箱或手机号即可。 --- ## III.验证安装 安装成功后，你应该能看到 Codex 的主界面。如果看不到，请检查: - 网络连接是否正常 - ChatGPT 账号是否已登录 - 是否安装了最新版本的 Codex --- ## IV.本节实操任务 1. 按照上述步骤Installing Codex Desktop App 2. 登录你的 ChatGPT 账号 3. 确认你能看到 Codex 的主界面 > 💡 **提示**:如果在安装过程中遇到问题，请参考 [FAQ](../../appendix/faq.md)。 --- ## V.Next Step [→ Lesson 6 :Understanding the Codex Interface](lesson-6.md)
+# Lesson 5: Installing Codex Desktop App (Step-by-Step)
+
+> 📌 **Learning Objectives**: Successfully install and log into the Codex desktop app on your computer
+> ⏱️ **Estimated Time**: 15 minutes
+> 🎯 **Teaching Rhythm**: Step-by-step demo + hands-on practice
+
+---
+
+## I. Download and Install
+
+### macOS Users
+
+1. Open your browser and visit the ChatGPT website: https://chatgpt.com
+2. After logging in, find the **"Codex"** or **"Code Interpreter"** entry in the left menu
+3. Click and select "Download Desktop App" (if available)
+4. After downloading, drag the app into your "Applications" folder
+5. When opening for the first time, the system may warn "from an unidentified developer." Go to "System Preferences → Security & Privacy" and allow it.
+
+### Windows Users
+
+1. Open your browser and visit the ChatGPT website: https://chatgpt.com
+2. After logging in, find the **"Codex"** or **"Code Interpreter"** entry in the left menu
+3. Click and select "Download Desktop App" (if available)
+4. After downloading, double-click the installer
+5. Follow the installation wizard prompts to complete the installation.
+
+> ⚠️ **Important**: Only download from the official OpenAI entry point. Do not download from third-party websites.
+
+---
+
+## II. Log In
+
+1. Open the Codex desktop app
+2. Log in with your ChatGPT account
+3. If you're using a Plus/Pro account, you can access advanced features immediately after logging in.
+
+> 💡 **Tip**: If you don't have a ChatGPT account yet, please sign up first. The registration process is simple — just an email address or phone number is enough.
+
+---
+
+## III. Verify Installation
+
+After successful installation, you should see the Codex main interface. If you can't see it, check:
+- Is your network connection working?
+- Are you logged into your ChatGPT account?
+- Are you running the latest version of Codex?
+
+---
+
+## IV. In-Lesson Practice Tasks
+
+1. Follow the steps above to install Codex
+2. Log into your ChatGPT account
+3. Confirm you can see the Codex main interface.
+
+> 💡 **Tip**: If you encounter issues during installation, refer to the [FAQ](../../appendix/faq).
+
+---
+
+## V. Next Step
+
+[→ Lesson 6: Understanding the Codex Interface](lesson-6)

@@ -1,1 +1,98 @@
-# Lesson 15 :Course Review & Learning Path > 📌 **Learning Objectives**：回顾核心知识点，掌握常见问题排查方法 > ⏱️ **Estimated Time**：15 分钟 > 🎯 **Teaching Rhythm**：总结回顾 + 问题排查 --- ## I.核心知识点回顾 ### Module 1:认识 Codex - Codex 是 OpenAI 的 AI 编程智能体，能读文件、写代码、运行命令 - 它不是聊天工具，也不是简单的代码补全工具 - 类比理解：Codex = 会编程的实习生 ### Module 2:上手准备 - 需要 ChatGPT 账号（推荐 Plus/Pro） - 桌面 App 是最适合新手的入口 - 核心概念：工作区（Workspace）和权限模式 ### Module 3:核心功能 - File Operations：读取、编辑、整理、批量处理 - Natural Language Driven：用说话来指挥 AI - Web Search：搜索 + 整理 + 总结 - 自动化：批量重命名、下载整理、脚本编写 ### Module 4:实用技巧 - Write Better Prompts的四要素：动作 + 对象 + 规则 + 验收标准 - Use Safely：备份重要文件、限制工作区 - Call Skills：PPT 生成、网页开发等预置模板 ### Module 5:项目实战 - Project 1:整理电脑文件夹 - Project 2:生成 PPT 报告 - Project 3:创建个人简介网页 - Project 4:Todo List App --- ## II.常见问题排查 ### 问题 1：登录失败 | 可能原因 | 解决方案 | |---------|---------| | 网络不稳定 | 检查网络连接，尝试切换网络 | | 账号未激活 | 确认邮箱已验证 | | 地区限制 | 确认你的地区是否支持 Codex | ### 问题 2：权限问题 | 症状 | 解决方案 | |------|---------| | Codex 无法访问文件夹 | 检查工作区设置是否正确 | | 操作被拒绝 | 检查权限模式设置 | | 文件无法保存 | 确认文件夹有写入权限 | ### 问题 3：任务卡住 | 症状 | 解决方案 | |------|---------| | Codex 长时间无响应 | 刷新页面或重启应用 | | 输出不符合预期 | 重新描述需求，更具体一些 | | 报错信息看不懂 | 把错误信息复制给 Codex 让它解释 | ### 问题 4：额度不足 | 症状 | 解决方案 | |------|---------| | 提示额度用完 | 升级到 Plus 或 Pro | | 免费额度不够用 | 等待下月重置或使用其他工具 | --- ## III.推荐学习资源 | 资源类型 | 链接/名称 | 说明 | |---------|----------|------| | 官方文档 | chatgpt.com/docs | OpenAI 官方文档 | | 社区论坛 | community.openai.com | 用户交流和经验分享 | | YouTube 教程 | 搜索"Codex tutorial" | 视频教程 | | Reddit 社区 | r/Claude, r/OpenAI | 讨论最新进展 | --- ## IV.Summary | 知识点 | 核心内容 | |--------|---------| | 知识回顾 | 从安装到实战的完整学习路径 | | 问题排查 | 登录、权限、任务卡住、额度等问题 | | 学习资源 | 官方文档、社区、视频教程 | --- ## V.Next Step [→ Lesson 16 :What to Learn Next](lesson-16.md)
+# Lesson 15: Course Review & Learning Path
+
+> 📌 **Learning Objectives**: Review core knowledge points and master common troubleshooting methods
+> ⏱️ **Estimated Time**: 15 minutes
+> 🎯 **Teaching Rhythm**: Summary review + troubleshooting
+
+---
+
+## I. Core Knowledge Review
+
+### Module 1: Understanding Codex
+- Codex is OpenAI's AI programming agent. It can read files, write code, and run commands.
+- It is not a chat tool, nor a simple code completion tool.
+- Analogy: Codex = a programming-savvy intern.
+
+### Module 2: Getting Started
+- You need a ChatGPT account (Plus/Pro recommended).
+- The desktop app is the most beginner-friendly entry point.
+- Core concepts: Workspace and Permission modes.
+
+### Module 3: Core Features
+- **File Operations**: Read, edit, organize, and batch process files.
+- **Natural Language Driven**: Command AI by talking.
+- **Web Search**: Search + organize + summarize.
+- **Automation**: Batch rename, download & organize, write scripts.
+
+### Module 4: Practical Tips
+- **Write Better Prompts**: Four elements — action + object + rules + acceptance criteria.
+- **Use Safely**: Back up important files, limit workspace.
+- **Call Skills**: PPT generation, web development, and other preset templates.
+
+### Module 5: Project Practice
+- Project 1: Organize your computer folder
+- Project 2: Create a PPT report
+- Project 3: Build a personal profile webpage
+- Project 4: Todo List App
+
+---
+
+## II. Common Troubleshooting
+
+### Issue 1: Login Failure
+
+| Possible Cause | Solution |
+|---------------|----------|
+| Unstable network | Check your connection, try switching networks |
+| Account not activated | Confirm your email has been verified |
+| Regional restrictions | Check whether your region supports Codex |
+
+### Issue 2: Permission Problems
+
+| Symptom | Solution |
+|---------|----------|
+| Codex can't access a folder | Check whether the workspace setting is correct |
+| Operation denied | Check the permission mode setting |
+| File can't be saved | Confirm the folder has write permission |
+
+### Issue 3: Task Stuck
+
+| Symptom | Solution |
+|---------|----------|
+| Codex unresponsive for a long time | Refresh the page or restart the app |
+| Output doesn't match expectations | Rephrase your request more specifically |
+| Error message unintelligible | Copy the error message to Codex and ask it to explain |
+
+### Issue 4: Quota Exhausted
+
+| Symptom | Solution |
+|---------|----------|
+| Prompt says quota is used up | Upgrade to Plus or Pro |
+| Free quota not enough | Wait for monthly reset or use alternative tools |
+
+---
+
+## III. Recommended Learning Resources
+
+| Resource Type | Link / Name | Description |
+|--------------|-------------|-------------|
+| Official docs | chatgpt.com/docs | OpenAI official documentation |
+| Community forum | community.openai.com | User discussions and experience sharing |
+| YouTube tutorials | Search "Codex tutorial" | Video tutorials |
+| Reddit communities | r/Claude, r/OpenAI | Discussions on latest developments |
+
+---
+
+## IV. Summary
+
+| Knowledge Point | Core Content |
+|-----------------|--------------|
+| Knowledge review | Complete learning path from installation to practice |
+| Troubleshooting | Login, permission, stuck tasks, quota issues |
+| Learning resources | Official docs, communities, video tutorials |
+
+---
+
+## V. Next Step
+
+[→ Lesson 16: What to Learn Next](lesson-16)

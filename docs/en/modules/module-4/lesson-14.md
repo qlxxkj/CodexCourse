@@ -1,1 +1,116 @@
-# Lesson 14 :Codex Skills（Skills）是什么 > 📌 **Learning Objectives**：了解 Codex 内置技能的概念，学会使用技能快速完成复杂任务 > ⏱️ **Estimated Time**：20 分钟 > 🎯 **Teaching Rhythm**：讲解 + 实操演示 --- ## I.什么是"技能"？ **技能（Skills）** 是 Codex 内置的预置工作模板。 你可以把技能想象成 Codex 的"专长领域"——每个技能都是为特定类型的任务预先优化过的。 ### 类比 如果 Codex 是一个全能助手： - **没有技能** = 你告诉它"帮我做 PPT"，它从零开始猜怎么做 - **有技能** = 你告诉它"用 PPT 技能帮我做一份演示文稿"，它直接套用最佳实践 --- ## II.Codex 有哪些常用技能？ | 技能名称 | 用途 | 适合人群 | |---------|------|---------| | PPT 生成 | 根据主题自动生成演示文稿 | 职场人士、学生 | | 网页开发 | 生成 HTML/CSS/JS 网页 | 任何想快速建站的人 | | 数据分析 | 读取数据文件并生成分析报告 | 分析师、运营 | | 代码生成 | 根据自然语言描述生成代码 | 开发者、学习者 | | 文档整理 | 自动整理和格式化文档 | 行政、文秘 | | 图片处理 | 调整图片尺寸、格式转换等 | 设计师、内容创作者 | > 💡 **提示**：具体可用的技能列表可能随版本更新而变化，请以实际界面为准。 --- ## III.实操一：用 PPT 技能生成演示文稿 ### 步骤 1. 打开 Codex，找到"技能"或"扩展"面板 2. 选择"PPT 生成"技能 3. 输入指令： ``` 帮我做一个关于"2026 年 AI 发展趋势"的演示文稿 要求：10 页左右，包含封面、目录、主要趋势分析、总结 ``` 4. Codex 会： - 联网搜索相关信息 - 生成大纲 - 创建每一页的内容 - 应用合适的模板和配色 5. 审查生成的 PPT，根据需要提出修改意见 --- ## IV.实操二：用网页开发技能做一个小游戏 ### 步骤 1. 选择"网页开发"技能 2. 输入指令： ``` 帮我做一个简单的贪吃蛇游戏网页 要求： - 使用键盘方向键控制蛇的移动 - 吃到食物后蛇身变长，分数增加 - 碰到边界或自身则游戏结束 - 界面简洁美观 ``` 3. Codex 会生成完整的 HTML + CSS + JavaScript 代码 4. 保存为 `snake.html`，在浏览器中打开即可游玩 --- ## V.如何自定义技能？ 当你发现某个任务经常要做时，可以让 Codex 帮你创建一个可复用的技能模板。 ### 示例 ``` 我每个月都要做一份销售汇总报告，你能帮我创建一个自动化技能吗？ ``` Codex 可能会： 1. 分析你过去的报告格式 2. 创建一个模板文件 3. 每次只需填入新数据就能自动生成报告 --- ## VI.本节实操任务清单 请按顺序完成以下任务： - [ ] 浏览 Codex 的技能列表，了解可用技能 - [ ] 使用 PPT 技能生成一份简单的演示文稿 - [ ] 使用网页开发技能创建一个简单的小游戏或工具 - [ ] 思考：哪个技能对你的工作最有用？ --- ## VII.Summary | 知识点 | 核心内容 | |--------|---------| | 技能是什么 | 预置的工作模板，让 Codex 更高效地完成特定任务 | | 常用技能 | PPT 生成、网页开发、数据分析、代码生成等 | | 使用方法 | 在技能面板选择 → 输入指令 → 审查结果 | | 自定义技能 | 可以将常用流程固化为可复用模板 | --- ## VIII.Next Step [→ 进入Module 5:项目实战](../module-5/project-1.md)
+# Lesson 14: Codex Skills
+
+> 📌 **Learning Objectives**: Understand the concept of Codex's built-in skills and learn to use them to quickly complete complex tasks
+> ⏱️ **Estimated Time**: 20 minutes
+> 🎯 **Teaching Rhythm**: Explanation + hands-on demo
+
+---
+
+## I. What Are "Skills"?
+
+**Skills** are Codex's built-in preset workflow templates.
+
+You can think of skills as Codex's "areas of expertise" — each skill is pre-optimized for a specific type of task.
+
+### Analogy
+
+If Codex is an all-around assistant:
+- **Without skills** = You tell it "help me make a PPT," and it guesses from scratch how to do it
+- **With skills** = You tell it "use the PPT skill to help me make a presentation," and it directly applies best practices
+
+---
+
+## II. What Common Skills Does Codex Have?
+
+| Skill Name | Purpose | Best For |
+|------------|--------|----------|
+| PPT Generation | Auto-generate presentations based on a topic | Professionals, students |
+| Web Development | Generate HTML/CSS/JS webpages | Anyone who wants to build a site quickly |
+| Data Analysis | Read data files and generate analysis reports | Analysts, operations staff |
+| Code Generation | Generate code from natural language descriptions | Developers, learners |
+| Document Organization | Auto-organize and format documents | Administrative staff |
+| Image Processing | Resize images, convert formats, etc. | Designers, content creators |
+
+> 💡 **Tip**: The specific list of available skills may change with version updates. Please refer to the actual interface.
+
+---
+
+## III. Practice 1: Use the PPT Skill to Generate a Presentation
+
+### Steps
+
+1. Open Codex and find the "Skills" or "Extensions" panel.
+2. Select the "PPT Generation" skill.
+3. Type this command:
+   ```
+   Help me make a presentation about "AI Development Trends in 2026".
+   Requirements: About 10 pages, including cover, table of contents, main trend analysis, and summary.
+   ```
+4. Codex will:
+   - Search the web for relevant information
+   - Generate an outline
+   - Create content for each slide
+   - Apply suitable templates and color schemes
+5. Review the generated PPT and provide modification feedback as needed.
+
+---
+
+## IV. Practice 2: Use the Web Development Skill to Make a Mini Game
+
+### Steps
+
+1. Select the "Web Development" skill.
+2. Type this command:
+   ```
+   Help me make a simple Snake game webpage.
+   Requirements:
+   - Use keyboard arrow keys to control the snake's movement
+   - The snake grows and the score increases when it eats food
+   - The game ends when the snake hits a wall or itself
+   - Clean and attractive interface
+   ```
+3. Codex will generate complete HTML + CSS + JavaScript code.
+4. Save as `snake.html` and open it in a browser to play.
+
+---
+
+## V. How to Customize Skills?
+
+When you find a task you often need to do, you can ask Codex to help you create a reusable skill template.
+
+### Example
+```
+I need to produce a sales summary report every month. Can you help me create an automation skill for this?
+```
+
+Codex might:
+1. Analyze your past report formats
+2. Create a template file
+3. Each time you just need to fill in new data to auto-generate the report
+
+---
+
+## VI. In-Lesson Practice Checklist
+
+Complete the following tasks in order:
+- [ ] Browse Codex's skill list to understand available skills
+- [ ] Use the PPT skill to generate a simple presentation
+- [ ] Use the Web Development skill to create a simple game or tool
+- [ ] Reflect: Which skill would be most useful for your work?
+
+---
+
+## VII. Summary
+
+| Knowledge Point | Core Content |
+|-----------------|--------------|
+| What skills are | Preset workflow templates that let Codex complete specific tasks more efficiently |
+| Common skills | PPT generation, web development, data analysis, code generation, etc. |
+| How to use | Select in skills panel → Enter command → Review results |
+| Custom skills | You can solidify common workflows into reusable templates |
+
+---
+
+## VIII. Next Step
+
+[→ Enter Module 5: Project Practice](../module-5/project-1)

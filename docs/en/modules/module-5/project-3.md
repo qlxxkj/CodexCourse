@@ -1,1 +1,93 @@
-# Project 3:Build a Simple Website（挑战级） > 📌 **Learning Objectives**：学会用自然语言让 Codex 生成并修改网页 > ⏱️ **Estimated Time**：40 分钟 > 🎯 **学到的能力**：自然语言编程、迭代优化、测试验证 --- ## I.任务描述 用自然语言让 Codex 生成一个个人简介网页。 --- ## II.操作步骤 ### 步骤 1：描述需求 打开 Codex，输入： ``` 帮我做一个个人简介网页，要求： - 包含头像区域（用一个占位符） - 显示姓名和一句话简介 - 技能列表（用标签形式展示 3-5 个技能） - 联系方式区域（邮箱和社交媒体链接） - 整体风格简洁现代，使用蓝色作为主色调 - 代码保存为 index.html ``` ### 步骤 2：查看生成结果 Codex 会生成完整的 HTML 代码。将代码保存为 `index.html`，双击在浏览器中打开查看效果。 ### 步骤 3：根据效果提出修改要求 观察页面后，你可能会有以下想法： ``` 1. "把头像从圆形改成圆角方形" 2. "在技能列表下面加一个项目展示区域" 3. "把配色方案改成深色模式" 4. "增加一个关于我的段落，大概 200 字" 5. "让页面在手机上也好看（响应式设计）" ``` ### 步骤 4：迭代优化 每提出一次修改要求，Codex 都会更新代码。重复这个过程直到满意为止。 --- ## III.进阶挑战 ### 添加交互功能 ``` 在页面上加一个按钮，点击后切换深色/浅色主题 ``` ### 添加动画效果 ``` 给页面添加一些简单的动画效果，比如元素淡入、悬停效果等 ``` ### 部署上线 ``` 帮我生成一个可以直接部署到 GitHub Pages 的项目结构 ``` --- ## IV.本节实操任务清单 请按顺序完成以下任务： - [ ] 让 Codex 生成个人简介网页的初版 - [ ] 在浏览器中预览效果 - [ ] 至少进行 3 轮修改优化 - [ ] 将最终版本保存到本地 --- ## V.Summary | 学到的能力 | 具体说明 | |-----------|---------| | 自然语言编程 | 用中文描述网页需求 | | 迭代优化 | 通过多次追问不断完善 | | 测试验证 | 在浏览器中查看效果 | | 问题解决 | 发现不足时告诉 Codex 如何改进 | --- ## VI.Next Step [→ Project 4:Todo List App](project-4.md)
+# Project 3: Build a Simple Website (Advanced Level)
+
+> 📌 **Learning Objectives**: Learn to use natural language to have Codex generate and modify webpages
+> ⏱️ **Estimated Time**: 40 minutes
+> 🎯 **Skills learned**: Natural language programming, iterative optimization, testing & validation
+
+---
+
+## I. Task Description
+
+Use natural language to have Codex generate a personal profile webpage.
+
+---
+
+## II. Operation Steps
+
+### Step 1: Describe Your Requirements
+
+Open Codex and type:
+```
+Help me build a personal profile webpage with these requirements:
+- Include an avatar area (use a placeholder)
+- Display name and a one-sentence bio
+- Skills list (displayed as tags, 3-5 skills)
+- Contact info area (email and social media links)
+- Clean, modern overall style with blue as the primary color
+- Save the code as index.html
+```
+
+### Step 2: Review the Generated Result
+
+Codex will generate complete HTML code. Save the code as `index.html`, double-click to open it in a browser, and check the result.
+
+### Step 3: Request Modifications Based on What You See
+
+After observing the page, you might have these thoughts:
+```
+1. "Change the avatar from a circle to a rounded square"
+2. "Add a project showcase section below the skills list"
+3. "Change the color scheme to dark mode"
+4. "Add an 'About Me' paragraph, about 200 words"
+5. "Make the page look good on mobile too (responsive design)"
+```
+
+### Step 4: Iterative Optimization
+
+Each time you make a modification request, Codex will update the code. Repeat this process until you're satisfied.
+
+---
+
+## III. Advanced Challenges
+
+### Add Interactive Features
+```
+Add a button to the page that toggles between dark and light themes when clicked.
+```
+
+### Add Animation Effects
+```
+Add some simple animation effects to the page, such as fade-in elements, hover effects, etc.
+```
+
+### Deploy Online
+```
+Help me generate a project structure that can be directly deployed to GitHub Pages.
+```
+
+---
+
+## IV. In-Lesson Practice Checklist
+
+Complete the following tasks in order:
+- [ ] Have Codex generate the first version of a personal profile webpage
+- [ ] Preview the result in a browser
+- [ ] Go through at least 3 rounds of modification and optimization
+- [ ] Save the final version locally
+
+---
+
+## V. Summary
+
+| Skill Learned | Description |
+|---------------|-------------|
+| Natural language programming | Describe webpage requirements in natural language |
+| Iterative optimization | Continuously refine through multiple rounds of follow-up |
+| Testing & validation | Check results in a browser |
+| Problem solving | Tell Codex how to improve when you find issues |
+
+---
+
+## VI. Next Step
+
+[→ Project 4: Todo List App](project-4)

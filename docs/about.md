@@ -41,4 +41,4 @@ This course is designed for absolute beginners who want to learn how to use Open
 ## 联系方式
 
 - GitHub: [qlxxkj/CodexCourse](https://github.com/qlxxkj/CodexCourse)
-- 反馈与建议: [课后反馈表](/appendix/feedback.md)
+- 反馈与建议: [课后反馈表](/appendix/feedback)

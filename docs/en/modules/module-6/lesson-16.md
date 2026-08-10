@@ -1,1 +1,117 @@
-# Lesson 16 :What to Learn Next > 📌 **Learning Objectives**：了解 Codex 进阶学习方向，规划后续学习路径 > ⏱️ **Estimated Time**：15 分钟 > 🎯 **Teaching Rhythm**：介绍 + 引导 --- ## I.你已经学会了什么？ 完成这门课程后，你应该能够： - ✅ 理解 Codex 是什么、能做什么 - ✅ 安装和登录 Codex 桌面 App - ✅ 使用自然语言指挥 Codex 完成File Operations - ✅ 让 Codex 联网搜索并整理资料 - ✅ 使用 Codex 技能快速完成复杂任务 - ✅ 独立完成从需求到交付的完整项目 --- ## II.进阶学习方向 ### 方向 1：CLI 命令行版本 如果你已经熟悉桌面 App，可以尝试命令行版本。 **适合人群**：想更灵活地控制 Codex 的用户 **学习内容**： - 安装 Codex CLI - 使用命令行参数指定工作区和指令 - 编写脚本自动化调用 Codex ```bash # 示例命令 codex --workspace ./my-project "帮我重构这个项目的代码" ``` ### 方向 2：自定义技能 把常用的工作流固化为可复用的技能模板。 **适合人群**：有固定重复性工作的用户 **学习内容**： - 分析自己的高频工作场景 - 设计技能模板的结构 - 用 Codex 生成技能配置文件 - 测试和优化技能效果 ### 方向 3：MCP 扩展 MCP（Model Context Protocol）是连接外部工具和数据源的协议。 **适合人群**：想将 Codex 与更多工具集成的用户 **学习内容**： - 了解 MCP 的基本概念 - 配置 MCP 服务器连接外部 API - 使用 MCP 扩展 Codex 的能力 ### 方向 4：多智能体协作 同时让多个 AI 智能体做不同的事。 **适合人群**：处理复杂项目的用户 **学习内容**： - 设计多智能体协作流程 - 分配不同任务给不同的智能体 - 整合各智能体的输出结果 --- ## III.实践建议 ### 每天练一点 - 每天花 10-15 分钟用 Codex 完成一个小任务 - 记录每次使用的指令和结果 - 逐步积累自己的"指令库" ### 加入社区 - 加入 Codex/ChatGPT 用户社区 - 分享你的使用经验和技巧 - 学习别人的创意用法 ### 持续学习 - 关注 OpenAI 的官方更新 - 尝试新功能和新技能 - 探索新的应用场景 --- ## IV.Summary | 学习方向 | 适合人群 | 核心价值 | |---------|---------|---------| | CLI 命令行 | 进阶用户 | 更灵活的自动化控制 | | 自定义技能 | 有固定工作流的用戶 | 提高效率，减少重复劳动 | | MCP 扩展 | 技术爱好者 | 连接更多外部工具 | | 多智能体协作 | 复杂项目处理者 | 并行处理，提高效率 | --- ## V.结语 恭喜你完成了这门课程！ 记住，Codex 只是一个工具，真正有价值的是你用它解决了什么问题。不要害怕犯错，每一次"不对"都是学习的机会。 **最重要的是——开始用起来吧！** --- ## VI.反馈与改进 如果你觉得这门课程对你有帮助，或者有任何改进建议，欢迎填写 [Feedback Form](../../appendix/feedback.md)。
+# Lesson 16: What to Learn Next
+
+> 📌 **Learning Objectives**: Understand advanced learning directions for Codex and plan your next steps
+> ⏱️ **Estimated Time**: 15 minutes
+> 🎯 **Teaching Rhythm**: Introduction + guidance
+
+---
+
+## I. What Have You Learned?
+
+After completing this course, you should be able to:
+- ✅ Understand what Codex is and what it can do
+- ✅ Install and log into the Codex desktop app
+- ✅ Command Codex to complete File Operations using natural language
+- ✅ Have Codex search the web and organize materials
+- ✅ Use Codex skills to quickly complete complex tasks
+- ✅ Independently complete a full project from requirement to delivery
+
+---
+
+## II. Advanced Learning Directions
+
+### Direction 1: CLI (Command Line) Version
+
+If you're already familiar with the desktop app, try the command line version.
+
+**Best for**: Users who want more flexible control over Codex.
+
+**What you'll learn**:
+- Install Codex CLI
+- Use command-line arguments to specify workspace and prompts
+- Write scripts to automate Codex calls
+
+```bash
+# Example command
+codex --workspace ./my-project "Help me refactor this project's code"
+```
+
+### Direction 2: Custom Skills
+
+Solidify your common workflows into reusable skill templates.
+
+**Best for**: Users with fixed, repetitive work patterns.
+
+**What you'll learn**:
+- Analyze your high-frequency work scenarios
+- Design the structure of skill templates
+- Use Codex to generate skill configuration files
+- Test and optimize skill effectiveness
+
+### Direction 3: MCP Extensions
+
+MCP (Model Context Protocol) is a protocol for connecting external tools and data sources.
+
+**Best for**: Users who want to integrate Codex with more tools.
+
+**What you'll learn**:
+- Understand the basics of MCP
+- Configure MCP servers to connect to external APIs
+- Use MCP to extend Codex's capabilities
+
+### Direction 4: Multi-Agent Collaboration
+
+Have multiple AI agents work on different things simultaneously.
+
+**Best for**: Users handling complex projects.
+
+**What you'll learn**:
+- Design multi-agent collaboration workflows
+- Assign different tasks to different agents
+- Integrate output from multiple agents
+
+---
+
+## III. Practice Suggestions
+
+### Practice a Little Every Day
+- Spend 10-15 minutes each day using Codex to complete a small task
+- Record the prompts and results each time
+- Gradually build your own "prompt library"
+
+### Join the Community
+- Join Codex/ChatGPT user communities
+- Share your usage experiences and tips
+- Learn creative approaches from others
+
+### Keep Learning
+- Follow OpenAI's official updates
+- Try new features and skills
+- Explore new application scenarios
+
+---
+
+## IV. Summary
+
+| Learning Direction | Best For | Core Value |
+|-------------------|----------|------------|
+| CLI command line | Advanced users | More flexible automation control |
+| Custom skills | Users with fixed workflows | Improve efficiency, reduce repetitive work |
+| MCP extensions | Tech enthusiasts | Connect more external tools |
+| Multi-agent collaboration | Complex project handlers | Parallel processing, improve efficiency |
+
+---
+
+## V. Closing Words
+
+Congratulations on completing this course!
+
+Remember, Codex is just a tool. What truly matters is what problems you solve with it. Don't be afraid to make mistakes — every "that's not right" is a learning opportunity.
+
+**The most important thing — just start using it!**
+
+---
+
+## VI. Feedback & Improvement
+
+If you found this course helpful, or have any suggestions for improvement, please feel free to fill out our [Feedback Form](../../appendix/feedback).
