@@ -8,10 +8,10 @@ hero:
   actions:
     - theme: brand
       text: → 开始第 1 课
-      link: /modules/module-1/lesson-1
+      link: /zh/modules/module-1/lesson-1
     - theme: alt
       text: 课程简介
-      link: /appendix/prep-checklist
+      link: /zh/appendix/prep-checklist
 
 features:
   - title: 整理文件

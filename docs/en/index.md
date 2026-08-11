@@ -94,14 +94,14 @@ Before starting, make sure you have the following ready:
 3. **Stable Internet Connection** — Codex needs to connect to the internet
 4. **A Folder to Organize** — For practice (e.g., "Downloads" folder)
 
-> 📋 For the detailed preparation checklist, please refer to [Pre-course Checklist](appendix/prep-checklist.md)
+> 📋 For the detailed preparation checklist, please refer to [Pre-course Checklist](/en/appendix/prep-checklist.md)
 
 ## What If I Encounter Problems?
 
-- Installation issues → See [FAQ](appendix/faq.md)
-- Don't understand terms → See [Glossary](appendix/glossary.md)
-- Self-assessment after course → Fill out [Feedback Form](appendix/feedback.md)
+- Installation issues → See [FAQ](/en/appendix/faq.md)
+- Don't understand terms → See [Glossary](/en/appendix/glossary.md)
+- Self-assessment after course → Fill out [Feedback Form](/en/appendix/feedback.md)
 
 ---
 
-*Ready? Let's start Lesson 1 👉 [Lesson 1: What is an AI Programming Assistant?](modules/module-1/lesson-1)*
+*Ready? Let's start Lesson 1 👉 [Lesson 1: What is an AI Programming Assistant?](/en/modules/module-1/lesson-1)*

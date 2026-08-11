@@ -7,10 +7,8 @@ export default defineConfig({
   lang: 'zh-CN',
 
   head: [
-    // Google AdSense — 请替换为实际发布者 ID（发布后从 AdSense 控制台获取）
     ['script', { 'data-ad-client': 'ca-pub-XXXXXXXXXXXXXXXX', 'async': 'async' }],
     ['meta', { name: 'google-adsense-account', content: 'ca-pub-XXXXXXXXXXXXXXXX' }],
-    // Open Graph
     ['meta', { property: 'og:locale:alternate', content: 'en_US' }],
     ['meta', { property: 'og:locale', content: 'zh_CN' }],
   ],
@@ -19,7 +17,7 @@ export default defineConfig({
     root: {
       label: '中文',
       lang: 'zh-CN',
-      link: '/',
+      link: '/zh/',
       title: 'Codex 从零到一',
       description: '让 AI 帮你搞定编程与办公',
     },
@@ -35,15 +33,15 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     nav: [
-      { text: '课程', link: '/' },
-      { text: 'About', link: '/about' },
+      { text: '课程', link: '/zh/' },
+      { text: 'About', link: '/zh/about' },
     ],
     sidebar: {
-      '/': [
+      '/zh/': [
         {
           text: '课程介绍',
           items: [
-            { text: '课程简介', link: '/' },
+            { text: '课程简介', link: '/zh/' },
             { text: '课前准备清单', link: '/zh/appendix/prep-checklist' },
             { text: '术语速查表', link: '/zh/appendix/glossary' },
             { text: '常见问题 FAQ', link: '/zh/appendix/faq' },
@@ -186,8 +184,8 @@ export default defineConfig({
       provider: 'local',
       options: {
         locales: {
-          zh: { placeholders: '搜索课程内容...', },
-          en: { placeholders: 'Search courses...', },
+          zh: { placeholders: '搜索课程内容...' },
+          en: { placeholders: 'Search courses...' },
         },
       },
     },
