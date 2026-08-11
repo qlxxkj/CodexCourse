@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模块三 — 核心功能 | CodexCourse PPT</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root { --ikb:#0068B8; --lemon:#FFE135; --lemon-green:#7CB342; --safety-orange:#FF6B35; --dark:#1A1A1A; --gray:#6B7280; --light-gray:#F3F4F6; --grid:#E5E7EB; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; font-family:'Inter',-apple-system,sans-serif; background:var(--light-gray); color:var(--dark); -webkit-font-smoothing:antialiased; }
+  body::before { content:''; position:fixed; inset:0; background-image:radial-gradient(circle,var(--grid) 1px,transparent 1px); background-size:24px 24px; pointer-events:none; z-index:0; }
+  .deck { display:flex; width:100vw; height:100vh; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; position:relative; z-index:1; }
+  .deck::-webkit-scrollbar { display:none; }
+  .slide { flex:0 0 100vw; height:100vh; scroll-snap-align:start; display:flex; flex-direction:column; padding:60px 80px; position:relative; overflow:hidden; background:var(--white); border-right:2px solid var(--grid); }
+  .slide-num { position:absolute; top:24px; right:32px; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; color:var(--gray); letter-spacing:0.05em; }
+  .slide.section-divider { background:var(--ikb); color:var(--white); }
+  .slide.section-divider .slide-num { color:rgba(255,255,255,0.5); }
+  .slide.section-divider .accent-bar { background:var(--lemon); }
+  .slide.title-slide { background:var(--ikb); color:var(--white); justify-content:center; align-items:flex-start; padding:80px; }
+  .slide.title-slide .slide-num { color:rgba(255,255,255,0.4); }
+  .slide.title-slide .module-tag { font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--lemon); margin-bottom:24px; display:block; }
+  .slide.title-slide h1 { font-size:clamp(36px,5vw,64px); font-weight:800; line-height:1.1; letter-spacing:-0.02em; margin-bottom:24px; max-width:800px; }
+  .slide.title-slide .subtitle { font-size:18px; font-weight:400; color:rgba(255,255,255,0.7); max-width:560px; line-height:1.6; }
+  .slide.title-slide .module-num { position:absolute; bottom:60px; right:80px; font-family:'JetBrains Mono',monospace; font-size:120px; font-weight:900; color:rgba(255,255,255,0.06); line-height:1; }
+  .slide-header { margin-bottom:28px; flex-shrink:0; }
+  .accent-bar { width:48px; height:4px; background:var(--lemon); margin-bottom:16px; }
+  .slide-title { font-size:clamp(22px,2.5vw,32px); font-weight:700; letter-spacing:-0.01em; color:var(--dark); line-height:1.2; }
+  .slide-subtitle { font-size:14px; color:var(--gray); margin-top:6px; font-weight:400; }
+  .slide-body { flex:1; overflow-y:auto; scrollbar-width:thin; scrollbar-color:var(--grid) transparent; }
+  .slide-body::-webkit-scrollbar { width:4px; }
+  .slide-body::-webkit-scrollbar-track { background:transparent; }
+  .slide-body::-webkit-scrollbar-thumb { background:var(--grid); border-radius:2px; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:32px; height:100%; }
+  .three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; height:100%; }
+  .three-col .col, .two-col .col { display:flex; flex-direction:column; gap:12px; }
+  .card { background:var(--light-gray); border:1px solid var(--grid); border-radius:8px; padding:18px 20px; display:flex; flex-direction:column; gap:8px; }
+  .card.highlight { border-left:4px solid var(--lemon); background:#FFFEF5; }
+  .card.warning { border-left:4px solid var(--safety-orange); background:#FFF8F5; }
+  .card.info { border-left:4px solid var(--ikb); background:#F0F7FF; }
+  .card.green { border-left:4px solid var(--lemon-green); background:#F5FBF0; }
+  .card-label { font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray); }
+  .card-title { font-size:15px; font-weight:600; color:var(--dark); line-height:1.4; }
+  .card-body { font-size:13px; color:var(--gray); line-height:1.6; }
+  .big-stat { font-family:'JetBrains Mono',monospace; font-size:48px; font-weight:800; color:var(--ikb); line-height:1; }
+  .big-stat-label { font-size:13px; color:var(--gray); margin-top:4px; }
+  .swiss-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .swiss-table th { background:var(--ikb); color:var(--white); font-weight:600; text-align:left; padding:10px 14px; font-size:12px; letter-spacing:0.02em; }
+  .swiss-table td { padding:10px 14px; border-bottom:1px solid var(--grid); color:var(--dark); vertical-align:top; line-height:1.5; }
+  .swiss-table tr:last-child td { border-bottom:none; }
+  .swiss-table tr:nth-child(even) td { background:var(--light-gray); }
+  .code-block { background:var(--dark); color:#E5E7EB; border-radius:8px; padding:14px 18px; font-family:'JetBrains Mono',monospace; font-size:12px; line-height:1.7; overflow-x:auto; margin:6px 0; white-space:pre-wrap; word-break:break-all; }
+  .quote { font-size:20px; font-weight:600; color:var(--dark); line-height:1.5; border-left:4px solid var(--lemon); padding-left:20px; margin:14px 0; }
+  .flow { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .flow-step { background:var(--light-gray); border:1px solid var(--grid); border-radius:6px; padding:10px 16px; font-size:13px; font-weight:500; color:var(--dark); }
+  .flow-arrow { font-size:18px; color:var(--ikb); font-weight:700; }
+  .summary-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .summary-item { background:var(--light-gray); border:1px solid var(--grid); border-radius:8px; padding:14px 18px; display:flex; flex-direction:column; gap:6px; }
+  .summary-item .num { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ikb); font-weight:600; }
+  .summary-item .text { font-size:13px; color:var(--dark); line-height:1.5; }
+  .checklist { display:flex; flex-direction:column; gap:8px; }
+  .checklist-item { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--dark); line-height:1.5; }
+  .check-icon { flex-shrink:0; width:18px; height:18px; border:2px solid var(--grid); border-radius:4px; margin-top:1px; }
+  .check-icon.checked { background:var(--lemon-green); border-color:var(--lemon-green); position:relative; }
+  .check-icon.checked::after { content:'✓'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:11px; color:white; font-weight:700; }
+  .nav-hint { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--gray); background:rgba(255,255,255,0.9); padding:6px 14px; border-radius:20px; border:1px solid var(--grid); z-index:100; pointer-events:none; }
+  .progress-bar { position:fixed; top:0; left:0; height:3px; background:var(--lemon); z-index:100; transition:width 0.3s ease; }
+  .module-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gray); margin-bottom:8px; }
+  .divider { width:100%; height:1px; background:var(--grid); margin:14px 0; }
+  .tag { display:inline-block; font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; padding:3px 8px; border-radius:4px; letter-spacing:0.05em; }
+  .tag.blue { background:#DBEAFE; color:var(--ikb); }
+  .tag.yellow { background:#FEF9C3; color:#92400E; }
+  .tag.green { background:#D1FAE5; color:#065F46; }
+  .tag.orange { background:#FED7AA; color:#9A3412; }
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<div class="deck" id="deck"><div class="slide title-slide"><div class="slide-num">01 / 15</div><span class="module-tag">MODULE 03 — 核心功能</span><h1>核心功能</h1><p class="subtitle">文件操作 · 自然语言驱动 · 联网检索 · 自动化</p><div class="module-num">0三</div></div><div class="slide section-divider"><div class="slide-num">02 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块三</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">第 8 课</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">文件操作</p></div><div class="slide"><div class="slide-num">03 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块三</div><h2 class="slide-title">Codex 能读取你电脑上的文件</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">支持的格式</div>
+              <div class="card-body" style="line-height:2.2;">
+                <div>📄 <strong>文本文件</strong>（.txt, .md, .csv）→ 直接阅读内容</div>
+                <div>💻 <strong>代码文件</strong>（.py, .js, .html）→ 分析并修改</div>
+                <div>🖼️ <strong>图片文件</strong>（.jpg, .png）→ 识别图片内容</div>
+                <div>📑 <strong>PDF 文件</strong> → 提取文字并总结</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">读取文件夹</div>
+              <div class="card-title">指令示例</div>
+              <div class="code-block" style="font-size:12px;">帮我看看这个文件夹里有什么文件</div>
+              <div class="card-body" style="margin-top:8px;">Codex 会列出所有文件名、大小、修改日期等信息。</div>
+            </div>
+            <div class="card">
+              <div class="card-label">实操：整理文档</div>
+              <div class="code-block" style="font-size:12px;">帮我整理这个文件夹，
+按文件类型创建子文件夹</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">04 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块三</div><h2 class="slide-title">批量操作 & 文件编辑</h2></div><div class="slide-body"><div class="three-col">
+          <div class="col">
+            <div class="card">
+              <div class="card-label">批量重命名</div>
+              <div class="code-block" style="font-size:11px;">把这些照片改成"旅行-序号.jpg"</div>
+              <div class="card-body" style="font-size:11px;">Codex 执行批量重命名，支持规则自定义。</div>
+            </div>
+            <div class="card green">
+              <div class="card-label">更多示例</div>
+              <div class="card-body" style="font-size:11px;line-height:2;">
+                <div>📌 "把所有 .JPG 改成 .jpg" → 统一小写</div>
+                <div>📌 "加上日期前缀 20260722" → 添加前缀</div>
+                <div>📌 "去掉所有空格" → 清理文件名</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">文件编辑</div>
+              <div class="card-title">Codex 能直接修改文件</div>
+              <div class="code-block" style="font-size:11px;">帮我把待办事项加上一项：
+"预约理发"</div>
+              <div class="card-body" style="font-size:11px;margin-top:6px;">直接修改原文件，无需手动编辑。</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">空间分析</div>
+              <div class="code-block" style="font-size:11px;">帮我分析这个文件夹的空间占用情况，
+列出最大的 10 个文件</div>
+              <div class="card-body" style="font-size:11px;margin-top:6px;">生成类似报告：<br>总大小 4.2GB，Top 10 最大文件...</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide section-divider"><div class="slide-num">05 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块三</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">第 9 课</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">自然语言驱动</p></div><div class="slide"><div class="slide-num">06 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块三</div><h2 class="slide-title">什么是 Vibe Coding？</h2></div><div class="slide-body"><div class="quote">用自然语言描述你想要什么，让 AI 来完成具体实现。</div>
+        <div class="two-col" style="margin-top:20px;">
+          <div class="col">
+            <div class="card warning">
+              <div class="card-label">传统编程方式</div>
+              <div class="card-title">自己买菜、洗菜、切菜、炒菜</div>
+              <div class="card-body">每一步都要亲自动手，需要掌握技术细节。</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">Vibe Coding</div>
+              <div class="card-title">告诉厨师"我要宫保鸡丁，少辣"</div>
+              <div class="card-body">你不需要会做饭，只需要会点菜。清楚知道要什么，用简洁语言描述即可。</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">07 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块三</div><h2 class="slide-title">好指令的四个要素</h2></div><div class="slide-body"><div class="card highlight" style="margin-bottom:16px;">
+          <div class="card-label">指令公式</div>
+          <div class="card-title" style="font-size:18px;">[动作] + [对象] + [规则/要求] + [期望结果]</div>
+        </div>
+        <div class="three-col">
+          <div class="col">
+            <div class="card warning">
+              <div class="card-label">❌ 差的指令</div>
+              <div class="card-title">"帮我做个东西"</div>
+              <div class="card-body">太模糊，Codex 不知道你要什么。</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-label">✅ 好的指令</div>
+              <div class="card-title">"帮我做一个个人简介网页"</div>
+              <div class="card-body">具体说明了要做什么，但还是不够具体。</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card green">
+              <div class="card-label">✅✅ 更好的指令</div>
+              <div class="card-title">"帮我做一个个人简介网页，主色调蓝色，简洁现代风格，保存为 index.html"</div>
+              <div class="card-body">包含格式、风格、验收标准。</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">08 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块三</div><h2 class="slide-title">学会"追问"和"修正"</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card">
+              <div class="card-label">第一轮</div>
+              <div class="code-block" style="font-size:11px;">你：帮我做一个个人简介网页
+Codex：生成了一个基本网页</div>
+            </div>
+            <div class="card">
+              <div class="card-label">第二轮</div>
+              <div class="code-block" style="font-size:11px;">你：页面太简单了，加一个
+   项目展示区域
+Codex：添加了项目展示区域</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-label">第三轮</div>
+              <div class="code-block" style="font-size:11px;">你：把主色调改成蓝色，
+   字体换成更大的
+Codex：修改了颜色和字体</div>
+            </div>
+            <div class="card highlight">
+              <div class="card-label">关键技巧</div>
+              <div class="card-body" style="line-height:2;">
+                <div>✅ 不要怕说"不对"，直接告诉 Codex 哪里不对</div>
+                <div>✅ 给具体反馈，不要说"不好看"，说"标题字体加大"</div>
+                <div>✅ 分步推进，大任务拆成小步骤</div>
+              </div>
+            </div>
+          </div>
+        </div></div></div><div class="slide section-divider"><div class="slide-num">09 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块三</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">第 10 课</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">联网与资料检索</p></div><div class="slide"><div class="slide-num">10 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块三</div><h2 class="slide-title">Codex 可以联网搜索</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">何时使用联网搜索？</div>
+              <div class="card-body" style="line-height:2.2;">
+                <div>✅ 回答常识性问题</div>
+                <div>✅ 查询最新新闻</div>
+                <div>✅ 查找产品评测</div>
+                <div>✅ 回答编程技术问题</div>
+                <div>❌ 分析本地文件内容</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">实操：调研 AI 发展趋势</div>
+              <div class="code-block" style="font-size:11px;">帮我调研 2026 年 AI 领域发展趋势，
+包括：大模型进展、办公场景应用、
+对就业影响。每部分 3 个要点，
+注明信息来源。</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">11 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块三</div><h2 class="slide-title">从联网搜索到生成报告</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card">
+              <div class="card-label">进阶用法 1</div>
+              <div class="code-block" style="font-size:11px;">帮我阅读这篇文章 [链接]，
+总结出 5 个核心观点</div>
+            </div>
+            <div class="card">
+              <div class="card-label">进阶用法 2</div>
+              <div class="code-block" style="font-size:11px;">帮我阅读这篇文章，
+找出其中提到的所有工具/产品</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">进阶用法 3</div>
+              <div class="code-block" style="font-size:11px;">根据这篇文章的内容，
+写一份适合发在朋友圈的
+推荐文案</div>
+            </div>
+            <div class="card green">
+              <div class="card-label">核心能力</div>
+              <div class="card-title">联网搜索 → 信息提取 → 内容整理 → 格式输出</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide section-divider"><div class="slide-num">12 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块三</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">第 11 课</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">自动化任务</p></div><div class="slide"><div class="slide-num">13 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块三</div><h2 class="slide-title">什么是"自动化任务"？</h2></div><div class="slide-body"><div class="quote">你告诉 Codex 要做什么，它自己一步步完成整个过程，不需要你反复操作。</div>
+        <div class="two-col" style="margin-top:20px;">
+          <div class="col">
+            <div class="card warning">
+              <div class="card-label">手动方式</div>
+              <div class="card-title">搬家：自己打包、贴标签、搬运</div>
+              <div class="card-body">每一步都要亲自动手，耗时耗力。</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">自动化方式</div>
+              <div class="card-title">Codex 就是那个"助手"</div>
+              <div class="card-body">你告诉它要做什么，它自己完成整个过程。</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">14 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块三</div><h2 class="slide-title">实操：批量重命名 & 自动下载整理</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card">
+              <div class="card-label">实操一：批量重命名</div>
+              <div class="code-block" style="font-size:11px;">帮我把这些图片按日期重命名，
+格式为"拍摄日期_序号.jpg"
+例如：2026-07-20_001.jpg</div>
+              <div class="card-body" style="margin-top:6px;font-size:12px;">Codex 读取 EXIF 信息，批量重命名。</div>
+            </div>
+            <div class="card highlight">
+              <div class="card-label">实操二：自动下载整理</div>
+              <div class="code-block" style="font-size:11px;">帮我搜索"远程办公最佳实践"，
+找出前 5 条结果，整理成文档</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">一次性任务 vs 可复用流程</div>
+              <div class="card-body" style="line-height:2;">
+                <div><strong>一次性任务：</strong>"合并这些 PDF"</div>
+                <div style="margin:6px 0;border-top:1px solid var(--grid);"></div>
+                <div><strong>可复用流程：</strong>写一个脚本，每次运行自动处理</div>
+              </div>
+            </div>
+            <div class="card green">
+              <div class="card-label">进阶：创建自动化脚本</div>
+              <div class="code-block" style="font-size:11px;">帮我写一个 Python 脚本，
+读取文件夹里的日志文件，
+生成每日工作汇总报告</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">15 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块三</div><h2 class="slide-title">模块三 · 核心功能小结</h2></div><div class="slide-body"><div class="flow" style="margin-bottom:20px;">
+          <div class="flow-step" style="background:var(--safetyOrange);color:white;">文件操作</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" style="background:var(--safetyOrange);color:white;">自然语言驱动</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" style="background:var(--safetyOrange);color:white;">联网检索</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" style="background:var(--safetyOrange);color:white;">自动化任务</div>
+        </div>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <div class="num">01</div>
+            <div class="text"><strong>文件操作</strong><br>读取、编辑、批量重命名、分类整理</div>
+          </div>
+          <div class="summary-item">
+            <div class="num">02</div>
+            <div class="text"><strong>Vibe Coding</strong><br>用自然语言描述目标，指令四要素：动作+对象+规则+期望结果</div>
+          </div>
+          <div class="summary-item">
+            <div class="num">03</div>
+            <div class="text"><strong>联网检索</strong><br>搜索 → 提取 → 整理 → 输出报告</div>
+          </div>
+          <div class="summary-item">
+            <div class="num">04</div>
+            <div class="text"><strong>自动化</strong><br>一次性任务 → 可复用脚本，长期提效</div>
+          </div>
+        </div></div></div></div>
+<div class="nav-hint">← → 翻页 &nbsp;|&nbsp; 15 页</div>
+<script>
+(function(){
+  var deck=document.getElementById('deck');
+  var slides=deck.querySelectorAll('.slide');
+  var total=slides.length;
+  var bar=document.getElementById('progressBar');
+  function update(){
+    var sl=deck.scrollLeft, sw=window.innerWidth;
+    var pct=Math.min(100, Math.round((sl/sw+1)/total*100));
+    bar.style.width=pct+'%';
+  }
+  deck.addEventListener('scroll',update);
+  update();
+  document.addEventListener('keydown',function(e){
+    var cur=Array.from(slides).indexOf(deck.querySelector('.slide'));
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){
+      e.preventDefault();
+      if(cur<total-1)slides[cur+1].scrollIntoView({behavior:'smooth',inline:'start'});
+    }else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){
+      e.preventDefault();
+      if(cur>0)slides[cur-1].scrollIntoView({behavior:'smooth',inline:'start'});
+    }
+  });
+  var tx=0;
+  deck.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;});
+  deck.addEventListener('touchend',function(e){
+    var d=tx-e.changedTouches[0].clientX;
+    var cur=Array.from(slides).indexOf(deck.querySelector('.slide'));
+    if(Math.abs(d)>50){
+      if(d>0&&cur<total-1)slides[cur+1].scrollIntoView({behavior:'smooth',inline:'start'});
+      else if(d<0&&cur>0)slides[cur-1].scrollIntoView({behavior:'smooth',inline:'start'});
+    }
+  });
+})();
+</script>
+</body>
+</html>

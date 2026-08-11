@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模块一 — 认识 Codex | CodexCourse PPT</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root { --ikb:#0068B8; --lemon:#FFE135; --lemon-green:#7CB342; --safety-orange:#FF6B35; --dark:#1A1A1A; --gray:#6B7280; --light-gray:#F3F4F6; --grid:#E5E7EB; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; font-family:'Inter',-apple-system,sans-serif; background:var(--light-gray); color:var(--dark); -webkit-font-smoothing:antialiased; }
+  body::before { content:''; position:fixed; inset:0; background-image:radial-gradient(circle,var(--grid) 1px,transparent 1px); background-size:24px 24px; pointer-events:none; z-index:0; }
+  .deck { display:flex; width:100vw; height:100vh; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; position:relative; z-index:1; }
+  .deck::-webkit-scrollbar { display:none; }
+  .slide { flex:0 0 100vw; height:100vh; scroll-snap-align:start; display:flex; flex-direction:column; padding:60px 80px; position:relative; overflow:hidden; background:var(--white); border-right:2px solid var(--grid); }
+  .slide-num { position:absolute; top:24px; right:32px; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; color:var(--gray); letter-spacing:0.05em; }
+  .slide.section-divider { background:var(--ikb); color:var(--white); }
+  .slide.section-divider .slide-num { color:rgba(255,255,255,0.5); }
+  .slide.section-divider .accent-bar { background:var(--lemon); }
+  .slide.title-slide { background:var(--ikb); color:var(--white); justify-content:center; align-items:flex-start; padding:80px; }
+  .slide.title-slide .slide-num { color:rgba(255,255,255,0.4); }
+  .slide.title-slide .module-tag { font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--lemon); margin-bottom:24px; display:block; }
+  .slide.title-slide h1 { font-size:clamp(36px,5vw,64px); font-weight:800; line-height:1.1; letter-spacing:-0.02em; margin-bottom:24px; max-width:800px; }
+  .slide.title-slide .subtitle { font-size:18px; font-weight:400; color:rgba(255,255,255,0.7); max-width:560px; line-height:1.6; }
+  .slide.title-slide .module-num { position:absolute; bottom:60px; right:80px; font-family:'JetBrains Mono',monospace; font-size:120px; font-weight:900; color:rgba(255,255,255,0.06); line-height:1; }
+  .slide-header { margin-bottom:28px; flex-shrink:0; }
+  .accent-bar { width:48px; height:4px; background:var(--lemon); margin-bottom:16px; }
+  .slide-title { font-size:clamp(22px,2.5vw,32px); font-weight:700; letter-spacing:-0.01em; color:var(--dark); line-height:1.2; }
+  .slide-subtitle { font-size:14px; color:var(--gray); margin-top:6px; font-weight:400; }
+  .slide-body { flex:1; overflow-y:auto; scrollbar-width:thin; scrollbar-color:var(--grid) transparent; }
+  .slide-body::-webkit-scrollbar { width:4px; }
+  .slide-body::-webkit-scrollbar-track { background:transparent; }
+  .slide-body::-webkit-scrollbar-thumb { background:var(--grid); border-radius:2px; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:32px; height:100%; }
+  .three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; height:100%; }
+  .three-col .col, .two-col .col { display:flex; flex-direction:column; gap:12px; }
+  .card { background:var(--light-gray); border:1px solid var(--grid); border-radius:8px; padding:18px 20px; display:flex; flex-direction:column; gap:8px; }
+  .card.highlight { border-left:4px solid var(--lemon); background:#FFFEF5; }
+  .card.warning { border-left:4px solid var(--safety-orange); background:#FFF8F5; }
+  .card.info { border-left:4px solid var(--ikb); background:#F0F7FF; }
+  .card.green { border-left:4px solid var(--lemon-green); background:#F5FBF0; }
+  .card-label { font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray); }
+  .card-title { font-size:15px; font-weight:600; color:var(--dark); line-height:1.4; }
+  .card-body { font-size:13px; color:var(--gray); line-height:1.6; }
+  .big-stat { font-family:'JetBrains Mono',monospace; font-size:48px; font-weight:800; color:var(--ikb); line-height:1; }
+  .big-stat-label { font-size:13px; color:var(--gray); margin-top:4px; }
+  .swiss-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .swiss-table th { background:var(--ikb); color:var(--white); font-weight:600; text-align:left; padding:10px 14px; font-size:12px; letter-spacing:0.02em; }
+  .swiss-table td { padding:10px 14px; border-bottom:1px solid var(--grid); color:var(--dark); vertical-align:top; line-height:1.5; }
+  .swiss-table tr:last-child td { border-bottom:none; }
+  .swiss-table tr:nth-child(even) td { background:var(--light-gray); }
+  .code-block { background:var(--dark); color:#E5E7EB; border-radius:8px; padding:14px 18px; font-family:'JetBrains Mono',monospace; font-size:12px; line-height:1.7; overflow-x:auto; margin:6px 0; white-space:pre-wrap; word-break:break-all; }
+  .quote { font-size:20px; font-weight:600; color:var(--dark); line-height:1.5; border-left:4px solid var(--lemon); padding-left:20px; margin:14px 0; }
+  .flow { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .flow-step { background:var(--light-gray); border:1px solid var(--grid); border-radius:6px; padding:10px 16px; font-size:13px; font-weight:500; color:var(--dark); }
+  .flow-arrow { font-size:18px; color:var(--ikb); font-weight:700; }
+  .summary-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .summary-item { background:var(--light-gray); border:1px solid var(--grid); border-radius:8px; padding:14px 18px; display:flex; flex-direction:column; gap:6px; }
+  .summary-item .num { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ikb); font-weight:600; }
+  .summary-item .text { font-size:13px; color:var(--dark); line-height:1.5; }
+  .checklist { display:flex; flex-direction:column; gap:8px; }
+  .checklist-item { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--dark); line-height:1.5; }
+  .check-icon { flex-shrink:0; width:18px; height:18px; border:2px solid var(--grid); border-radius:4px; margin-top:1px; }
+  .check-icon.checked { background:var(--lemon-green); border-color:var(--lemon-green); position:relative; }
+  .check-icon.checked::after { content:'✓'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:11px; color:white; font-weight:700; }
+  .nav-hint { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--gray); background:rgba(255,255,255,0.9); padding:6px 14px; border-radius:20px; border:1px solid var(--grid); z-index:100; pointer-events:none; }
+  .progress-bar { position:fixed; top:0; left:0; height:3px; background:var(--lemon); z-index:100; transition:width 0.3s ease; }
+  .module-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gray); margin-bottom:8px; }
+  .divider { width:100%; height:1px; background:var(--grid); margin:14px 0; }
+  .tag { display:inline-block; font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; padding:3px 8px; border-radius:4px; letter-spacing:0.05em; }
+  .tag.blue { background:#DBEAFE; color:var(--ikb); }
+  .tag.yellow { background:#FEF9C3; color:#92400E; }
+  .tag.green { background:#D1FAE5; color:#065F46; }
+  .tag.orange { background:#FED7AA; color:#9A3412; }
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<div class="deck" id="deck"><div class="slide title-slide"><div class="slide-num">01 / 15</div><span class="module-tag">MODULE 01 — 认识 Codex</span><h1>认识 Codex</h1><p class="subtitle">让 AI 帮你搞定编程与办公</p><div class="module-num">0一</div></div><div class="slide section-divider"><div class="slide-num">02 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块一</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">第 1 课</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">AI 编程助手是什么？</p></div><div class="slide"><div class="slide-num">03 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块一</div><h2 class="slide-title">AI 编程助手 vs 聊天机器人</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">聊天机器人</div>
+              <div class="card-title">只能"聊"，不能"干"</div>
+              <div class="card-body">你问它问题，它给你文字回复。你可以让它写代码片段，但代码能不能跑、怎么跑、在哪里跑——它不管。</div>
+            </div>
+            <div class="card">
+              <div class="card-label">局限性</div>
+              <div class="card-body" style="line-height:2;">
+                <div>❌ 不能读你的项目文件</div>
+                <div>❌ 不能运行代码并调试</div>
+                <div>❌ 不能操作电脑上的文件</div>
+                <div>❌ 不能完成完整任务</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">AI 编程助手（Codex）</div>
+              <div class="card-title">能"聊"也能"干"的智能体</div>
+              <div class="card-body">不仅回答你的问题，还能直接操作你的文件和系统，完成从需求到交付的全过程。</div>
+            </div>
+            <div class="card green">
+              <div class="card-label">核心能力</div>
+              <div class="card-body" style="line-height:2;">
+                <div>✅ 读你的项目文件</div>
+                <div>✅ 运行代码并调试</div>
+                <div>✅ 操作电脑上的文件</div>
+                <div>✅ 调用外部工具</div>
+              </div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">04 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块一</div><h2 class="slide-title">Codex 到底是什么？</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">核心定义</div>
+              <div class="card-title" style="font-size:17px;">Codex 是 OpenAI 推出的 AI 编程智能体（coding agent）</div>
+            </div>
+            <div class="card">
+              <div class="card-label">两个关键词</div>
+              <div class="card-body" style="line-height:2;">
+                <div><strong>编程</strong> — 核心能力围绕代码展开：写代码、改代码、调试代码、解释代码</div>
+                <div><strong>智能体</strong> — 不是被动回答问题的工具，而是能主动执行任务的"助手"</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="quote">"你不需要教它编程知识，你只需要告诉它你要什么。"</div>
+            <div class="card green">
+              <div class="card-label">类比：Codex = 会编程的实习生</div>
+              <div class="card-body" style="line-height:2;">
+                <div>📌 你告诉它要做什么（用自然语言）</div>
+                <div>📌 它自己去读相关文件、写代码、运行测试</div>
+                <div>📌 发现问题 → 修正错误 → 把成果交给你</div>
+              </div>
+            </div>
+            <div class="card info">
+              <div class="card-label">另一个类比</div>
+              <div class="card-title">Codex = 万能秘书</div>
+              <div class="card-body">整理文件、搜索资料、写邮件、做表格，额外还会写代码。</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">05 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块一</div><h2 class="slide-title">Codex vs GitHub Copilot</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card warning">
+              <div class="card-label">GitHub Copilot</div>
+              <div class="card-title">代码补全工具 — 给程序员用的"辅助轮"</div>
+              <div class="card-body">在编辑器里打字，它帮你补全下一行代码。需要至少看得懂代码。</div>
+            </div>
+            <div class="card">
+              <div class="card-label">工作位置</div>
+              <div class="card-title">VS Code 等代码编辑器内</div>
+            </div>
+            <div class="card">
+              <div class="card-label">任务粒度</div>
+              <div class="card-title">单行 / 单函数级别</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">Codex</div>
+              <div class="card-title">完整任务智能体 — 给普通人用的"自动驾驶"</div>
+              <div class="card-body">你告诉它"帮我做一个网页"，它会自己读文件、写代码、保存文件，独立完成全过程。</div>
+            </div>
+            <div class="card green">
+              <div class="card-label">工作位置</div>
+              <div class="card-title">独立桌面 App / 命令行</div>
+            </div>
+            <div class="card info">
+              <div class="card-label">任务粒度</div>
+              <div class="card-title">完整功能 / 完整项目</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">06 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块一</div><h2 class="slide-title">生活中的类比</h2></div><div class="slide-body"><div class="three-col">
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">类比一</div>
+              <div class="card-title">Codex = 会编程的实习生</div>
+              <div class="card-body" style="line-height:2;">
+                <div>📌 你告诉它要做什么（用自然语言）</div>
+                <div>📌 它自己去读相关文件、写代码、运行测试</div>
+                <div>📌 发现问题 → 修正错误 → 把成果交给你</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">类比二</div>
+              <div class="card-title">Codex = 万能秘书</div>
+              <div class="card-body" style="line-height:2;">
+                <div>📌 整理文件（按类型、日期分类）</div>
+                <div>📌 搜索资料（上网查资料并整理成报告）</div>
+                <div>📌 写邮件、做表格，额外还会写代码</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card green">
+              <div class="card-label">类比三</div>
+              <div class="card-title">Codex = 乐高积木 + 说明书</div>
+              <div class="card-body" style="line-height:2;">
+                <div>📌 传统方式：你自己一块一块拼</div>
+                <div>📌 Codex 方式：你告诉它"我要一个城堡"</div>
+                <div>📌 它帮你拼好，你只管验收</div>
+              </div>
+            </div>
+          </div>
+        </div></div></div><div class="slide section-divider"><div class="slide-num">07 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块一</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">第 2 课</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">Codex 能帮你做什么？</p></div><div class="slide"><div class="slide-num">08 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块一</div><h2 class="slide-title">编程开发案例</h2></div><div class="slide-body"><div class="three-col">
+          <div class="col">
+            <div class="card">
+              <div class="card-label">案例 1：修 Bug</div>
+              <div class="card-body" style="font-size:12px;">把报错信息和代码拖进 Codex，说"帮我找原因并修复"，30 秒得到修复方案。</div>
+            </div>
+            <div class="card highlight">
+              <div class="card-label">案例 2：从零到网页</div>
+              <div class="card-body" style="font-size:12px;">告诉 Codex 产品功能，自动生成完整 HTML，30 分钟替代几天的前端工作。</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-label">案例 3：重构代码</div>
+              <div class="card-body" style="font-size:12px;">把混乱的脚本拖进去，Codex 拆分函数、加注释、写文档。</div>
+            </div>
+            <div class="card green">
+              <div class="card-label">案例 4：Excel 分析</div>
+              <div class="card-body" style="font-size:12px;">拖入 Excel，Codex 用 Python 读取、分析、生成图表，2 小时变 5 分钟。</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="summary-grid" style="grid-template-columns:1fr;">
+              <div class="summary-item">
+                <div class="num">KEY</div>
+                <div class="text">你不需要知道"索引越界"是什么，只需要告诉 Codex "出错了，帮我修"。</div>
+              </div>
+              <div class="summary-item">
+                <div class="num">WHO</div>
+                <div class="text">律师、招聘、运营、设计师、教师 — 非技术岗位也在用。</div>
+              </div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">09 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块一</div><h2 class="slide-title">办公提效 & 日常任务</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card green">
+              <div class="card-label">办公提效</div>
+              <div class="card-title">整理杂乱的下载文件夹</div>
+              <div class="card-body">把"下载"文件夹设为工作区，说"按文件类型分类"，5 分钟搞定几百个文件。</div>
+            </div>
+            <div class="card green">
+              <div class="card-label">办公提效</div>
+              <div class="card-title">生成会议纪要</div>
+              <div class="card-body">把会议文字稿发给 Codex，自动生成结构化纪要：议题、讨论要点、待办任务。</div>
+            </div>
+            <div class="card green">
+              <div class="card-label">办公提效</div>
+              <div class="card-title">批量处理 Excel</div>
+              <div class="card-body">拖入 Excel，Codex 分析数据并生成图表，2 小时工作变 5 分钟。</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">日常任务</div>
+              <div class="card-title">整理照片 · 分析磁盘空间 · 翻译文档</div>
+              <div class="card-body">按 EXIF 日期分类照片、找出占用空间最大的文件、翻译并润色文档。</div>
+            </div>
+            <div class="card info">
+              <div class="card-label">核心认知</div>
+              <div class="card-title">Codex 不是高级搜索工具</div>
+              <div class="card-body">它是能直接操作你文件和系统的智能助手——从需求到交付，全程自动化。</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide section-divider"><div class="slide-num">10 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块一</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">第 3 课</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">Codex vs 其他工具</p></div><div class="slide"><div class="slide-num">11 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块一</div><h2 class="slide-title">Codex vs ChatGPT</h2></div><div class="slide-body"><div class="quote">ChatGPT 是一辆车，Codex 是这辆车的"自动驾驶模式"。</div>
+        <div class="two-col" style="margin-top:20px;">
+          <div class="col">
+            <div class="card">
+              <div class="card-label">ChatGPT 普通聊天模式</div>
+              <div class="card-title">回答问题、写文案、翻译</div>
+              <div class="card-body">不能操作你的文件，不能执行代码。</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">Codex（代码解释器模式）</div>
+              <div class="card-title">读文件、写代码、运行命令</div>
+              <div class="card-body">在工作区内直接操作文件系统，能执行代码。</div>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="flow">
+          <div class="flow-step">聊天 / 问问题</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">ChatGPT 普通模式</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" style="background:var(--ikb);color:white;">让 AI 帮你干活</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" style="background:var(--lemon);color:var(--dark);">Codex</div>
+        </div></div></div><div class="slide"><div class="slide-num">12 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块一</div><h2 class="slide-title">Codex vs 传统自动化工具</h2></div><div class="slide-body"><table class="swiss-table">
+          <tr><th>任务</th><th>传统方式</th><th>Codex 方式</th></tr>
+          <tr><td>批量重命名文件</td><td>写 Python 脚本 / 专用软件</td><td>说："把 IMG_ 改成 Photo_"</td></tr>
+          <tr><td>合并多个 Excel</td><td>Power Query / VBA</td><td>说："把三个文件合并到一个表"</td></tr>
+          <tr><td>整理文件夹</td><td>手动操作 / 脚本</td><td>说："按类型分类"</td></tr>
+        </table>
+        <div class="divider"></div>
+        <div class="card highlight" style="margin-top:12px;">
+          <div class="card-label">一句话总结</div>
+          <div class="card-title">Codex 不是聊天工具、不是代码补全工具、不是传统自动化工具——它是能听懂人话、能操作你电脑的智能助手。</div>
+        </div></div></div><div class="slide"><div class="slide-num">13 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块一</div><h2 class="slide-title">本节知识小结</h2></div><div class="slide-body"><div class="summary-grid">
+          <div class="summary-item">
+            <div class="num">01</div>
+            <div class="text"><strong>AI 编程助手 vs 聊天机器人</strong><br>前者能干活，后者只能聊天</div>
+          </div>
+          <div class="summary-item">
+            <div class="num">02</div>
+            <div class="text"><strong>Codex 核心定位</strong><br>OpenAI 的 AI 编程智能体，能读文件、写代码、运行命令</div>
+          </div>
+          <div class="summary-item">
+            <div class="num">03</div>
+            <div class="text"><strong>Codex vs Copilot</strong><br>Copilot 补全代码，Codex 完成任务</div>
+          </div>
+          <div class="summary-item">
+            <div class="num">04</div>
+            <div class="text"><strong>类比理解</strong><br>Codex = 会编程的实习生 / 万能秘书</div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">14 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块一</div><h2 class="slide-title">模块一 · 本章要点回顾</h2></div><div class="slide-body"><div class="flow" style="margin-bottom:20px;">
+          <div class="flow-step" style="background:var(--ikb);color:white;">什么是 Codex？</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" style="background:var(--lemon);color:var(--dark);">它能做什么？</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">它和别的工具有什么不同？</div>
+        </div>
+        <div class="checklist">
+          <div class="checklist-item"><div class="check-icon checked"></div><span>理解 Codex 是能操作文件的智能体，不只是聊天机器人</span></div>
+          <div class="checklist-item"><div class="check-icon checked"></div><span>知道 Codex 可以修 Bug、写网页、整理文件、做数据分析</span></div>
+          <div class="checklist-item"><div class="check-icon checked"></div><span>清楚 Codex vs Copilot vs ChatGPT 的区别</span></div>
+          <div class="checklist-item"><div class="check-icon"></div><span>课后思考：你工作中有哪些重复性任务可以交给 Codex？</span></div>
+        </div></div></div><div class="slide"><div class="slide-num">15 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块一</div><h2 class="slide-title">模块一 · 学习路径总览</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">课程结构</div>
+              <div class="card-title">6 个模块 · 16 节课 · 4 个实战项目</div>
+              <div class="card-body" style="line-height:2.2;">
+                <div><strong>模块一</strong> 认识 Codex <span class="tag blue">3 课</span></div>
+                <div><strong>模块二</strong> 上手准备 <span class="tag yellow">4 课</span></div>
+                <div><strong>模块三</strong> 核心功能 <span class="tag green">4 课</span></div>
+                <div><strong>模块四</strong> 实用技巧 <span class="tag orange">3 课</span></div>
+                <div><strong>模块五</strong> 项目实战 <span class="tag blue">4 项目</span></div>
+                <div><strong>模块六</strong> 总结与进阶 <span class="tag yellow">2 课</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">学完你能做到</div>
+              <div class="card-body" style="line-height:2;">
+                <div>✅ 让 Codex 帮你整理文件夹、批量重命名</div>
+                <div>✅ 用自然语言描述需求，生成网页或小工具</div>
+                <div>✅ 让 Codex 联网搜索资料并整理成报告</div>
+                <div>✅ 让 Codex 执行重复性任务，节省时间</div>
+                <div>✅ 使用 Codex 内置技能快速完成复杂任务</div>
+              </div>
+            </div>
+            <div class="card green">
+              <div class="card-label">下一步</div>
+              <div class="card-title">→ 进入模块二：上手准备</div>
+              <div class="card-body">学习如何安装 Codex 桌面 App，熟悉界面，跑通第一个任务。</div>
+            </div>
+          </div>
+        </div></div></div></div>
+<div class="nav-hint">← → 翻页 &nbsp;|&nbsp; 15 页</div>
+<script>
+(function(){
+  var deck=document.getElementById('deck');
+  var slides=deck.querySelectorAll('.slide');
+  var total=slides.length;
+  var bar=document.getElementById('progressBar');
+  function update(){
+    var sl=deck.scrollLeft, sw=window.innerWidth;
+    var pct=Math.min(100, Math.round((sl/sw+1)/total*100));
+    bar.style.width=pct+'%';
+  }
+  deck.addEventListener('scroll',update);
+  update();
+  document.addEventListener('keydown',function(e){
+    var cur=Array.from(slides).indexOf(deck.querySelector('.slide'));
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){
+      e.preventDefault();
+      if(cur<total-1)slides[cur+1].scrollIntoView({behavior:'smooth',inline:'start'});
+    }else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){
+      e.preventDefault();
+      if(cur>0)slides[cur-1].scrollIntoView({behavior:'smooth',inline:'start'});
+    }
+  });
+  var tx=0;
+  deck.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;});
+  deck.addEventListener('touchend',function(e){
+    var d=tx-e.changedTouches[0].clientX;
+    var cur=Array.from(slides).indexOf(deck.querySelector('.slide'));
+    if(Math.abs(d)>50){
+      if(d>0&&cur<total-1)slides[cur+1].scrollIntoView({behavior:'smooth',inline:'start'});
+      else if(d<0&&cur>0)slides[cur-1].scrollIntoView({behavior:'smooth',inline:'start'});
+    }
+  });
+})();
+</script>
+</body>
+</html>

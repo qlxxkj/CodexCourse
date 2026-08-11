@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模块五 — 项目实战 | CodexCourse PPT</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root { --ikb:#0068B8; --lemon:#FFE135; --lemon-green:#7CB342; --safety-orange:#FF6B35; --dark:#1A1A1A; --gray:#6B7280; --light-gray:#F3F4F6; --grid:#E5E7EB; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; font-family:'Inter',-apple-system,sans-serif; background:var(--light-gray); color:var(--dark); -webkit-font-smoothing:antialiased; }
+  body::before { content:''; position:fixed; inset:0; background-image:radial-gradient(circle,var(--grid) 1px,transparent 1px); background-size:24px 24px; pointer-events:none; z-index:0; }
+  .deck { display:flex; width:100vw; height:100vh; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; position:relative; z-index:1; }
+  .deck::-webkit-scrollbar { display:none; }
+  .slide { flex:0 0 100vw; height:100vh; scroll-snap-align:start; display:flex; flex-direction:column; padding:60px 80px; position:relative; overflow:hidden; background:var(--white); border-right:2px solid var(--grid); }
+  .slide-num { position:absolute; top:24px; right:32px; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; color:var(--gray); letter-spacing:0.05em; }
+  .slide.section-divider { background:var(--ikb); color:var(--white); }
+  .slide.section-divider .slide-num { color:rgba(255,255,255,0.5); }
+  .slide.section-divider .accent-bar { background:var(--lemon); }
+  .slide.title-slide { background:var(--ikb); color:var(--white); justify-content:center; align-items:flex-start; padding:80px; }
+  .slide.title-slide .slide-num { color:rgba(255,255,255,0.4); }
+  .slide.title-slide .module-tag { font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--lemon); margin-bottom:24px; display:block; }
+  .slide.title-slide h1 { font-size:clamp(36px,5vw,64px); font-weight:800; line-height:1.1; letter-spacing:-0.02em; margin-bottom:24px; max-width:800px; }
+  .slide.title-slide .subtitle { font-size:18px; font-weight:400; color:rgba(255,255,255,0.7); max-width:560px; line-height:1.6; }
+  .slide.title-slide .module-num { position:absolute; bottom:60px; right:80px; font-family:'JetBrains Mono',monospace; font-size:120px; font-weight:900; color:rgba(255,255,255,0.06); line-height:1; }
+  .slide-header { margin-bottom:28px; flex-shrink:0; }
+  .accent-bar { width:48px; height:4px; background:var(--lemon); margin-bottom:16px; }
+  .slide-title { font-size:clamp(22px,2.5vw,32px); font-weight:700; letter-spacing:-0.01em; color:var(--dark); line-height:1.2; }
+  .slide-subtitle { font-size:14px; color:var(--gray); margin-top:6px; font-weight:400; }
+  .slide-body { flex:1; overflow-y:auto; scrollbar-width:thin; scrollbar-color:var(--grid) transparent; }
+  .slide-body::-webkit-scrollbar { width:4px; }
+  .slide-body::-webkit-scrollbar-track { background:transparent; }
+  .slide-body::-webkit-scrollbar-thumb { background:var(--grid); border-radius:2px; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:32px; height:100%; }
+  .three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; height:100%; }
+  .three-col .col, .two-col .col { display:flex; flex-direction:column; gap:12px; }
+  .card { background:var(--light-gray); border:1px solid var(--grid); border-radius:8px; padding:18px 20px; display:flex; flex-direction:column; gap:8px; }
+  .card.highlight { border-left:4px solid var(--lemon); background:#FFFEF5; }
+  .card.warning { border-left:4px solid var(--safety-orange); background:#FFF8F5; }
+  .card.info { border-left:4px solid var(--ikb); background:#F0F7FF; }
+  .card.green { border-left:4px solid var(--lemon-green); background:#F5FBF0; }
+  .card-label { font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray); }
+  .card-title { font-size:15px; font-weight:600; color:var(--dark); line-height:1.4; }
+  .card-body { font-size:13px; color:var(--gray); line-height:1.6; }
+  .big-stat { font-family:'JetBrains Mono',monospace; font-size:48px; font-weight:800; color:var(--ikb); line-height:1; }
+  .big-stat-label { font-size:13px; color:var(--gray); margin-top:4px; }
+  .swiss-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .swiss-table th { background:var(--ikb); color:var(--white); font-weight:600; text-align:left; padding:10px 14px; font-size:12px; letter-spacing:0.02em; }
+  .swiss-table td { padding:10px 14px; border-bottom:1px solid var(--grid); color:var(--dark); vertical-align:top; line-height:1.5; }
+  .swiss-table tr:last-child td { border-bottom:none; }
+  .swiss-table tr:nth-child(even) td { background:var(--light-gray); }
+  .code-block { background:var(--dark); color:#E5E7EB; border-radius:8px; padding:14px 18px; font-family:'JetBrains Mono',monospace; font-size:12px; line-height:1.7; overflow-x:auto; margin:6px 0; white-space:pre-wrap; word-break:break-all; }
+  .quote { font-size:20px; font-weight:600; color:var(--dark); line-height:1.5; border-left:4px solid var(--lemon); padding-left:20px; margin:14px 0; }
+  .flow { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .flow-step { background:var(--light-gray); border:1px solid var(--grid); border-radius:6px; padding:10px 16px; font-size:13px; font-weight:500; color:var(--dark); }
+  .flow-arrow { font-size:18px; color:var(--ikb); font-weight:700; }
+  .summary-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .summary-item { background:var(--light-gray); border:1px solid var(--grid); border-radius:8px; padding:14px 18px; display:flex; flex-direction:column; gap:6px; }
+  .summary-item .num { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ikb); font-weight:600; }
+  .summary-item .text { font-size:13px; color:var(--dark); line-height:1.5; }
+  .checklist { display:flex; flex-direction:column; gap:8px; }
+  .checklist-item { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--dark); line-height:1.5; }
+  .check-icon { flex-shrink:0; width:18px; height:18px; border:2px solid var(--grid); border-radius:4px; margin-top:1px; }
+  .check-icon.checked { background:var(--lemon-green); border-color:var(--lemon-green); position:relative; }
+  .check-icon.checked::after { content:'✓'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:11px; color:white; font-weight:700; }
+  .nav-hint { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--gray); background:rgba(255,255,255,0.9); padding:6px 14px; border-radius:20px; border:1px solid var(--grid); z-index:100; pointer-events:none; }
+  .progress-bar { position:fixed; top:0; left:0; height:3px; background:var(--lemon); z-index:100; transition:width 0.3s ease; }
+  .module-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gray); margin-bottom:8px; }
+  .divider { width:100%; height:1px; background:var(--grid); margin:14px 0; }
+  .tag { display:inline-block; font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; padding:3px 8px; border-radius:4px; letter-spacing:0.05em; }
+  .tag.blue { background:#DBEAFE; color:var(--ikb); }
+  .tag.yellow { background:#FEF9C3; color:#92400E; }
+  .tag.green { background:#D1FAE5; color:#065F46; }
+  .tag.orange { background:#FED7AA; color:#9A3412; }
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<div class="deck" id="deck"><div class="slide title-slide"><div class="slide-num">01 / 15</div><span class="module-tag">MODULE 05 — 项目实战</span><h1>项目实战</h1><p class="subtitle">用 Codex 完成真实项目，从入门到综合实战</p><div class="module-num">0五</div></div><div class="slide section-divider"><div class="slide-num">02 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块五</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">项目一</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">整理你的电脑（入门级）</p></div><div class="slide"><div class="slide-num">03 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块五</div><h2 class="slide-title">任务描述与准备</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">任务</div>
+              <div class="card-title">整理你电脑上的一个杂乱文件夹</div>
+              <div class="card-body">选择一个实际存在问题的文件夹（如下载、桌面、文档），让 Codex 帮你整理。</div>
+            </div>
+            <div class="card">
+              <div class="card-label">准备步骤</div>
+              <div class="card-body" style="line-height:2;">
+                <div>1️⃣ 创建测试文件夹 "待整理文件夹"</div>
+                <div>2️⃣ 放入不同类型文件（.txt, .jpg, .pdf, .xlsx, .zip）</div>
+                <div>3️⃣ 在 Codex 中设为工作区</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">学到的能力</div>
+              <div class="card-body" style="line-height:2;">
+                <div>✅ 文件操作（读取、移动、分类）</div>
+                <div>✅ 自然语言指令编写</div>
+                <div>✅ 权限管理实践</div>
+                <div>✅ 结果验证与反馈</div>
+              </div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">04 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块五</div><h2 class="slide-title">操作步骤详解</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card">
+              <div class="card-label">Step 1：分析文件夹</div>
+              <div class="code-block" style="font-size:11px;">请帮我分析一下这个文件夹，告诉我：
+1. 总共有多少个文件？
+2. 按文件类型分类，各有多少个？
+3. 最大的三个文件是什么？</div>
+            </div>
+            <div class="card highlight">
+              <div class="card-label">Step 2：让 Codex 整理</div>
+              <div class="code-block" style="font-size:11px;">请按文件类型帮我整理这个文件夹：
+- 图片文件移到 images 文件夹
+- 文档文件移到 documents 文件夹
+- 表格文件移到 spreadsheets 文件夹
+请先告诉我你的计划，等我确认后再执行。</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">Step 3：审查计划</div>
+              <div class="code-block" style="font-size:11px;">我的整理计划：
+1. 创建子文件夹：images/, documents/, ...
+2. 扫描所有文件并按扩展名分类
+3. 将每个文件移动到对应子文件夹
+请确认是否开始执行？</div>
+            </div>
+            <div class="card green">
+              <div class="card-label">Step 4：验证结果</div>
+              <div class="card-body" style="font-size:12px;">检查文件夹结构是否正确，必要时让 Codex 调整。</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">05 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块五</div><h2 class="slide-title">进阶挑战</h2></div><div class="slide-body"><div class="three-col">
+          <div class="col">
+            <div class="card">
+              <div class="card-label">挑战 1</div>
+              <div class="code-block" style="font-size:11px;">找出所有超过 10MB 的文件，
+把它们单独放到一个
+"大文件"文件夹里</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">挑战 2</div>
+              <div class="code-block" style="font-size:11px;">统计一下这个文件夹里有多少
+重复的文件名（忽略扩展名）</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card green">
+              <div class="card-label">挑战 3</div>
+              <div class="code-block" style="font-size:11px;">帮我生成一份文件夹整理报告，
+保存到 reports.md 文件中</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide section-divider"><div class="slide-num">06 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块五</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">项目二</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">生成一份 PPT 报告（进阶级）</p></div><div class="slide"><div class="slide-num">07 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块五</div><h2 class="slide-title">任务描述与操作步骤</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">任务</div>
+              <div class="card-title">让 Codex 根据网上资料生成一份主题演示文稿</div>
+              <div class="card-body" style="line-height:2;">
+                <div>📌 选择主题（如"远程办公趋势"）</div>
+                <div>📌 让 Codex 生成大纲</div>
+                <div>📌 审查并确认大纲</div>
+                <div>📌 联网搜索填充内容</div>
+                <div>📌 审查并微调</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-label">关键指令</div>
+              <div class="code-block" style="font-size:11px;">帮我做一个关于"[主题]"的演示文稿，
+要求：
+1. 10-15 页左右
+2. 包含封面、目录、主要观点分析、
+   案例、总结
+3. 先给我一个大纲，等我确认后再开始</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">08 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块五</div><h2 class="slide-title">进阶技巧</h2></div><div class="slide-body"><div class="three-col">
+          <div class="col">
+            <div class="card">
+              <div class="card-label">添加图表</div>
+              <div class="code-block" style="font-size:11px;">在"市场规模"这一页，
+帮我生成一个柱状图
+来展示过去 5 年的数据变化</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">转换语言</div>
+              <div class="code-block" style="font-size:11px;">把这份演示文稿
+翻译成英文版本</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card green">
+              <div class="card-label">导出格式</div>
+              <div class="code-block" style="font-size:11px;">把内容保存为 Markdown
+格式的文件，
+方便我后续编辑</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide section-divider"><div class="slide-num">09 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块五</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">项目三</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">做一个简单网页（挑战级）</p></div><div class="slide"><div class="slide-num">10 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块五</div><h2 class="slide-title">任务描述</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">任务</div>
+              <div class="card-title">用自然语言让 Codex 生成并修改网页</div>
+              <div class="card-body" style="line-height:2;">
+                <div>📌 描述需求</div>
+                <div>📌 查看生成结果</div>
+                <div>📌 根据效果提出修改</div>
+                <div>📌 迭代优化直至满意</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-label">学到的能力</div>
+              <div class="card-body" style="line-height:2;">
+                <div>✅ 自然语言编程</div>
+                <div>✅ 迭代优化（追问技巧）</div>
+                <div>✅ 测试验证</div>
+                <div>✅ 问题解决</div>
+              </div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">11 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块五</div><h2 class="slide-title">示例指令与迭代优化</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">初版指令</div>
+              <div class="code-block" style="font-size:11px;">帮我做一个个人简介网页，要求：
+- 包含头像区域（占位符）
+- 显示姓名和一句话简介
+- 技能列表（标签形式，3-5 个）
+- 联系方式区域（邮箱、社交媒体）
+- 整体风格简洁现代，蓝色主色调
+- 代码保存为 index.html</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">迭代优化示例</div>
+              <div class="card-body" style="line-height:2;">
+                <div>📌 "把头像从圆形改成圆角方形"</div>
+                <div>📌 "在技能列表下面加一个项目展示区域"</div>
+                <div>📌 "把配色方案改成深色模式"</div>
+                <div>📌 "增加一个关于我的段落，大概 200 字"</div>
+                <div>📌 "让页面在手机上也好看"</div>
+              </div>
+            </div>
+          </div>
+        </div></div></div><div class="slide section-divider"><div class="slide-num">12 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块五</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">项目四</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">待办事项管理小工具（综合实战）</p></div><div class="slide"><div class="slide-num">13 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块五</div><h2 class="slide-title">任务描述</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">任务</div>
+              <div class="card-title">从零到一开发一个待办事项管理工具</div>
+              <div class="card-body" style="line-height:2;">
+                <div>✅ 添加待办事项</div>
+                <div>✅ 标记已完成</div>
+                <div>✅ 删除事项</div>
+                <div>✅ 数据保存在 localStorage</div>
+                <div>✅ 支持深色模式切换</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">学到的能力</div>
+              <div class="card-body" style="line-height:2;">
+                <div>📌 需求拆解</div>
+                <div>📌 任务规划</div>
+                <div>📌 全流程协作</div>
+                <div>📌 测试验证</div>
+              </div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">14 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块五</div><h2 class="slide-title">操作步骤与进阶扩展</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card">
+              <div class="card-label">Step 1：描述需求</div>
+              <div class="code-block" style="font-size:11px;">帮我做一个待办事项管理网页，
+功能要求：添加、标记完成、删除、
+数据保存在 localStorage、
+支持深色模式切换</div>
+            </div>
+            <div class="card highlight">
+              <div class="card-label">Step 2：让 Codex 制定计划</div>
+              <div class="code-block" style="font-size:11px;">在开始写代码之前，请先告诉我
+你的实现计划，包括：
+1. 使用什么技术栈
+2. 文件结构是怎样的
+3. 各个功能的实现思路</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">进阶扩展</div>
+              <div class="card-body" style="line-height:2;">
+                <div>📌 添加分类功能（工作/个人/学习）</div>
+                <div>📌 添加提醒功能（截止日期）</div>
+                <div>📌 添加导出功能（JSON/CSV）</div>
+                <div>📌 部署到 GitHub Pages</div>
+              </div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">15 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块五</div><h2 class="slide-title">模块五 · 项目实战回顾</h2></div><div class="slide-body"><div class="flow" style="margin-bottom:20px;">
+          <div class="flow-step" style="background:#8B5CF6;color:white;">整理电脑</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" style="background:#8B5CF6;color:white;">生成 PPT</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" style="background:#8B5CF6;color:white;">制作网页</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" style="background:#8B5CF6;color:white;">待办工具</div>
+        </div>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <div class="num">难度递增</div>
+            <div class="text">入门 → 进阶 → 挑战 → 综合，逐步提升</div>
+          </div>
+          <div class="summary-item">
+            <div class="num">核心能力</div>
+            <div class="text">文件操作、联网检索、自然语言编程、项目管理</div>
+          </div>
+          <div class="summary-item">
+            <div class="num">实践方法</div>
+            <div class="text">描述需求 → 让 Codex 规划 → 逐步实现 → 测试优化</div>
+          </div>
+          <div class="summary-item">
+            <div class="num">下一步</div>
+            <div class="text">进入模块六，回顾全课程，规划进阶学习路径</div>
+          </div>
+        </div></div></div></div>
+<div class="nav-hint">← → 翻页 &nbsp;|&nbsp; 15 页</div>
+<script>
+(function(){
+  var deck=document.getElementById('deck');
+  var slides=deck.querySelectorAll('.slide');
+  var total=slides.length;
+  var bar=document.getElementById('progressBar');
+  function update(){
+    var sl=deck.scrollLeft, sw=window.innerWidth;
+    var pct=Math.min(100, Math.round((sl/sw+1)/total*100));
+    bar.style.width=pct+'%';
+  }
+  deck.addEventListener('scroll',update);
+  update();
+  document.addEventListener('keydown',function(e){
+    var cur=Array.from(slides).indexOf(deck.querySelector('.slide'));
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){
+      e.preventDefault();
+      if(cur<total-1)slides[cur+1].scrollIntoView({behavior:'smooth',inline:'start'});
+    }else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){
+      e.preventDefault();
+      if(cur>0)slides[cur-1].scrollIntoView({behavior:'smooth',inline:'start'});
+    }
+  });
+  var tx=0;
+  deck.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;});
+  deck.addEventListener('touchend',function(e){
+    var d=tx-e.changedTouches[0].clientX;
+    var cur=Array.from(slides).indexOf(deck.querySelector('.slide'));
+    if(Math.abs(d)>50){
+      if(d>0&&cur<total-1)slides[cur+1].scrollIntoView({behavior:'smooth',inline:'start'});
+      else if(d<0&&cur>0)slides[cur-1].scrollIntoView({behavior:'smooth',inline:'start'});
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模块四 — 实用技巧 | CodexCourse PPT</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root { --ikb:#0068B8; --lemon:#FFE135; --lemon-green:#7CB342; --safety-orange:#FF6B35; --dark:#1A1A1A; --gray:#6B7280; --light-gray:#F3F4F6; --grid:#E5E7EB; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; overflow:hidden; font-family:'Inter',-apple-system,sans-serif; background:var(--light-gray); color:var(--dark); -webkit-font-smoothing:antialiased; }
+  body::before { content:''; position:fixed; inset:0; background-image:radial-gradient(circle,var(--grid) 1px,transparent 1px); background-size:24px 24px; pointer-events:none; z-index:0; }
+  .deck { display:flex; width:100vw; height:100vh; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; position:relative; z-index:1; }
+  .deck::-webkit-scrollbar { display:none; }
+  .slide { flex:0 0 100vw; height:100vh; scroll-snap-align:start; display:flex; flex-direction:column; padding:60px 80px; position:relative; overflow:hidden; background:var(--white); border-right:2px solid var(--grid); }
+  .slide-num { position:absolute; top:24px; right:32px; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; color:var(--gray); letter-spacing:0.05em; }
+  .slide.section-divider { background:var(--ikb); color:var(--white); }
+  .slide.section-divider .slide-num { color:rgba(255,255,255,0.5); }
+  .slide.section-divider .accent-bar { background:var(--lemon); }
+  .slide.title-slide { background:var(--ikb); color:var(--white); justify-content:center; align-items:flex-start; padding:80px; }
+  .slide.title-slide .slide-num { color:rgba(255,255,255,0.4); }
+  .slide.title-slide .module-tag { font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--lemon); margin-bottom:24px; display:block; }
+  .slide.title-slide h1 { font-size:clamp(36px,5vw,64px); font-weight:800; line-height:1.1; letter-spacing:-0.02em; margin-bottom:24px; max-width:800px; }
+  .slide.title-slide .subtitle { font-size:18px; font-weight:400; color:rgba(255,255,255,0.7); max-width:560px; line-height:1.6; }
+  .slide.title-slide .module-num { position:absolute; bottom:60px; right:80px; font-family:'JetBrains Mono',monospace; font-size:120px; font-weight:900; color:rgba(255,255,255,0.06); line-height:1; }
+  .slide-header { margin-bottom:28px; flex-shrink:0; }
+  .accent-bar { width:48px; height:4px; background:var(--lemon); margin-bottom:16px; }
+  .slide-title { font-size:clamp(22px,2.5vw,32px); font-weight:700; letter-spacing:-0.01em; color:var(--dark); line-height:1.2; }
+  .slide-subtitle { font-size:14px; color:var(--gray); margin-top:6px; font-weight:400; }
+  .slide-body { flex:1; overflow-y:auto; scrollbar-width:thin; scrollbar-color:var(--grid) transparent; }
+  .slide-body::-webkit-scrollbar { width:4px; }
+  .slide-body::-webkit-scrollbar-track { background:transparent; }
+  .slide-body::-webkit-scrollbar-thumb { background:var(--grid); border-radius:2px; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:32px; height:100%; }
+  .three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; height:100%; }
+  .three-col .col, .two-col .col { display:flex; flex-direction:column; gap:12px; }
+  .card { background:var(--light-gray); border:1px solid var(--grid); border-radius:8px; padding:18px 20px; display:flex; flex-direction:column; gap:8px; }
+  .card.highlight { border-left:4px solid var(--lemon); background:#FFFEF5; }
+  .card.warning { border-left:4px solid var(--safety-orange); background:#FFF8F5; }
+  .card.info { border-left:4px solid var(--ikb); background:#F0F7FF; }
+  .card.green { border-left:4px solid var(--lemon-green); background:#F5FBF0; }
+  .card-label { font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:var(--gray); }
+  .card-title { font-size:15px; font-weight:600; color:var(--dark); line-height:1.4; }
+  .card-body { font-size:13px; color:var(--gray); line-height:1.6; }
+  .big-stat { font-family:'JetBrains Mono',monospace; font-size:48px; font-weight:800; color:var(--ikb); line-height:1; }
+  .big-stat-label { font-size:13px; color:var(--gray); margin-top:4px; }
+  .swiss-table { width:100%; border-collapse:collapse; font-size:13px; }
+  .swiss-table th { background:var(--ikb); color:var(--white); font-weight:600; text-align:left; padding:10px 14px; font-size:12px; letter-spacing:0.02em; }
+  .swiss-table td { padding:10px 14px; border-bottom:1px solid var(--grid); color:var(--dark); vertical-align:top; line-height:1.5; }
+  .swiss-table tr:last-child td { border-bottom:none; }
+  .swiss-table tr:nth-child(even) td { background:var(--light-gray); }
+  .code-block { background:var(--dark); color:#E5E7EB; border-radius:8px; padding:14px 18px; font-family:'JetBrains Mono',monospace; font-size:12px; line-height:1.7; overflow-x:auto; margin:6px 0; white-space:pre-wrap; word-break:break-all; }
+  .quote { font-size:20px; font-weight:600; color:var(--dark); line-height:1.5; border-left:4px solid var(--lemon); padding-left:20px; margin:14px 0; }
+  .flow { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .flow-step { background:var(--light-gray); border:1px solid var(--grid); border-radius:6px; padding:10px 16px; font-size:13px; font-weight:500; color:var(--dark); }
+  .flow-arrow { font-size:18px; color:var(--ikb); font-weight:700; }
+  .summary-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .summary-item { background:var(--light-gray); border:1px solid var(--grid); border-radius:8px; padding:14px 18px; display:flex; flex-direction:column; gap:6px; }
+  .summary-item .num { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ikb); font-weight:600; }
+  .summary-item .text { font-size:13px; color:var(--dark); line-height:1.5; }
+  .checklist { display:flex; flex-direction:column; gap:8px; }
+  .checklist-item { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--dark); line-height:1.5; }
+  .check-icon { flex-shrink:0; width:18px; height:18px; border:2px solid var(--grid); border-radius:4px; margin-top:1px; }
+  .check-icon.checked { background:var(--lemon-green); border-color:var(--lemon-green); position:relative; }
+  .check-icon.checked::after { content:'✓'; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:11px; color:white; font-weight:700; }
+  .nav-hint { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--gray); background:rgba(255,255,255,0.9); padding:6px 14px; border-radius:20px; border:1px solid var(--grid); z-index:100; pointer-events:none; }
+  .progress-bar { position:fixed; top:0; left:0; height:3px; background:var(--lemon); z-index:100; transition:width 0.3s ease; }
+  .module-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gray); margin-bottom:8px; }
+  .divider { width:100%; height:1px; background:var(--grid); margin:14px 0; }
+  .tag { display:inline-block; font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; padding:3px 8px; border-radius:4px; letter-spacing:0.05em; }
+  .tag.blue { background:#DBEAFE; color:var(--ikb); }
+  .tag.yellow { background:#FEF9C3; color:#92400E; }
+  .tag.green { background:#D1FAE5; color:#065F46; }
+  .tag.orange { background:#FED7AA; color:#9A3412; }
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<div class="deck" id="deck"><div class="slide title-slide"><div class="slide-num">01 / 15</div><span class="module-tag">MODULE 04 — 实用技巧</span><h1>实用技巧</h1><p class="subtitle">优化指令 · 安全管理 · 技能调用</p><div class="module-num">0四</div></div><div class="slide section-divider"><div class="slide-num">02 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块四</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">第 12 课</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">如何写出更好的指令</p></div><div class="slide"><div class="slide-num">03 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块四</div><h2 class="slide-title">指令质量决定结果质量</h2></div><div class="slide-body"><div class="quote">好的指令 = 清晰的目标 + 具体的要求 + 明确的验收标准</div>
+        <div class="two-col" style="margin-top:20px;">
+          <div class="col">
+            <div class="card warning">
+              <div class="card-label">❌ 差的指令</div>
+              <div class="card-title">"帮我做一个网站"</div>
+              <div class="card-body">太模糊，不知道什么类型、什么风格、包含哪些内容。</div>
+            </div>
+            <div class="card">
+              <div class="card-label">✅ 好一些</div>
+              <div class="card-title">"帮我做一个个人简介网页"</div>
+              <div class="card-body">好一些，但还是不够具体。</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">✅✅ 更好的指令</div>
+              <div class="code-block" style="font-size:11px;">帮我做一个个人简介网页，要求：
+1. 包含头像、姓名、简介、技能列表、联系方式
+2. 简洁现代的设计风格
+3. 主色调为蓝色
+4. 代码保存为 index.html</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">04 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块四</div><h2 class="slide-title">关键技巧：先计划、再执行</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">技巧一：提供背景信息</div>
+              <div class="card-body" style="line-height:2;">
+                <div><strong>整理照片：</strong>"去年去日本旅行拍的照片，按城市分类"</div>
+                <div><strong>写邮件：</strong>"给客户邮件，语气正式，主题是项目延期"</div>
+                <div><strong>数据分析：</strong>"销售数据，包含日期、产品、数量、金额四列"</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">技巧二：让 Codex 先给计划</div>
+              <div class="code-block" style="font-size:11px;">在开始之前，先告诉我你的执行计划，
+等我确认后你再开始</div>
+              <div class="card-body" style="margin-top:8px;">
+                <div>✅ 确认 Codex 理解了你的需求</div>
+                <div>✅ 调整计划中的任何偏差</div>
+                <div>✅ 避免做无用功</div>
+              </div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">05 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块四</div><h2 class="slide-title">指令模板</h2></div><div class="slide-body"><div class="three-col">
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">文件操作类</div>
+              <div class="code-block" style="font-size:11px;">请帮我 [动作] [对象]，
+[具体要求]，[验收标准]</div>
+              <div class="card-body" style="margin-top:8px;font-size:11px;">例：帮我把文件夹里的图片按日期分类</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">内容生成类</div>
+              <div class="code-block" style="font-size:11px;">请帮我 [动作] 一个 [类型]，
+关于 [主题]，要求 [格式/风格]</div>
+              <div class="card-body" style="margin-top:8px;font-size:11px;">例：写一份健康饮食周报，分三个部分</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card green">
+              <div class="card-label">数据分析类</div>
+              <div class="code-block" style="font-size:11px;">请帮我分析 [数据源]，
+找出 [关注点]，输出 [格式]</div>
+              <div class="card-body" style="margin-top:8px;font-size:11px;">例：分析销售数据，找出增长最快的产品</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide section-divider"><div class="slide-num">06 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块四</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">第 13 课</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">安全与权限管理</p></div><div class="slide"><div class="slide-num">07 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块四</div><h2 class="slide-title">为什么要有权限管理？</h2></div><div class="slide-body"><div class="card warning" style="margin-bottom:16px;">
+          <div class="card-label">⚠️ 核心原因</div>
+          <div class="card-title">Codex 能操作你的文件——读取、修改、删除</div>
+          <div class="card-body">这意味着它既有强大的能力，也有潜在的风险。权限管理的核心目的：确保 Codex 只在授权范围内使用，保护你的数据安全。</div>
+        </div>
+        <div class="three-col">
+          <div class="col">
+            <div class="card green">
+              <div class="card-label">✅ 应该做的</div>
+              <div class="card-body" style="line-height:2;">
+                <div>📌 备份重要文件</div>
+                <div>📌 使用默认权限</div>
+                <div>📌 审阅每次结果</div>
+                <div>📌 限制工作区范围</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card warning">
+              <div class="card-label">❌ 不应该做的</div>
+              <div class="card-body" style="line-height:2;">
+                <div>🚫 输入密码、银行卡信息</div>
+                <div>🚫 给完全访问权限</div>
+                <div>🚫 不检查 Codex 的输出</div>
+                <div>🚫 让 Codex 操作系统关键目录</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">三种权限模式</div>
+              <div class="card-body" style="line-height:2.2;">
+                <div><span class="tag green">默认权限</span> — 每次操作前征求同意</div>
+                <div><span class="tag yellow">自动审查</span> — 事后审计，效率更高</div>
+                <div><span class="tag orange">完全访问</span> — 高风险，不建议</div>
+              </div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">08 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块四</div><h2 class="slide-title">实操：设置权限</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card">
+              <div class="card-label">Step 1</div>
+              <div class="card-title">打开设置界面</div>
+              <div class="card-body">找到"权限管理"或"安全设置"</div>
+            </div>
+            <div class="card">
+              <div class="card-label">Step 2</div>
+              <div class="card-title">选择默认权限模式</div>
+              <div class="card-body">刚开始使用时保持默认权限，最安全</div>
+            </div>
+            <div class="card highlight">
+              <div class="card-label">Step 3</div>
+              <div class="card-title">测试验证</div>
+              <div class="card-body">让 Codex 执行一个文件操作，观察它如何征求你的同意</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">权限示例</div>
+              <div class="code-block" style="font-size:11px;">Codex：我打算创建子文件夹
+"images"，并将所有图片移入。
+是否允许？
+
+你：[允许 / 拒绝]</div>
+            </div>
+            <div class="card green">
+              <div class="card-label">安全原则</div>
+              <div class="card-title">最小权限原则</div>
+              <div class="card-body">只给 Codex 完成工作所需的最小权限，用完即收回。</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">09 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块四</div><h2 class="slide-title">用"验收标准"告诉 Codex 什么叫做好了</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">示例：整理文档</div>
+              <div class="code-block" style="font-size:11px;">帮我整理这份文档，要求：
+1. 去除所有空行
+2. 统一标题格式（一级标题用 #
+   二级标题用 ##）
+3. 检查并修正错别字
+4. 最后告诉我你做了哪些修改</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">关键技巧</div>
+              <div class="card-title">让 Codex 告诉你它做了什么</div>
+              <div class="card-body">注意最后一条——<strong>让 Codex 告诉你它做了什么</strong>，这样你可以快速验证结果是否符合预期。</div>
+            </div>
+            <div class="card green">
+              <div class="card-label">好处</div>
+              <div class="card-body" style="line-height:2;">
+                <div>✅ 快速验证结果是否正确</div>
+                <div>✅ 发现遗漏的细节</div>
+                <div>✅ 方便后续追问和调整</div>
+              </div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">10 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块四</div><h2 class="slide-title">本节实操任务 & 小结</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="checklist">
+              <div class="checklist-item"><div class="check-icon checked"></div><span>选择一个你想让 Codex 完成的任务</span></div>
+              <div class="checklist-item"><div class="check-icon checked"></div><span>先用模糊的指令试一次</span></div>
+              <div class="checklist-item"><div class="check-icon"></div><span>再用清晰的指令（按模板）试一次</span></div>
+              <div class="checklist-item"><div class="check-icon"></div><span>对比两次结果的差异</span></div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="summary-grid">
+              <div class="summary-item">
+                <div class="num">01</div>
+                <div class="text"><strong>拆分任务</strong><br>大任务拆成小步骤，逐步完成</div>
+              </div>
+              <div class="summary-item">
+                <div class="num">02</div>
+                <div class="text"><strong>先计划后执行</strong><br>让 Codex 先给出计划，确认后再执行</div>
+              </div>
+              <div class="summary-item">
+                <div class="num">03</div>
+                <div class="text"><strong>提供背景</strong><br>主动告诉 Codex 相关上下文</div>
+              </div>
+              <div class="summary-item">
+                <div class="num">04</div>
+                <div class="text"><strong>验收标准</strong><br>明确告诉 Codex 什么叫"做好了"</div>
+              </div>
+            </div>
+          </div>
+        </div></div></div><div class="slide section-divider"><div class="slide-num">11 / 15</div><div class="module-label" style="color:rgba(255,255,255,0.5);">模块四</div><h1 style="font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.1;margin-bottom:16px;">第 14 课</h1><p style="font-size:18px;color:rgba(255,255,255,0.7);">Codex 的"技能"（Skills）</p></div><div class="slide"><div class="slide-num">12 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块四</div><h2 class="slide-title">什么是"技能"？</h2></div><div class="slide-body"><div class="quote">技能是 Codex 内置的预置工作模板——每个技能都是为特定类型的任务预先优化过的。</div>
+        <div class="two-col" style="margin-top:20px;">
+          <div class="col">
+            <div class="card">
+              <div class="card-label">没有技能</div>
+              <div class="card-title">"帮我做 PPT"</div>
+              <div class="card-body">Codex 从零开始猜怎么做，效率低，质量不稳定。</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">有技能</div>
+              <div class="card-title">"用 PPT 技能帮我做演示文稿"</div>
+              <div class="card-body">Codex 直接套用最佳实践，更高效、质量更稳定。</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">13 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块四</div><h2 class="slide-title">常用技能一览</h2></div><div class="slide-body"><table class="swiss-table">
+          <tr><th>技能名称</th><th>用途</th><th>适合人群</th></tr>
+          <tr><td><span class="tag yellow">PPT 生成</span></td><td>根据主题自动生成演示文稿</td><td>职场人士、学生</td></tr>
+          <tr><td><span class="tag blue">网页开发</span></td><td>生成 HTML/CSS/JS 网页</td><td>任何想快速建站的人</td></tr>
+          <tr><td><span class="tag green">数据分析</span></td><td>读取数据文件并生成分析报告</td><td>分析师、运营</td></tr>
+          <tr><td><span class="tag orange">代码生成</span></td><td>根据自然语言描述生成代码</td><td>开发者、学习者</td></tr>
+          <tr><td><span class="tag blue">文档整理</span></td><td>自动整理和格式化文档</td><td>行政、文秘</td></tr>
+          <tr><td><span class="tag green">图片处理</span></td><td>调整图片尺寸、格式转换等</td><td>设计师、内容创作者</td></tr>
+        </table>
+        <div class="card info" style="margin-top:12px;">
+          <div class="card-label">提示</div>
+          <div class="card-body">具体可用的技能列表可能随版本更新而变化，请以实际界面为准。</div>
+        </div></div></div><div class="slide"><div class="slide-num">14 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块四</div><h2 class="slide-title">实操：使用技能</h2></div><div class="slide-body"><div class="two-col">
+          <div class="col">
+            <div class="card highlight">
+              <div class="card-label">实操一：PPT 技能</div>
+              <div class="code-block" style="font-size:11px;">帮我做一个关于"2026 年 AI
+发展趋势"的演示文稿
+要求：10 页左右，包含封面、目录、
+主要趋势分析、总结</div>
+              <div class="card-body" style="margin-top:6px;font-size:12px;">Codex 会联网搜索 → 生成大纲 → 创建内容 → 应用模板</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card info">
+              <div class="card-label">实操二：网页开发技能</div>
+              <div class="code-block" style="font-size:11px;">帮我做一个贪吃蛇游戏网页
+- 键盘方向键控制
+- 吃食物后蛇身变长
+- 碰边界或自身则结束
+- 界面简洁美观</div>
+            </div>
+            <div class="card green">
+              <div class="card-label">自定义技能</div>
+              <div class="card-title">将常用流程固化为模板</div>
+              <div class="code-block" style="font-size:11px;">我每个月都要做销售汇总报告，
+你能帮我创建一个自动化技能吗？</div>
+            </div>
+          </div>
+        </div></div></div><div class="slide"><div class="slide-num">15 / 15</div><div class="slide-header"><div class="accent-bar"></div><div class="module-label">模块四</div><h2 class="slide-title">模块四 · 实用技巧小结</h2></div><div class="slide-body"><div class="flow" style="margin-bottom:20px;">
+          <div class="flow-step" style="background:var(--lemon);color:var(--dark);">写好指令</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" style="background:var(--lemon);color:var(--dark);">安全设置</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step" style="background:var(--lemon);color:var(--dark);">调用技能</div>
+        </div>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <div class="num">01</div>
+            <div class="text"><strong>指令四要素</strong><br>动作 + 对象 + 规则 + 期望结果</div>
+          </div>
+          <div class="summary-item">
+            <div class="num">02</div>
+            <div class="text"><strong>先计划后执行</strong><br>让 Codex 先给出计划，确认后再执行</div>
+          </div>
+          <div class="summary-item">
+            <div class="num">03</div>
+            <div class="text"><strong>安全原则</strong><br>默认权限、备份重要文件、限制工作区</div>
+          </div>
+          <div class="summary-item">
+            <div class="num">04</div>
+            <div class="text"><strong>技能调用</strong><br>选择技能 → 输入指令 → 审查结果</div>
+          </div>
+        </div></div></div></div>
+<div class="nav-hint">← → 翻页 &nbsp;|&nbsp; 15 页</div>
+<script>
+(function(){
+  var deck=document.getElementById('deck');
+  var slides=deck.querySelectorAll('.slide');
+  var total=slides.length;
+  var bar=document.getElementById('progressBar');
+  function update(){
+    var sl=deck.scrollLeft, sw=window.innerWidth;
+    var pct=Math.min(100, Math.round((sl/sw+1)/total*100));
+    bar.style.width=pct+'%';
+  }
+  deck.addEventListener('scroll',update);
+  update();
+  document.addEventListener('keydown',function(e){
+    var cur=Array.from(slides).indexOf(deck.querySelector('.slide'));
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){
+      e.preventDefault();
+      if(cur<total-1)slides[cur+1].scrollIntoView({behavior:'smooth',inline:'start'});
+    }else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){
+      e.preventDefault();
+      if(cur>0)slides[cur-1].scrollIntoView({behavior:'smooth',inline:'start'});
+    }
+  });
+  var tx=0;
+  deck.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;});
+  deck.addEventListener('touchend',function(e){
+    var d=tx-e.changedTouches[0].clientX;
+    var cur=Array.from(slides).indexOf(deck.querySelector('.slide'));
+    if(Math.abs(d)>50){
+      if(d>0&&cur<total-1)slides[cur+1].scrollIntoView({behavior:'smooth',inline:'start'});
+      else if(d<0&&cur>0)slides[cur-1].scrollIntoView({behavior:'smooth',inline:'start'});
+    }
+  });
+})();
+</script>
+</body>
+</html>
