@@ -20,6 +20,19 @@ export default defineConfig({
       link: '/zh/',
       title: 'Codex 从零到一',
       description: '让 AI 帮你搞定编程与办公',
+      themeConfig: {
+        nav: [
+          { text: '课程', link: '/zh/' },
+          { text: 'About', link: '/zh/about' },
+        ],
+        socialLinks: [
+          { icon: 'github', link: 'https://github.com/qlxxkj/CodexCourse' },
+        ],
+        footer: {
+          message: 'Released under the MIT License.',
+          copyright: 'Copyright © 2026 Codex Course Team',
+        },
+      },
     },
     en: {
       label: 'English',
@@ -27,15 +40,24 @@ export default defineConfig({
       link: '/en/',
       title: 'Codex from Zero to One',
       description: 'Master AI-powered programming and productivity',
+      themeConfig: {
+        nav: [
+          { text: 'Course', link: '/en/' },
+          { text: 'About', link: '/en/about' },
+        ],
+        socialLinks: [
+          { icon: 'github', link: 'https://github.com/qlxxkj/CodexCourse' },
+        ],
+        footer: {
+          message: 'Released under the MIT License.',
+          copyright: 'Copyright © 2026 Codex Course Team',
+        },
+      },
     },
   },
 
   themeConfig: {
     logo: '/logo.svg',
-    nav: [
-      { text: '课程', link: '/zh/' },
-      { text: 'About', link: '/zh/about' },
-    ],
     sidebar: {
       '/zh/': [
         {
@@ -172,13 +194,6 @@ export default defineConfig({
           ],
         },
       ],
-    },
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/qlxxkj/CodexCourse' },
-    ],
-    footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2026 Codex Course Team',
     },
     search: {
       provider: 'local',
