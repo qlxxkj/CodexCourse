@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Codex Course</title>
+  <script>
+    (function() {
+      var lang = navigator.language || navigator.userLanguage;
+      if (lang.indexOf('zh') === 0) {
+        window.location.replace('/CodexCourse/zh/');
+      } else {
+        window.location.replace('/CodexCourse/en/');
+      }
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=/CodexCourse/zh/">
+  </noscript>
+</head>
+<body>
+  <p>如果您没有自动跳转，<a href="/CodexCourse/zh/">请点击这里进入中文版</a> 或 <a href="/CodexCourse/en/">English</a>。</p>
+</body>
+</html>
