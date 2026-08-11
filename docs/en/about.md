@@ -1,3 +1,7 @@
+---
+lang: en-US
+---
+
 # About Codex Course
 
 This course is designed for absolute beginners who want to learn how to use OpenAI's Codex — an AI coding agent that can read files, write code, run commands, and automate tasks using natural language.
