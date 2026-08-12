@@ -25,9 +25,6 @@ export default defineConfig({
           { text: '课程', link: '/zh/' },
           { text: 'About', link: '/zh/about' },
         ],
-        socialLinks: [
-          { icon: 'github', link: 'https://github.com/qlxxkj/CodexCourse' },
-        ],
         footer: {
           message: 'Released under the MIT License.',
           copyright: 'Copyright © 2026 Codex Course Team',
@@ -44,9 +41,6 @@ export default defineConfig({
         nav: [
           { text: 'Course', link: '/en/' },
           { text: 'About', link: '/en/about' },
-        ],
-        socialLinks: [
-          { icon: 'github', link: 'https://github.com/qlxxkj/CodexCourse' },
         ],
         footer: {
           message: 'Released under the MIT License.',
