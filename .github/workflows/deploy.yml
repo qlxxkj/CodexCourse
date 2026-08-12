@@ -34,8 +34,8 @@ jobs:
         run: npm run build
       - name: Fix asset paths for custom domain
         run: |
-          # Replace /CodexCourse/ with / in all HTML files for custom domain compatibility
-          find docs/.vitepress/dist -name "*.html" -exec sed -i 's|/CodexCourse/|/|g' {} +
+          # Replace /CodexCourse/ with / in all files (HTML, JS, JSON) for custom domain compatibility
+          find docs/.vitepress/dist -type f \( -name "*.html" -o -name "*.js" -o -name "*.json" \) -exec sed -i 's|/CodexCourse/|/|g' {} +
       - name: Copy build output to root
         run: cp -r docs/.vitepress/dist/* .
       - name: Upload artifact
