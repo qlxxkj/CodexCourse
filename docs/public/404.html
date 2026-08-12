@@ -7,22 +7,32 @@
   <script>
     (function() {
       var path = window.location.pathname;
-      // Custom domain root -> redirect to CodexCourse subpath
+      var isCustomDomain = location.hostname.indexOf('github.io') === -1;
+      var base = isCustomDomain ? '' : '/CodexCourse';
+      // Redirect custom domain root to language home
       if (path === '/' || path === '') {
         var lang = navigator.language || navigator.userLanguage;
         if (lang.indexOf('zh') === 0) {
-          window.location.replace('/CodexCourse/zh/');
+          window.location.replace(base + '/zh/');
         } else {
-          window.location.replace('/CodexCourse/en/');
+          window.location.replace(base + '/en/');
         }
+        return;
+      }
+      // Try without .html suffix, fall back to original path as 404
+      var cleanPath = path.replace(/^\//, '');
+      if (!cleanPath.endsWith('.html')) {
+        window.location.replace(base + path + '.html');
+      } else {
+        window.location.replace(base + path);
       }
     })();
   </script>
   <noscript>
-    <meta http-equiv="refresh" content="0;url=/CodexCourse/zh/">
+    <meta http-equiv="refresh" content="0;url=/zh/">
   </noscript>
 </head>
 <body>
-  <p>If not redirected, go to <a href="/CodexCourse/zh/">中文</a> or <a href="/CodexCourse/en/">English</a>.</p>
+  <p>If not redirected, go to <a href="/zh/">中文</a> or <a href="/en/">English</a>.</p>
 </body>
 </html>

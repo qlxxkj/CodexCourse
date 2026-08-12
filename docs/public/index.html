@@ -7,10 +7,13 @@
   <script>
     (function() {
       var lang = navigator.language || navigator.userLanguage;
+      var path = window.location.pathname;
+      var isCustomDomain = location.hostname.indexOf('github.io') === -1;
+      var base = isCustomDomain ? '' : '/CodexCourse';
       if (lang.indexOf('zh') === 0) {
-        window.location.replace('/zh/');
+        window.location.replace(base + '/zh/');
       } else {
-        window.location.replace('/en/');
+        window.location.replace(base + '/en/');
       }
     })();
   </script>
