@@ -7,16 +7,10 @@
   <script>
     (function() {
       var lang = navigator.language || navigator.userLanguage;
-      var path = window.location.pathname;
-      var base = '';
-      // Detect if we're under a subpath like /CodexCourse/
-      if (path.indexOf('/CodexCourse/') === 0) {
-        base = '/CodexCourse';
-      }
       if (lang.indexOf('zh') === 0) {
-        window.location.replace(base + '/zh/');
+        window.location.replace('/zh/');
       } else {
-        window.location.replace(base + '/en/');
+        window.location.replace('/en/');
       }
     })();
   </script>
