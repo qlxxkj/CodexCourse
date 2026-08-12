@@ -1,37 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh-CN" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Codex Course</title>
-    <script>
-      (function() {
-        var path = window.location.pathname;
-        // If accessing custom domain root, redirect to language home
-        if (path === '/' || path === '') {
-          var lang = navigator.language || navigator.userLanguage;
-          if (lang.indexOf('zh') === 0) {
-            window.location.replace('/zh/');
-          } else {
-            window.location.replace('/en/');
-          }
-          return;
-        }
-        // Remove leading slash and try as a page path
-        var cleanPath = path.replace(/^\//, '');
-        // Try appending .html
-        if (!cleanPath.endsWith('.html')) {
-          window.location.replace(path + '.html');
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Codex Course</title>
+  <script>
+    (function() {
+      var path = window.location.pathname;
+      // Custom domain root -> redirect to CodexCourse subpath
+      if (path === '/' || path === '') {
+        var lang = navigator.language || navigator.userLanguage;
+        if (lang.indexOf('zh') === 0) {
+          window.location.replace('/CodexCourse/zh/');
         } else {
-          window.location.replace(path);
+          window.location.replace('/CodexCourse/en/');
         }
-      })();
-    </script>
-    <noscript>
-      <meta http-equiv="refresh" content="0;url=/zh/">
-    </noscript>
-  </head>
-  <body>
-    <p>If not redirected, <a href="/zh/">中文</a> or <a href="/en/">English</a>.</p>
-  </body>
+      }
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=/CodexCourse/zh/">
+  </noscript>
+</head>
+<body>
+  <p>If not redirected, go to <a href="/CodexCourse/zh/">中文</a> or <a href="/CodexCourse/en/">English</a>.</p>
+</body>
 </html>
