@@ -7,18 +7,24 @@
   <script>
     (function() {
       var lang = navigator.language || navigator.userLanguage;
+      var path = window.location.pathname;
+      var base = '';
+      // Detect if we're under a subpath like /CodexCourse/
+      if (path.indexOf('/CodexCourse/') === 0) {
+        base = '/CodexCourse';
+      }
       if (lang.indexOf('zh') === 0) {
-        window.location.replace('/CodexCourse/zh/');
+        window.location.replace(base + '/zh/');
       } else {
-        window.location.replace('/CodexCourse/en/');
+        window.location.replace(base + '/en/');
       }
     })();
   </script>
   <noscript>
-    <meta http-equiv="refresh" content="0;url=/CodexCourse/zh/">
+    <meta http-equiv="refresh" content="0;url=/zh/">
   </noscript>
 </head>
 <body>
-  <p>如果您没有自动跳转，<a href="/CodexCourse/zh/">请点击这里进入中文版</a> 或 <a href="/CodexCourse/en/">English</a>。</p>
+  <p>如果您没有自动跳转，<a href="/zh/">中文</a> 或 <a href="/en/">English</a>。</p>
 </body>
 </html>
