@@ -7,6 +7,7 @@ export default defineConfig({
   lang: 'zh-CN',
 
   head: [
+    ['link', { rel: 'icon', href: '/CodexCourse/logo.svg' }],
     ['script', { 'data-ad-client': 'ca-pub-XXXXXXXXXXXXXXXX', 'async': 'async' }],
     ['meta', { name: 'google-adsense-account', content: 'ca-pub-XXXXXXXXXXXXXXXX' }],
     ['meta', { property: 'og:locale:alternate', content: 'en_US' }],
