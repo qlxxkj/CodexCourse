@@ -22,7 +22,7 @@
 
 - **macOS**：macOS 12.0 及以上
 - **Windows**：Windows 10 及以上
-- **Chromebook**：支持 Chrome OS 即可
+- **Linux**： Ubuntu 22 及以上
 
 ### 3. 稳定的网络连接
 

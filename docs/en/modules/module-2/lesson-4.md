@@ -21,7 +21,7 @@
 ### 2. A Computer
 - **macOS**: macOS 12.0 or later
 - **Windows**: Windows 10 or later
-- **Chromebook**: Chrome OS supported
+- **Linux**: Ubuntu 22 or later
 
 ### 3. A Stable Internet Connection
 Codex needs real-time connectivity to communicate with AI servers. A broadband connection of 50Mbps or above is recommended.
