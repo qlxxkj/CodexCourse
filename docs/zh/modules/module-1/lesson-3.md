@@ -1,4 +1,4 @@
-# 第 3 课：Codex vs 其他工具（不纠结版）
+# 第 3 课：Codex vs 其他工具
 
 > 📌 **学习目标**：理解 Codex 与 ChatGPT、GitHub Copilot 的区别，知道什么时候该用什么工具  
 > ⏱️ **预计时长**：10 分钟  
